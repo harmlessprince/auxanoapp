@@ -38,9 +38,9 @@
 
 <style scoped>
 .loader {
-  border-top-color: #3498db;
+  border-top-color: #7e22ce;
   -webkit-animation: spinner 1.5s linear infinite;
-  animation: spinner 2s linear infinite;
+  animation: spinner 1.5s linear infinite;
 }
 @-webkit-keyframes spinner {
   0% {

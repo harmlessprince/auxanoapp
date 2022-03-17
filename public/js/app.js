@@ -3033,7 +3033,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.loader[data-v-6ca9e6be] {\n  border-top-color: #3498db;\n  -webkit-animation: spinner-data-v-6ca9e6be 1.5s linear infinite;\n  animation: spinner-data-v-6ca9e6be 2s linear infinite;\n}\n@-webkit-keyframes spinner-data-v-6ca9e6be {\n0% {\n    -webkit-transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spinner-data-v-6ca9e6be {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.loader[data-v-6ca9e6be] {\n  border-top-color: #7e22ce;\n  -webkit-animation: spinner-data-v-6ca9e6be 1.5s linear infinite;\n  animation: spinner-data-v-6ca9e6be 1.5s linear infinite;\n}\n@-webkit-keyframes spinner-data-v-6ca9e6be {\n0% {\n    -webkit-transform: rotate(0deg);\n}\n100% {\n    -webkit-transform: rotate(360deg);\n}\n}\n@keyframes spinner-data-v-6ca9e6be {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
