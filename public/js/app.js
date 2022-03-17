@@ -2638,7 +2638,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       loading: false
     };
   },
-  created: function created() {
+  beforeMount: function beforeMount() {
     var _this = this;
 
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -2695,6 +2695,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context2.next = 4;
                 return (0,_utilities_apiService__WEBPACK_IMPORTED_MODULE_1__.get)("/tickets", params).then(function (response) {
                   return response.data.data.data;
+                })["catch"](function (err) {
+                  console.log(err);
+                  _this2.loading = false;
                 });
 
               case 4:
@@ -2735,15 +2738,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                _context3.next = 2;
+                console.log("http://auxanoapp.test/api");
+                _context3.next = 3;
                 return (0,_utilities_apiService__WEBPACK_IMPORTED_MODULE_1__.get)("/statuses").then(function (response) {
                   return response.data.data;
+                })["catch"](function (err) {
+                  console.log(err);
                 });
 
-              case 2:
+              case 3:
                 _this3.statuses = _context3.sent;
 
-              case 3:
+              case 4:
               case "end":
                 return _context3.stop();
             }
@@ -2943,39 +2949,7 @@ var get = function get(url) {
     headers: {},
     params: params
   });
-}; // export const post = (url, data) => axios({
-//     method: 'POST',
-//     url,
-//     data,
-//     headers: { 'Authorization': `Bearer ${Auth.state.api_token}` }
-// });
-// export const put = (url, data) => axios({
-//     method: 'PUT',
-//     url,
-//     data,
-//     headers: { 'Authorization': `Bearer ${Auth.state.api_token}` }
-// });
-// export const patch = (url, data) => axios({
-//     method: 'PATCH',
-//     url,
-//     data,
-//     headers: { 'Authorization': `Bearer ${Auth.state.api_token}` }
-// });
-// export const byMethod = (method, url, data, params = {}) => axios({
-//     method,
-//     url,
-//     data,
-//     params,
-//     headers: { 'Authorization': `Bearer ${Auth.state.api_token}` }
-// });
-// export const postD = (url, data) => axios({
-//     url,
-//     data,
-//     method: 'POST',
-//     responseType: 'blob',
-//     headers: { 'Authorization': `Bearer ${Auth.state.api_token}` }
-// });
-
+};
 var del = function del(url) {
   return axios__WEBPACK_IMPORTED_MODULE_0___default()({
     url: url,

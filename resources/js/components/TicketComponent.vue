@@ -304,7 +304,7 @@ export default {
       loading: false,
     };
   },
-  async created() {
+  async beforeMount() {
     this.loading = true;
     await this.getStatus();
     await this.getPriority();
@@ -318,9 +318,14 @@ export default {
   methods: {
     async getTickets(params = {}) {
       this.loading = true;
-      this.tickets = await get("/tickets", params).then((response) => {
-        return response.data.data.data;
-      });
+      this.tickets = await get("/tickets", params)
+        .then((response) => {
+          return response.data.data.data;
+        })
+        .catch((err) => {
+          console.log(err);
+          this.loading = false;
+        });
       this.selectTicket(this.tickets[0]);
       this.loading = false;
     },
@@ -338,9 +343,14 @@ export default {
       this.selectedTicket = ticket;
     },
     async getStatus() {
-      this.statuses = await get("/statuses").then((response) => {
-        return response.data.data;
-      });
+      console.log(process.env.MIX_APP_URL);
+      this.statuses = await get("/statuses")
+        .then((response) => {
+          return response.data.data;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
     async getPriority() {
       this.priorities = await get("/priorities").then((response) => {
