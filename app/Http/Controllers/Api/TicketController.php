@@ -30,9 +30,8 @@ class TicketController extends Controller
             CategoryFilter::class,
             TechnicianFilter::class,
             TicketNameFilter::class,
-        ])->thenReturn()->latest()->paginate();
-        return response()->json([
-            'data' => $tickets,
-        ]);
+        ])->thenReturn()->latest()->simplePaginate(30);
+    
+        return $tickets;
     }
 }

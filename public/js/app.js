@@ -2613,6 +2613,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2685,7 +2700,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        var params;
+        var params, responseData;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -2694,20 +2709,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this2.loading = true;
                 _context2.next = 4;
                 return (0,_utilities_apiService__WEBPACK_IMPORTED_MODULE_1__.get)("/tickets", params).then(function (response) {
-                  return response.data.data.data;
+                  return response.data;
                 })["catch"](function (err) {
                   console.log(err);
                   _this2.loading = false;
                 });
 
               case 4:
-                _this2.tickets = _context2.sent;
+                responseData = _context2.sent;
+                console.log(responseData); // first_page_url: "http://auxanoapp.test/api/tickets?page=1";
+                // from: 1;
+                // next_page_url: "http://auxanoapp.test/api/tickets?page=2";
+                // path: "http://auxanoapp.test/api/tickets";
+                // per_page: 15;
+                // prev_page_url: null;
+                // to: 15;
+                // current_page: 1
+
+                _this2.tickets = responseData.data;
 
                 _this2.selectTicket(_this2.tickets[0]);
 
                 _this2.loading = false;
 
-              case 7:
+              case 9:
               case "end":
                 return _context2.stop();
             }
@@ -44080,357 +44105,314 @@ var render = function () {
                 ]
               ),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-start-3 col-end-7 text-gray-700 dark:text-gray-400 sm:p-2",
-                },
-                [
-                  _vm.selectedTicket
-                    ? _c("div", { staticClass: "flex" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "border-r-2 border-grey-100 dark:border-gray-700",
-                          },
-                          [
+              _vm.selectedTicket
+                ? _c(
+                    "div",
+                    {
+                      staticClass:
+                        "\n        col-start-3 col-end-7\n        text-gray-700\n        dark:text-gray-400\n        sm:p-2\n        flex\n      ",
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "border-r-2 border-grey-100 dark:border-gray-700 w-3/4 ",
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex justify-between items-center mb-2",
+                            },
+                            [
+                              _c(
+                                "h4",
+                                {
+                                  staticClass:
+                                    "\n              text-lg\n              sm:text-md\n              font-bold\n              text-gray-600\n              dark:text-gray-300\n            ",
+                                },
+                                [
+                                  _vm._v(
+                                    "\n            " +
+                                      _vm._s(_vm.selectedTicket.subject) +
+                                      "\n          "
+                                  ),
+                                ]
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "flex flex-col" }, [
                             _c(
-                              "div",
+                              "p",
                               {
                                 staticClass:
-                                  "flex justify-between items-center mb-2",
+                                  "text-green-400 mb-2 font-semibold",
                               },
                               [
-                                _c(
-                                  "h4",
-                                  {
-                                    staticClass:
-                                      "\n                text-lg\n                sm:text-md\n                font-bold\n                text-gray-600\n                dark:text-gray-300\n              ",
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n              " +
-                                        _vm._s(_vm.selectedTicket.subject) +
-                                        "\n            "
-                                    ),
-                                  ]
+                                _vm._v(
+                                  "\n            Submitted by: " +
+                                    _vm._s(_vm.selectedTicket.user.first_name) +
+                                    "\n            " +
+                                    _vm._s(_vm.selectedTicket.user.last_name) +
+                                    "\n          "
                                 ),
                               ]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "flex flex-col" }, [
-                              _c(
-                                "p",
-                                {
-                                  staticClass:
-                                    "text-green-400 mb-2 font-semibold",
-                                },
-                                [
-                                  _vm._v(
-                                    "\n              Submitted by: " +
-                                      _vm._s(
-                                        _vm.selectedTicket.user.first_name
-                                      ) +
-                                      "\n              " +
-                                      _vm._s(
-                                        _vm.selectedTicket.user.last_name
-                                      ) +
-                                      "\n            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "p",
-                                {
-                                  staticClass:
-                                    "text-orange-400 my-3 font-semibold",
-                                },
-                                [
-                                  _vm._v(
-                                    "\n              Assigned To: " +
-                                      _vm._s(
-                                        _vm.selectedTicket.agent.first_name
-                                      ) +
-                                      "\n              " +
-                                      _vm._s(
-                                        _vm.selectedTicket.agent.last_name
-                                      ) +
-                                      "\n            "
-                                  ),
-                                ]
-                              ),
-                            ]),
-                            _vm._v(" "),
-                            _c("divider"),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "my-3 w-full" }, [
-                              _c(
-                                "h4",
-                                {
-                                  staticClass:
-                                    "\n                text-md\n                font-semibold\n                text-gray-600\n                dark:text-gray-300\n                mb-3\n              ",
-                                },
-                                [
-                                  _vm._v(
-                                    "\n              Customer Info\n            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "flex items-end mb-2" },
-                                [
-                                  _c(
-                                    "h5",
-                                    {
-                                      staticClass:
-                                        "text-md text-grey-600 font-semibold sentence mr-3",
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                Name:\n              "
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "tex-sm" }, [
-                                    _vm._v(
-                                      "\n                " +
-                                        _vm._s(
-                                          _vm.selectedTicket.customer.name
-                                        ) +
-                                        "\n              "
-                                    ),
-                                  ]),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "flex items-end mb-2" },
-                                [
-                                  _c(
-                                    "h5",
-                                    {
-                                      staticClass:
-                                        "text-md text-grey-600 font-semibold sentence mr-3",
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                Email:\n              "
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "tex-sm" }, [
-                                    _vm._v(
-                                      "\n                " +
-                                        _vm._s(
-                                          _vm.selectedTicket.customer.email
-                                        ) +
-                                        "\n              "
-                                    ),
-                                  ]),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "flex items-end" }, [
-                                _c(
-                                  "h5",
-                                  {
-                                    staticClass:
-                                      "text-md text-grey-600 font-semibold sentence mr-3",
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                Phone number:\n              "
-                                    ),
-                                  ]
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "text-orange-400 my-3 font-semibold",
+                              },
+                              [
+                                _vm._v(
+                                  "\n            Assigned To: " +
+                                    _vm._s(
+                                      _vm.selectedTicket.agent.first_name
+                                    ) +
+                                    "\n            " +
+                                    _vm._s(_vm.selectedTicket.agent.last_name) +
+                                    "\n          "
                                 ),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "tex-sm" }, [
-                                  _vm._v(
-                                    "\n                " +
-                                      _vm._s(
-                                        _vm.selectedTicket.customer.phone_number
-                                      ) +
-                                      "\n              "
-                                  ),
-                                ]),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("divider"),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "my-3 w-full" }, [
-                              _c(
-                                "h4",
-                                {
-                                  staticClass:
-                                    "\n                text-md\n                font-semibold\n                text-gray-600\n                dark:text-gray-300\n                mb-3\n              ",
-                                },
-                                [
-                                  _vm._v(
-                                    "\n              Fault Detail\n            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "mb-3" }, [
-                                _c(
-                                  "h5",
-                                  {
-                                    staticClass:
-                                      "text-md text-grey-600 font-semibold sentence mb-1",
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                Reported:\n              "
-                                    ),
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "tex-sm" }, [
-                                  _vm._v(
-                                    "\n                " +
-                                      _vm._s(
-                                        _vm.selectedTicket.fault_reported
-                                          ? _vm.selectedTicket.fault_reported
-                                          : "None Reported"
-                                      ) +
-                                      "\n              "
-                                  ),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", {}, [
-                                _c(
-                                  "h5",
-                                  {
-                                    staticClass:
-                                      "text-md text-grey-600 font-semibold sentence mb-1",
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                Observed:\n              "
-                                    ),
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "tex-sm" }, [
-                                  _vm._v(
-                                    "\n                " +
-                                      _vm._s(
-                                        _vm.selectedTicket.fault_observed
-                                          ? _vm.selectedTicket.fault_observed
-                                          : "None Observed"
-                                      ) +
-                                      "\n              "
-                                  ),
-                                ]),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("divider"),
-                            _vm._v(
-                              "\n          " +
-                                _vm._s(_vm.selectedTicket) +
-                                "\n        "
+                              ]
                             ),
-                          ],
-                          1
-                        ),
+                          ]),
+                          _vm._v(" "),
+                          _c("divider"),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "my-3 w-full" }, [
+                            _c(
+                              "h4",
+                              {
+                                staticClass:
+                                  "\n              text-md\n              font-semibold\n              text-gray-600\n              dark:text-gray-300\n              mb-3\n            ",
+                              },
+                              [
+                                _vm._v(
+                                  "\n            Customer Info\n          "
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "flex items-end mb-2" }, [
+                              _c(
+                                "h5",
+                                {
+                                  staticClass:
+                                    "text-md text-grey-600 font-semibold sentence mr-3",
+                                },
+                                [_vm._v("\n              Name:\n            ")]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "tex-sm" }, [
+                                _vm._v(
+                                  "\n              " +
+                                    _vm._s(_vm.selectedTicket.customer.name) +
+                                    "\n            "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "flex items-end mb-2" }, [
+                              _c(
+                                "h5",
+                                {
+                                  staticClass:
+                                    "text-md text-grey-600 font-semibold sentence mr-3",
+                                },
+                                [_vm._v("\n              Email:\n            ")]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "tex-sm" }, [
+                                _vm._v(
+                                  "\n              " +
+                                    _vm._s(_vm.selectedTicket.customer.email) +
+                                    "\n            "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "flex items-end" }, [
+                              _c(
+                                "h5",
+                                {
+                                  staticClass:
+                                    "text-md text-grey-600 font-semibold sentence mr-3",
+                                },
+                                [
+                                  _vm._v(
+                                    "\n              Phone number:\n            "
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "tex-sm" }, [
+                                _vm._v(
+                                  "\n              " +
+                                    _vm._s(
+                                      _vm.selectedTicket.customer.phone_number
+                                    ) +
+                                    "\n            "
+                                ),
+                              ]),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("divider"),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "my-3 w-full" }, [
+                            _c(
+                              "h4",
+                              {
+                                staticClass:
+                                  "\n              text-md\n              font-semibold\n              text-gray-600\n              dark:text-gray-300\n              mb-3\n            ",
+                              },
+                              [_vm._v("\n            Fault Detail\n          ")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "mb-3" }, [
+                              _c(
+                                "h5",
+                                {
+                                  staticClass:
+                                    "text-md text-grey-600 font-semibold sentence mb-1",
+                                },
+                                [
+                                  _vm._v(
+                                    "\n              Reported:\n            "
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "tex-sm" }, [
+                                _vm._v(
+                                  "\n              " +
+                                    _vm._s(
+                                      _vm.selectedTicket.fault_reported
+                                        ? _vm.selectedTicket.fault_reported
+                                        : "None Reported"
+                                    ) +
+                                    "\n            "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", {}, [
+                              _c(
+                                "h5",
+                                {
+                                  staticClass:
+                                    "text-md text-grey-600 font-semibold sentence mb-1",
+                                },
+                                [
+                                  _vm._v(
+                                    "\n              Observed:\n            "
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "tex-sm" }, [
+                                _vm._v(
+                                  "\n              " +
+                                    _vm._s(
+                                      _vm.selectedTicket.fault_observed
+                                        ? _vm.selectedTicket.fault_observed
+                                        : "None Observed"
+                                    ) +
+                                    "\n            "
+                                ),
+                              ]),
+                            ]),
+                          ]),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "p-2 flex flex-col w-1/4" }, [
+                        _c("div", { staticClass: "mb-3" }, [
+                          _c(
+                            "h6",
+                            {
+                              staticClass:
+                                "\n              text-sm\n              font-semibold\n              text-gray-600\n              dark:text-gray-300\n              mb-1\n              uppercase\n            ",
+                            },
+                            [_vm._v("\n            Status\n          ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "\n              capitalize\n              px-2\n              py-1\n              font-semibold\n              whitespace-nowrap\n              rounded-full\n              text-sm\n            ",
+                              class: _vm.getStatusColor(
+                                _vm.selectedTicket.status.name
+                              ),
+                            },
+                            [
+                              _vm._v(
+                                "\n            " +
+                                  _vm._s(_vm.selectedTicket.status.name) +
+                                  "\n          "
+                              ),
+                            ]
+                          ),
+                        ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "p-2 grow flex flex-col" }, [
-                          _c("div", { staticClass: "mb-3" }, [
-                            _c(
-                              "h6",
-                              {
-                                staticClass:
-                                  "\n                text-sm\n                font-semibold\n                text-gray-600\n                dark:text-gray-300\n                mb-1\n                uppercase\n              ",
-                              },
-                              [_vm._v("\n              Status\n            ")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "\n                capitalize\n                px-2\n                py-1\n                font-semibold\n                whitespace-nowrap\n                rounded-full\n                text-sm\n              ",
-                                class: _vm.getStatusColor(
-                                  _vm.selectedTicket.status.name
-                                ),
-                              },
-                              [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(_vm.selectedTicket.status.name) +
-                                    "\n            "
-                                ),
-                              ]
-                            ),
-                          ]),
+                        _c("div", { staticClass: "mb-3" }, [
+                          _c(
+                            "h6",
+                            {
+                              staticClass:
+                                "\n              text-sm\n              font-semibold\n              text-gray-600\n              dark:text-gray-300\n              mb-1\n              uppercase\n            ",
+                            },
+                            [_vm._v("\n            Priority\n          ")]
+                          ),
                           _vm._v(" "),
-                          _c("div", { staticClass: "mb-3" }, [
-                            _c(
-                              "h6",
-                              {
-                                staticClass:
-                                  "\n                text-sm\n                font-semibold\n                text-gray-600\n                dark:text-gray-300\n                mb-1\n                uppercase\n              ",
-                              },
-                              [_vm._v("\n              Priority\n            ")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "\n                capitalize\n                px-2\n                py-1\n                font-semibold\n                leading-tight\n                rounded-full\n                text-sm\n              ",
-                                class: _vm.getPriorityColor(
-                                  _vm.selectedTicket.priority.name
-                                ),
-                              },
-                              [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(_vm.selectedTicket.priority.name) +
-                                    "\n            "
-                                ),
-                              ]
-                            ),
-                          ]),
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "\n              capitalize\n              px-2\n              py-1\n              font-semibold\n              leading-tight\n              rounded-full\n              text-sm\n            ",
+                              class: _vm.getPriorityColor(
+                                _vm.selectedTicket.priority.name
+                              ),
+                            },
+                            [
+                              _vm._v(
+                                "\n            " +
+                                  _vm._s(_vm.selectedTicket.priority.name) +
+                                  "\n          "
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "mb-3" }, [
+                          _c(
+                            "h6",
+                            {
+                              staticClass:
+                                "\n              text-sm\n              font-semibold\n              text-gray-600\n              dark:text-gray-300\n              mb-1\n              uppercase\n            ",
+                            },
+                            [_vm._v("\n            Category\n          ")]
+                          ),
                           _vm._v(" "),
-                          _c("div", { staticClass: "mb-3" }, [
-                            _c(
-                              "h6",
-                              {
-                                staticClass:
-                                  "\n                text-sm\n                font-semibold\n                text-gray-600\n                dark:text-gray-300\n                mb-1\n                uppercase\n              ",
-                              },
-                              [_vm._v("\n              Category\n            ")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "span",
-                              { staticClass: "font-semibold text-sm" },
-                              [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(_vm.selectedTicket.category.name) +
-                                    "\n            "
-                                ),
-                              ]
+                          _c("span", { staticClass: "font-semibold text-sm" }, [
+                            _vm._v(
+                              "\n            " +
+                                _vm._s(_vm.selectedTicket.category.name) +
+                                "\n          "
                             ),
                           ]),
                         ]),
-                      ])
-                    : _vm._e(),
-                ]
-              ),
+                      ]),
+                    ]
+                  )
+                : _vm._e(),
             ]
           )
         : _c("empty-state"),
