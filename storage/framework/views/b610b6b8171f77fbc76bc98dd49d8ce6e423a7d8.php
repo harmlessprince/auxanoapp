@@ -20,7 +20,7 @@
                  <?php echo e($title); ?>
 
              </p>
-             <button
+             <button type="button"
                  class="inline-flex items-center justify-center w-6 h-6 text-gray-400 transition-colors duration-150 rounded dark:hover:text-gray-200 hover: hover:text-gray-700"
                  aria-label="close" @click="closeModal">
                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" role="img" aria-hidden="true">
