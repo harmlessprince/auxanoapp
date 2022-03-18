@@ -3328,6 +3328,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3714,6 +3734,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\n.v-enter-active[data-v-5b8c7b36],\n.v-leave-active[data-v-5b8c7b36] {\n  transition: opacity 0.5s ease;\n}\n.v-enter-from[data-v-5b8c7b36],\n.v-leave-to[data-v-5b8c7b36] {\n  opacity: 0;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=style&index=0&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=style&index=0&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.fade-enter-active,\n.fade-leave-active {\n  transition: opacity 1.5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -43503,6 +43547,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=style&index=0&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=style&index=0&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TicketDetail.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=style&index=0&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
@@ -44154,15 +44228,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _TicketDetail_vue_vue_type_template_id_3f2fe3e8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TicketDetail.vue?vue&type=template&id=3f2fe3e8& */ "./resources/js/components/TicketDetail.vue?vue&type=template&id=3f2fe3e8&");
 /* harmony import */ var _TicketDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TicketDetail.vue?vue&type=script&lang=js& */ "./resources/js/components/TicketDetail.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _TicketDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TicketDetail.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/TicketDetail.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
+;
 
 
 /* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _TicketDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _TicketDetail_vue_vue_type_template_id_3f2fe3e8___WEBPACK_IMPORTED_MODULE_0__.render,
   _TicketDetail_vue_vue_type_template_id_3f2fe3e8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
@@ -44366,6 +44442,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketComponent_vue_vue_type_style_index_0_id_5b8c7b36_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TicketComponent.vue?vue&type=style&index=0&id=5b8c7b36&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketComponent.vue?vue&type=style&index=0&id=5b8c7b36&scoped=true&lang=css&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/TicketDetail.vue?vue&type=style&index=0&lang=css&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/TicketDetail.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TicketDetail.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=style&index=0&lang=css&");
 
 
 /***/ }),
@@ -45450,210 +45539,112 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.selectedTicket
-    ? _c(
-        "div",
-        {
-          staticClass:
-            "col-start-3 col-end-7 text-gray-700 dark:text-gray-400 sm:p-2 flex",
-        },
-        [
-          _c("div", { staticClass: "w-4/6" }, [
-            _c(
-              "div",
-              { staticClass: "flex items-center space-x-4 mb-2 flex-wrap" },
-              [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "\n          flex\n          items-center\n          justify-between\n          px-4\n          py-2\n          text-sm\n          font-medium\n          leading-5\n          text-white\n          transition-colors\n          rounded-lg\n          duration-150\n          border border-transparent\n          focus:outline-none\n          text-white\n          bg-orange-600\n        ",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function ($event) {
-                        return _vm.showModal("status-modal")
-                      },
-                    },
-                  },
-                  [_vm._v("\n        Change Status\n      ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "\n          flex\n          items-center\n          justify-between\n          px-4\n          py-2\n          text-sm\n          font-medium\n          leading-5\n          transition-colors\n          rounded-lg\n          duration-150\n          border border-transparent\n          focus:outline-none\n          text-yellow-100\n          bg-yellow-500\n        ",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function ($event) {
-                        return _vm.showModal("priority-modal")
-                      },
-                    },
-                  },
-                  [_vm._v("\n        Change Priority\n      ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "\n          flex\n          items-center\n          justify-between\n          px-4\n          py-2\n          text-sm\n          font-medium\n          leading-5\n          transition-colors\n          rounded-lg\n          duration-150\n          border border-transparent\n          focus:outline-none\n          text-blue-100\n          bg-blue-500\n        ",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function ($event) {
-                        return _vm.showModal("assign-modal")
-                      },
-                    },
-                  },
-                  [_vm._v("\n        Assign\n      ")]
-                ),
-                _vm._v(" "),
-                _c("v-button", { staticClass: "bg-green-700 text-green-100" }, [
-                  _vm._v(" Edit "),
-                ]),
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "flex justify-between items-center mb-2" },
-              [
-                _c(
-                  "h4",
-                  {
-                    staticClass:
-                      "text-lg sm:text-md font-bold text-gray-600 dark:text-gray-300",
-                  },
-                  [
-                    _vm._v(
-                      "\n        " +
-                        _vm._s(_vm.selectedTicket.subject) +
-                        "\n      "
-                    ),
-                  ]
-                ),
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex flex-col" }, [
-              _c("p", { staticClass: "text-green-400 mb-2 font-semibold" }, [
-                _vm._v(
-                  "\n        Submitted by: " +
-                    _vm._s(_vm.selectedTicket.user.first_name) +
-                    "\n        " +
-                    _vm._s(_vm.selectedTicket.user.last_name) +
-                    "\n      "
-                ),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-orange-400 my-3 font-semibold" }, [
-                _vm._v(
-                  "\n        Assigned To: " +
-                    _vm._s(_vm.selectedTicket.agent.first_name) +
-                    "\n        " +
-                    _vm._s(_vm.selectedTicket.agent.last_name) +
-                    "\n      "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "my-3 w-full" }, [
+  return _c("transition", { attrs: { name: "fade" } }, [
+    _vm.selectedTicket
+      ? _c(
+          "div",
+          {
+            staticClass:
+              "col-start-3 col-end-7 text-gray-700 dark:text-gray-400 sm:p-2 flex",
+          },
+          [
+            _c("div", { staticClass: "w-4/6" }, [
               _c(
-                "h4",
-                {
-                  staticClass:
-                    "text-md font-semibold text-gray-600 dark:text-gray-300 mb-3",
-                },
-                [_vm._v("\n        Customer Info\n      ")]
+                "div",
+                { staticClass: "flex items-center space-x-4 mb-2 flex-wrap" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "\n            flex\n            items-center\n            justify-between\n            px-4\n            py-2\n            text-sm\n            font-medium\n            leading-5\n            text-white\n            transition-colors\n            rounded-lg\n            duration-150\n            border border-transparent\n            focus:outline-none\n            text-white\n            bg-orange-600\n          ",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function ($event) {
+                          return _vm.showModal("status-modal")
+                        },
+                      },
+                    },
+                    [_vm._v("\n          Change Status\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "\n            flex\n            items-center\n            justify-between\n            px-4\n            py-2\n            text-sm\n            font-medium\n            leading-5\n            transition-colors\n            rounded-lg\n            duration-150\n            border border-transparent\n            focus:outline-none\n            text-yellow-100\n            bg-yellow-500\n          ",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function ($event) {
+                          return _vm.showModal("priority-modal")
+                        },
+                      },
+                    },
+                    [_vm._v("\n          Change Priority\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "\n            flex\n            items-center\n            justify-between\n            px-4\n            py-2\n            text-sm\n            font-medium\n            leading-5\n            transition-colors\n            rounded-lg\n            duration-150\n            border border-transparent\n            focus:outline-none\n            text-blue-100\n            bg-blue-500\n          ",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function ($event) {
+                          return _vm.showModal("assign-modal")
+                        },
+                      },
+                    },
+                    [_vm._v("\n          Assign\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-button",
+                    { staticClass: "bg-green-700 text-green-100" },
+                    [_vm._v(" Edit ")]
+                  ),
+                ],
+                1
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "flex items-end mb-2" }, [
-                _c(
-                  "h5",
-                  {
-                    staticClass:
-                      "text-md text-grey-600 font-semibold sentence mr-3",
-                  },
-                  [_vm._v("\n          Name:\n        ")]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "tex-sm" }, [
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(_vm.selectedTicket.customer.name) +
-                      "\n        "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-end mb-2" }, [
-                _c(
-                  "h5",
-                  {
-                    staticClass:
-                      "text-md text-grey-600 font-semibold sentence mr-3",
-                  },
-                  [_vm._v("\n          Email:\n        ")]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "tex-sm" }, [
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(_vm.selectedTicket.customer.email) +
-                      "\n        "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-end" }, [
-                _c(
-                  "h5",
-                  {
-                    staticClass:
-                      "text-md text-grey-600 font-semibold sentence mr-3",
-                  },
-                  [_vm._v("\n          Phone number:\n        ")]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "tex-sm" }, [
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(_vm.selectedTicket.customer.phone_number) +
-                      "\n        "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "my-3 w-full" }, [
               _c(
-                "h4",
-                {
-                  staticClass:
-                    "text-md font-semibold text-gray-600 dark:text-gray-300 mb-3",
-                },
-                [_vm._v("\n        Fault Detail\n      ")]
+                "div",
+                { staticClass: "flex justify-between items-center mb-2" },
+                [
+                  _c(
+                    "h4",
+                    {
+                      staticClass:
+                        "\n            text-lg\n            sm:text-md\n            font-bold\n            text-gray-600\n            dark:text-gray-300\n          ",
+                    },
+                    [
+                      _vm._v(
+                        "\n          " +
+                          _vm._s(_vm.selectedTicket.subject) +
+                          "\n        "
+                      ),
+                    ]
+                  ),
+                ]
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "mb-3" }, [
-                _c(
-                  "h5",
-                  {
-                    staticClass:
-                      "text-md text-grey-600 font-semibold sentence mb-1",
-                  },
-                  [_vm._v("\n          Reported:\n        ")]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "tex-sm" }, [
+              _c("div", { staticClass: "flex flex-col" }, [
+                _c("p", { staticClass: "text-green-400 mb-2 font-semibold" }, [
                   _vm._v(
-                    "\n          " +
-                      _vm._s(
-                        _vm.selectedTicket.fault_reported
-                          ? _vm.selectedTicket.fault_reported
-                          : "None Reported"
-                      ) +
+                    "\n          Submitted by: " +
+                      _vm._s(_vm.selectedTicket.user.first_name) +
+                      "\n          " +
+                      _vm._s(_vm.selectedTicket.user.last_name) +
+                      "\n        "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-orange-400 my-3 font-semibold" }, [
+                  _vm._v(
+                    "\n          Assigned To: " +
+                      _vm._s(_vm.selectedTicket.agent.first_name) +
+                      "\n          " +
+                      _vm._s(_vm.selectedTicket.agent.last_name) +
                       "\n        "
                   ),
                 ]),
@@ -45661,470 +45652,613 @@ var render = function () {
               _vm._v(" "),
               _c("div", { staticClass: "my-3 w-full" }, [
                 _c(
-                  "h5",
+                  "h4",
                   {
                     staticClass:
-                      "text-md text-grey-600 font-semibold sentence mb-1",
+                      "text-md font-semibold text-gray-600 dark:text-gray-300 mb-3",
                   },
-                  [_vm._v("\n          Observed:\n        ")]
+                  [_vm._v("\n          Customer Info\n        ")]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "tex-sm" }, [
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(
-                        _vm.selectedTicket.fault_observed
-                          ? _vm.selectedTicket.fault_observed
-                          : "None Observed"
-                      ) +
-                      "\n        "
+                _c("div", { staticClass: "flex items-end mb-2" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "text-md text-grey-600 font-semibold sentence mr-3",
+                    },
+                    [_vm._v("\n            Name:\n          ")]
                   ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "tex-sm" }, [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(_vm.selectedTicket.customer.name) +
+                        "\n          "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex items-end mb-2" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "text-md text-grey-600 font-semibold sentence mr-3",
+                    },
+                    [_vm._v("\n            Email:\n          ")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "tex-sm" }, [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(_vm.selectedTicket.customer.email) +
+                        "\n          "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex items-end" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "text-md text-grey-600 font-semibold sentence mr-3",
+                    },
+                    [_vm._v("\n            Phone number:\n          ")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "tex-sm" }, [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(_vm.selectedTicket.customer.phone_number) +
+                        "\n          "
+                    ),
+                  ]),
                 ]),
               ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "p-2 flex flex-col w-2/6" }, [
-            _c("div", { staticClass: "mb-3" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c(
-                "h6",
-                {
-                  staticClass:
-                    "\n          text-sm\n          font-semibold\n          text-gray-600\n          dark:text-gray-300\n          mb-1\n          uppercase\n        ",
-                },
-                [_vm._v("\n        Status\n      ")]
-              ),
               _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "\n          capitalize\n          px-2\n          py-1\n          font-semibold\n          whitespace-nowrap\n          rounded-full\n          text-sm\n        ",
-                  class: _vm.getStatusColor(_vm.selectedTicket.status.name),
-                },
-                [
-                  _vm._v(
-                    "\n        " +
-                      _vm._s(_vm.selectedTicket.status.name) +
-                      "\n      "
-                  ),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c(
-                "h6",
-                {
-                  staticClass:
-                    "\n          text-sm\n          font-semibold\n          text-gray-600\n          dark:text-gray-300\n          mb-1\n          uppercase\n        ",
-                },
-                [_vm._v("\n        Priority\n      ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "\n          capitalize\n          px-2\n          py-1\n          font-semibold\n          leading-tight\n          rounded-full\n          text-sm\n        ",
-                  class: _vm.getPriorityColor(_vm.selectedTicket.priority.name),
-                },
-                [
-                  _vm._v(
-                    "\n        " +
-                      _vm._s(_vm.selectedTicket.priority.name) +
-                      "\n      "
-                  ),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c(
-                "h6",
-                {
-                  staticClass:
-                    "\n          text-sm\n          font-semibold\n          text-gray-600\n          dark:text-gray-300\n          mb-1\n          uppercase\n        ",
-                },
-                [_vm._v("\n        Category\n      ")]
-              ),
-              _vm._v(" "),
-              _c("span", { staticClass: "font-semibold text-sm" }, [
-                _vm._v(
-                  "\n        " +
-                    _vm._s(_vm.selectedTicket.category.name) +
-                    "\n      "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c(
-                "h6",
-                {
-                  staticClass:
-                    "\n          text-sm\n          font-semibold\n          text-gray-600\n          dark:text-gray-300\n          mb-1\n          uppercase\n        ",
-                },
-                [_vm._v("\n        Due Date\n      ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass: "capitalize font-semibold leading-tight text-sm",
-                },
-                [
-                  _vm._v(
-                    "\n        " +
-                      _vm._s(_vm.selectedTicket.due_at) +
-                      "\n      "
-                  ),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "mb-3" },
-              [
+              _c("div", { staticClass: "my-3 w-full" }, [
                 _c(
                   "h4",
                   {
                     staticClass:
                       "text-md font-semibold text-gray-600 dark:text-gray-300 mb-3",
                   },
-                  [_vm._v("\n        Ticket History\n      ")]
+                  [_vm._v("\n          Fault Detail\n        ")]
                 ),
                 _vm._v(" "),
-                _c("audit", { attrs: { audits: _vm.selectedTicket.audits } }),
-              ],
-              1
-            ),
-          ]),
-          _vm._v(" "),
-          _c("status-modal", {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.isModalVisible == "status-modal",
-                expression: "isModalVisible == 'status-modal'",
-              },
-            ],
-            on: { close: _vm.closeModal },
-            scopedSlots: _vm._u(
-              [
-                {
-                  key: "header",
-                  fn: function () {
-                    return [_vm._v(" Change Status ")]
+                _c("div", { staticClass: "mb-3" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "text-md text-grey-600 font-semibold sentence mb-1",
+                    },
+                    [_vm._v("\n            Reported:\n          ")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "tex-sm" }, [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(
+                          _vm.selectedTicket.fault_reported
+                            ? _vm.selectedTicket.fault_reported
+                            : "None Reported"
+                        ) +
+                        "\n          "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "my-3 w-full" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "text-md text-grey-600 font-semibold sentence mb-1",
+                    },
+                    [_vm._v("\n            Observed:\n          ")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "tex-sm" }, [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(
+                          _vm.selectedTicket.fault_observed
+                            ? _vm.selectedTicket.fault_observed
+                            : "None Observed"
+                        ) +
+                        "\n          "
+                    ),
+                  ]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-2 flex flex-col w-2/6" }, [
+              _c("div", { staticClass: "mb-3" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-3" }, [
+                _c(
+                  "h6",
+                  {
+                    staticClass:
+                      "\n            text-sm\n            font-semibold\n            text-gray-600\n            dark:text-gray-300\n            mb-1\n            uppercase\n          ",
                   },
-                  proxy: true,
-                },
+                  [_vm._v("\n          Status\n        ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    staticClass:
+                      "\n            capitalize\n            px-2\n            py-1\n            font-semibold\n            whitespace-nowrap\n            rounded-full\n            text-sm\n          ",
+                    class: _vm.getStatusColor(_vm.selectedTicket.status.name),
+                  },
+                  [
+                    _vm._v(
+                      "\n          " +
+                        _vm._s(_vm.selectedTicket.status.name) +
+                        "\n        "
+                    ),
+                  ]
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-3" }, [
+                _c(
+                  "h6",
+                  {
+                    staticClass:
+                      "\n            text-sm\n            font-semibold\n            text-gray-600\n            dark:text-gray-300\n            mb-1\n            uppercase\n          ",
+                  },
+                  [_vm._v("\n          Priority\n        ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    staticClass:
+                      "\n            capitalize\n            px-2\n            py-1\n            font-semibold\n            leading-tight\n            rounded-full\n            text-sm\n          ",
+                    class: _vm.getPriorityColor(
+                      _vm.selectedTicket.priority.name
+                    ),
+                  },
+                  [
+                    _vm._v(
+                      "\n          " +
+                        _vm._s(_vm.selectedTicket.priority.name) +
+                        "\n        "
+                    ),
+                  ]
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-3" }, [
+                _c(
+                  "h6",
+                  {
+                    staticClass:
+                      "\n            text-sm\n            font-semibold\n            text-gray-600\n            dark:text-gray-300\n            mb-1\n            uppercase\n          ",
+                  },
+                  [_vm._v("\n          Category\n        ")]
+                ),
+                _vm._v(" "),
+                _c("span", { staticClass: "font-semibold text-sm" }, [
+                  _vm._v(
+                    "\n          " +
+                      _vm._s(_vm.selectedTicket.category.name) +
+                      "\n        "
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-3" }, [
+                _c(
+                  "h6",
+                  {
+                    staticClass:
+                      "\n            text-sm\n            font-semibold\n            text-gray-600\n            dark:text-gray-300\n            mb-1\n            uppercase\n          ",
+                  },
+                  [_vm._v("\n          Due Date\n        ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    staticClass:
+                      "capitalize font-semibold leading-tight text-sm",
+                  },
+                  [
+                    _vm._v(
+                      "\n          " +
+                        _vm._s(_vm.selectedTicket.due_at) +
+                        "\n        "
+                    ),
+                  ]
+                ),
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mb-3" },
+                [
+                  _c(
+                    "h4",
+                    {
+                      staticClass:
+                        "text-md font-semibold text-gray-600 dark:text-gray-300 mb-3",
+                    },
+                    [_vm._v("\n          Ticket History\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c("audit", { attrs: { audits: _vm.selectedTicket.audits } }),
+                ],
+                1
+              ),
+            ]),
+            _vm._v(" "),
+            _c("status-modal", {
+              directives: [
                 {
-                  key: "body",
-                  fn: function () {
-                    return [
-                      _c("div", { staticClass: "flex flex-wrap -mx-3 mb-3" }, [
-                        _c("div", { staticClass: "w-full px-3 mb-3" }, [
-                          _c("label", { staticClass: "block mt-4 text-sm" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass: "text-gray-700 dark:text-gray-400",
-                              },
-                              [_vm._v(" Status ")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "select",
-                              {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.selectedStatus,
-                                    expression: "selectedStatus",
-                                  },
-                                ],
-                                staticClass:
-                                  "\n                block\n                w-full\n                mt-1\n                text-sm\n                dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700\n                form-select\n                focus:border-purple-400\n                focus:outline-none\n                focus:shadow-outline-purple\n                dark:focus:shadow-outline-gray\n              ",
-                                on: {
-                                  change: function ($event) {
-                                    var $$selectedVal = Array.prototype.filter
-                                      .call(
-                                        $event.target.options,
-                                        function (o) {
-                                          return o.selected
-                                        }
-                                      )
-                                      .map(function (o) {
-                                        var val =
-                                          "_value" in o ? o._value : o.value
-                                        return val
-                                      })
-                                    _vm.selectedStatus = $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  },
-                                },
-                              },
-                              [
-                                _c("option", { attrs: { value: "" } }, [
-                                  _vm._v("----Select Status----"),
-                                ]),
-                                _vm._v(" "),
-                                _vm._l(_vm.statuses, function (status) {
-                                  return _c(
-                                    "option",
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.isModalVisible == "status-modal",
+                  expression: "isModalVisible == 'status-modal'",
+                },
+              ],
+              on: { close: _vm.closeModal },
+              scopedSlots: _vm._u(
+                [
+                  {
+                    key: "header",
+                    fn: function () {
+                      return [_vm._v(" Change Status ")]
+                    },
+                    proxy: true,
+                  },
+                  {
+                    key: "body",
+                    fn: function () {
+                      return [
+                        _c(
+                          "div",
+                          { staticClass: "flex flex-wrap -mx-3 mb-3" },
+                          [
+                            _c("div", { staticClass: "w-full px-3 mb-3" }, [
+                              _c(
+                                "label",
+                                { staticClass: "block mt-4 text-sm" },
+                                [
+                                  _c(
+                                    "span",
                                     {
-                                      key: status.id,
-                                      domProps: { value: status.id },
+                                      staticClass:
+                                        "text-gray-700 dark:text-gray-400",
+                                    },
+                                    [_vm._v(" Status ")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.selectedStatus,
+                                          expression: "selectedStatus",
+                                        },
+                                      ],
+                                      staticClass:
+                                        "\n                  block\n                  w-full\n                  mt-1\n                  text-sm\n                  dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700\n                  form-select\n                  focus:border-purple-400\n                  focus:outline-none\n                  focus:shadow-outline-purple\n                  dark:focus:shadow-outline-gray\n                ",
+                                      on: {
+                                        change: function ($event) {
+                                          var $$selectedVal =
+                                            Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function (o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function (o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                          _vm.selectedStatus = $event.target
+                                            .multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        },
+                                      },
                                     },
                                     [
-                                      _vm._v(
-                                        "\n                " +
-                                          _vm._s(status.name) +
-                                          "\n              "
-                                      ),
-                                    ]
-                                  )
-                                }),
-                              ],
-                              2
-                            ),
-                          ]),
-                        ]),
-                      ]),
-                    ]
+                                      _c("option", { attrs: { value: "" } }, [
+                                        _vm._v("----Select Status----"),
+                                      ]),
+                                      _vm._v(" "),
+                                      _vm._l(_vm.statuses, function (status) {
+                                        return _c(
+                                          "option",
+                                          {
+                                            key: status.id,
+                                            domProps: { value: status.id },
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                  " +
+                                                _vm._s(status.name) +
+                                                "\n                "
+                                            ),
+                                          ]
+                                        )
+                                      }),
+                                    ],
+                                    2
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]
+                    },
+                    proxy: true,
                   },
-                  proxy: true,
+                ],
+                null,
+                false,
+                1632194956
+              ),
+            }),
+            _vm._v(" "),
+            _c("priority-modal", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.isModalVisible == "priority-modal",
+                  expression: "isModalVisible == 'priority-modal'",
                 },
               ],
-              null,
-              false,
-              970222988
-            ),
-          }),
-          _vm._v(" "),
-          _c("priority-modal", {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.isModalVisible == "priority-modal",
-                expression: "isModalVisible == 'priority-modal'",
-              },
-            ],
-            on: { close: _vm.closeModal },
-            scopedSlots: _vm._u(
-              [
-                {
-                  key: "header",
-                  fn: function () {
-                    return [_vm._v(" Change Priority ")]
+              on: { close: _vm.closeModal },
+              scopedSlots: _vm._u(
+                [
+                  {
+                    key: "header",
+                    fn: function () {
+                      return [_vm._v(" Change Priority ")]
+                    },
+                    proxy: true,
                   },
-                  proxy: true,
-                },
-                {
-                  key: "body",
-                  fn: function () {
-                    return [
-                      _c("div", { staticClass: "flex flex-wrap -mx-3 mb-3" }, [
-                        _c("div", { staticClass: "w-full px-3 mb-3" }, [
-                          _c("label", { staticClass: "block mt-4 text-sm" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass: "text-gray-700 dark:text-gray-400",
-                              },
-                              [_vm._v(" Status ")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "select",
-                              {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.selectedPriority,
-                                    expression: "selectedPriority",
-                                  },
-                                ],
-                                staticClass:
-                                  "\n                block\n                w-full\n                mt-1\n                text-sm\n                dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700\n                form-select\n                focus:border-purple-400\n                focus:outline-none\n                focus:shadow-outline-purple\n                dark:focus:shadow-outline-gray\n              ",
-                                on: {
-                                  change: function ($event) {
-                                    var $$selectedVal = Array.prototype.filter
-                                      .call(
-                                        $event.target.options,
-                                        function (o) {
-                                          return o.selected
-                                        }
-                                      )
-                                      .map(function (o) {
-                                        var val =
-                                          "_value" in o ? o._value : o.value
-                                        return val
-                                      })
-                                    _vm.selectedPriority = $event.target
-                                      .multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  },
-                                },
-                              },
-                              [
-                                _c("option", { attrs: { value: "" } }, [
-                                  _vm._v("----Select Status----"),
-                                ]),
-                                _vm._v(" "),
-                                _vm._l(_vm.priorities, function (item) {
-                                  return _c(
-                                    "option",
+                  {
+                    key: "body",
+                    fn: function () {
+                      return [
+                        _c(
+                          "div",
+                          { staticClass: "flex flex-wrap -mx-3 mb-3" },
+                          [
+                            _c("div", { staticClass: "w-full px-3 mb-3" }, [
+                              _c(
+                                "label",
+                                { staticClass: "block mt-4 text-sm" },
+                                [
+                                  _c(
+                                    "span",
                                     {
-                                      key: item.id,
-                                      domProps: { value: item.id },
+                                      staticClass:
+                                        "text-gray-700 dark:text-gray-400",
+                                    },
+                                    [_vm._v(" Status ")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.selectedPriority,
+                                          expression: "selectedPriority",
+                                        },
+                                      ],
+                                      staticClass:
+                                        "\n                  block\n                  w-full\n                  mt-1\n                  text-sm\n                  dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700\n                  form-select\n                  focus:border-purple-400\n                  focus:outline-none\n                  focus:shadow-outline-purple\n                  dark:focus:shadow-outline-gray\n                ",
+                                      on: {
+                                        change: function ($event) {
+                                          var $$selectedVal =
+                                            Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function (o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function (o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                          _vm.selectedPriority = $event.target
+                                            .multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        },
+                                      },
                                     },
                                     [
-                                      _vm._v(
-                                        "\n                " +
-                                          _vm._s(item.name) +
-                                          "\n              "
-                                      ),
-                                    ]
-                                  )
-                                }),
-                              ],
-                              2
-                            ),
-                          ]),
-                        ]),
-                      ]),
-                    ]
+                                      _c("option", { attrs: { value: "" } }, [
+                                        _vm._v("----Select Status----"),
+                                      ]),
+                                      _vm._v(" "),
+                                      _vm._l(_vm.priorities, function (item) {
+                                        return _c(
+                                          "option",
+                                          {
+                                            key: item.id,
+                                            domProps: { value: item.id },
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                  " +
+                                                _vm._s(item.name) +
+                                                "\n                "
+                                            ),
+                                          ]
+                                        )
+                                      }),
+                                    ],
+                                    2
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]
+                    },
+                    proxy: true,
                   },
-                  proxy: true,
+                ],
+                null,
+                false,
+                1416547034
+              ),
+            }),
+            _vm._v(" "),
+            _c("assign-modal", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.isModalVisible == "assign-modal",
+                  expression: "isModalVisible == 'assign-modal'",
                 },
               ],
-              null,
-              false,
-              24618714
-            ),
-          }),
-          _vm._v(" "),
-          _c("assign-modal", {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.isModalVisible == "assign-modal",
-                expression: "isModalVisible == 'assign-modal'",
-              },
-            ],
-            on: { close: _vm.closeModal },
-            scopedSlots: _vm._u(
-              [
-                {
-                  key: "header",
-                  fn: function () {
-                    return [_vm._v(" Reassign Ticket ")]
+              on: { close: _vm.closeModal },
+              scopedSlots: _vm._u(
+                [
+                  {
+                    key: "header",
+                    fn: function () {
+                      return [_vm._v(" Reassign Ticket ")]
+                    },
+                    proxy: true,
                   },
-                  proxy: true,
-                },
-                {
-                  key: "body",
-                  fn: function () {
-                    return [
-                      _c("div", { staticClass: "flex flex-wrap -mx-3 mb-3" }, [
-                        _c("div", { staticClass: "w-full px-3 mb-3" }, [
-                          _c("label", { staticClass: "block mt-4 text-sm" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass: "text-gray-700 dark:text-gray-400",
-                              },
-                              [_vm._v(" Reassign ")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "select",
-                              {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.selectedAgent,
-                                    expression: "selectedAgent",
-                                  },
-                                ],
-                                staticClass:
-                                  "\n                block\n                w-full\n                mt-1\n                text-sm\n                dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700\n                form-select\n                focus:border-purple-400\n                focus:outline-none\n                focus:shadow-outline-purple\n                dark:focus:shadow-outline-gray\n              ",
-                                on: {
-                                  change: function ($event) {
-                                    var $$selectedVal = Array.prototype.filter
-                                      .call(
-                                        $event.target.options,
-                                        function (o) {
-                                          return o.selected
-                                        }
-                                      )
-                                      .map(function (o) {
-                                        var val =
-                                          "_value" in o ? o._value : o.value
-                                        return val
-                                      })
-                                    _vm.selectedAgent = $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  },
-                                },
-                              },
-                              [
-                                _c("option", { attrs: { value: "" } }, [
-                                  _vm._v("----Select Status----"),
-                                ]),
-                                _vm._v(" "),
-                                _vm._l(_vm.users, function (item) {
-                                  return _c(
-                                    "option",
+                  {
+                    key: "body",
+                    fn: function () {
+                      return [
+                        _c(
+                          "div",
+                          { staticClass: "flex flex-wrap -mx-3 mb-3" },
+                          [
+                            _c("div", { staticClass: "w-full px-3 mb-3" }, [
+                              _c(
+                                "label",
+                                { staticClass: "block mt-4 text-sm" },
+                                [
+                                  _c(
+                                    "span",
                                     {
-                                      key: item.id,
-                                      domProps: { value: item.id },
+                                      staticClass:
+                                        "text-gray-700 dark:text-gray-400",
+                                    },
+                                    [_vm._v(" Reassign ")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.selectedAgent,
+                                          expression: "selectedAgent",
+                                        },
+                                      ],
+                                      staticClass:
+                                        "\n                  block\n                  w-full\n                  mt-1\n                  text-sm\n                  dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700\n                  form-select\n                  focus:border-purple-400\n                  focus:outline-none\n                  focus:shadow-outline-purple\n                  dark:focus:shadow-outline-gray\n                ",
+                                      on: {
+                                        change: function ($event) {
+                                          var $$selectedVal =
+                                            Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function (o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function (o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                          _vm.selectedAgent = $event.target
+                                            .multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        },
+                                      },
                                     },
                                     [
-                                      _vm._v(
-                                        "\n                " +
-                                          _vm._s(item.first_name) +
-                                          " " +
-                                          _vm._s(item.last_name) +
-                                          "\n              "
-                                      ),
-                                    ]
-                                  )
-                                }),
-                              ],
-                              2
-                            ),
-                          ]),
-                        ]),
-                      ]),
-                    ]
+                                      _c("option", { attrs: { value: "" } }, [
+                                        _vm._v("----Select Status----"),
+                                      ]),
+                                      _vm._v(" "),
+                                      _vm._l(_vm.users, function (item) {
+                                        return _c(
+                                          "option",
+                                          {
+                                            key: item.id,
+                                            domProps: { value: item.id },
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                  " +
+                                                _vm._s(item.first_name) +
+                                                " " +
+                                                _vm._s(item.last_name) +
+                                                "\n                "
+                                            ),
+                                          ]
+                                        )
+                                      }),
+                                    ],
+                                    2
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]
+                    },
+                    proxy: true,
                   },
-                  proxy: true,
-                },
-              ],
-              null,
-              false,
-              3448497218
-            ),
-          }),
-        ],
-        1
-      )
-    : _vm._e()
+                ],
+                null,
+                false,
+                1070281538
+              ),
+            }),
+          ],
+          1
+        )
+      : _vm._e(),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
