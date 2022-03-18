@@ -2320,279 +2320,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _utilities_apiService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utilities/apiService */ "./resources/js/utilities/apiService.js");
-/* harmony import */ var _utilities_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utilities/helpers */ "./resources/js/utilities/helpers.js");
-/* harmony import */ var _SearchTicketForm_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SearchTicketForm.vue */ "./resources/js/components/SearchTicketForm.vue");
-/* harmony import */ var _Divider_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Divider.vue */ "./resources/js/components/Divider.vue");
-/* harmony import */ var _EmptyState_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./EmptyState.vue */ "./resources/js/components/EmptyState.vue");
+/* harmony import */ var _SearchTicketForm_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchTicketForm.vue */ "./resources/js/components/SearchTicketForm.vue");
+/* harmony import */ var _Divider_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Divider.vue */ "./resources/js/components/Divider.vue");
+/* harmony import */ var _EmptyState_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./EmptyState.vue */ "./resources/js/components/EmptyState.vue");
+/* harmony import */ var _TicketList_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TicketList.vue */ "./resources/js/components/TicketList.vue");
 /* harmony import */ var _Loading_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Loading.vue */ "./resources/js/components/Loading.vue");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _TicketDetail_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TicketDetail.vue */ "./resources/js/components/TicketDetail.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2637,20 +2376,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    "search-ticket-form": _SearchTicketForm_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    divider: _Divider_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    "empty-state": _EmptyState_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    Loading: _Loading_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+    "search-ticket-form": _SearchTicketForm_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    divider: _Divider_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    "empty-state": _EmptyState_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    Loading: _Loading_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+    TicketList: _TicketList_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    TicketDetail: _TicketDetail_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
   },
   data: function data() {
     return {
       tickets: [],
-      selectedTicket: null,
       statuses: [],
       categories: [],
       priorities: [],
       technicians: [],
-      loading: false
+      loading: false,
+      currentTicket: null
     };
   },
   beforeMount: function beforeMount() {
@@ -2717,22 +2458,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 4:
                 responseData = _context2.sent;
-                console.log(responseData); // first_page_url: "http://auxanoapp.test/api/tickets?page=1";
-                // from: 1;
-                // next_page_url: "http://auxanoapp.test/api/tickets?page=2";
-                // path: "http://auxanoapp.test/api/tickets";
-                // per_page: 15;
-                // prev_page_url: null;
-                // to: 15;
-                // current_page: 1
-
+                console.log(responseData);
                 _this2.tickets = responseData.data;
-
-                _this2.selectTicket(_this2.tickets[0]);
-
                 _this2.loading = false;
 
-              case 9:
+              case 8:
               case "end":
                 return _context2.stop();
             }
@@ -2740,20 +2470,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2);
       }))();
     },
-    formatDate: function formatDate(date) {
-      return moment__WEBPACK_IMPORTED_MODULE_7___default()(date).fromNow();
-    },
-    truncateTicketName: function truncateTicketName(name) {
-      var limit = 20;
-
-      if (screen.width > 1366) {
-        limit = 30;
-      }
-
-      return (0,_utilities_helpers__WEBPACK_IMPORTED_MODULE_2__.truncate)(name, limit);
-    },
-    selectTicket: function selectTicket(ticket) {
-      this.selectedTicket = ticket;
+    getTicketSelected: function getTicketSelected(ticketSelected) {
+      this.currentTicket = ticketSelected.selectedTicket;
     },
     getStatus: function getStatus() {
       var _this3 = this;
@@ -2763,18 +2481,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                console.log("http://auxanoapp.test/api");
-                _context3.next = 3;
+                _context3.next = 2;
                 return (0,_utilities_apiService__WEBPACK_IMPORTED_MODULE_1__.get)("/statuses").then(function (response) {
                   return response.data.data;
                 })["catch"](function (err) {
                   console.log(err);
                 });
 
-              case 3:
+              case 2:
                 _this3.statuses = _context3.sent;
 
-              case 4:
+              case 3:
               case "end":
                 return _context3.stop();
             }
@@ -2853,7 +2570,204 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee6);
       }))();
-    },
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Divider_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Divider.vue */ "./resources/js/components/Divider.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ["selectedTicket"],
+  components: {
+    divider: _Divider_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {};
+  },
+  methods: {
     getStatusColor: function getStatusColor(state) {
       var color = "";
 
@@ -2885,6 +2799,124 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return color;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketList.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketList.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utilities_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utilities/helpers */ "./resources/js/utilities/helpers.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ["tickets"],
+  data: function data() {
+    return {
+      selectedTicket: null
+    };
+  },
+  created: function created() {
+    this.selectTicket(this.tickets[0]);
+  },
+  methods: {
+    selectTicket: function selectTicket(ticket) {
+      this.selectedTicket = ticket;
+      this.$emit("ticketSelected", {
+        selectedTicket: this.selectedTicket
+      });
+    },
+    truncateTicketName: function truncateTicketName(name) {
+      var limit = 20;
+
+      if (screen.width > 1366) {
+        limit = 30;
+      }
+
+      return (0,_utilities_helpers__WEBPACK_IMPORTED_MODULE_0__.truncate)(name, limit);
+    },
+    formatDate: function formatDate(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).fromNow();
     }
   }
 });
@@ -43336,6 +43368,84 @@ component.options.__file = "resources/js/components/TicketComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/TicketDetail.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/TicketDetail.vue ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _TicketDetail_vue_vue_type_template_id_3f2fe3e8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TicketDetail.vue?vue&type=template&id=3f2fe3e8& */ "./resources/js/components/TicketDetail.vue?vue&type=template&id=3f2fe3e8&");
+/* harmony import */ var _TicketDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TicketDetail.vue?vue&type=script&lang=js& */ "./resources/js/components/TicketDetail.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TicketDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TicketDetail_vue_vue_type_template_id_3f2fe3e8___WEBPACK_IMPORTED_MODULE_0__.render,
+  _TicketDetail_vue_vue_type_template_id_3f2fe3e8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/TicketDetail.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/TicketList.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/TicketList.vue ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _TicketList_vue_vue_type_template_id_5d983d16___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TicketList.vue?vue&type=template&id=5d983d16& */ "./resources/js/components/TicketList.vue?vue&type=template&id=5d983d16&");
+/* harmony import */ var _TicketList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TicketList.vue?vue&type=script&lang=js& */ "./resources/js/components/TicketList.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TicketList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TicketList_vue_vue_type_template_id_5d983d16___WEBPACK_IMPORTED_MODULE_0__.render,
+  _TicketList_vue_vue_type_template_id_5d983d16___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/TicketList.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/SearchTicketForm.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/SearchTicketForm.vue?vue&type=script&lang=js& ***!
@@ -43365,6 +43475,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TicketComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketComponent.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/TicketDetail.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/TicketDetail.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TicketDetail.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/TicketList.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/TicketList.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TicketList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketList.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -43492,6 +43634,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketComponent_vue_vue_type_template_id_5b8c7b36_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketComponent_vue_vue_type_template_id_5b8c7b36_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TicketComponent.vue?vue&type=template&id=5b8c7b36&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketComponent.vue?vue&type=template&id=5b8c7b36&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/TicketDetail.vue?vue&type=template&id=3f2fe3e8&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/TicketDetail.vue?vue&type=template&id=3f2fe3e8& ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketDetail_vue_vue_type_template_id_3f2fe3e8___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketDetail_vue_vue_type_template_id_3f2fe3e8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketDetail_vue_vue_type_template_id_3f2fe3e8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TicketDetail.vue?vue&type=template&id=3f2fe3e8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=template&id=3f2fe3e8&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/TicketList.vue?vue&type=template&id=5d983d16&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/TicketList.vue?vue&type=template&id=5d983d16& ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketList_vue_vue_type_template_id_5d983d16___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketList_vue_vue_type_template_id_5d983d16___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TicketList_vue_vue_type_template_id_5d983d16___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TicketList.vue?vue&type=template&id=5d983d16& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketList.vue?vue&type=template&id=5d983d16&");
 
 
 /***/ }),
@@ -44036,388 +44212,390 @@ var render = function () {
                 "\n      bg-white\n      dark:divide-gray-700 dark:bg-gray-800\n      mt-3\n      p-3\n      grid grid-cols-6\n      gap-x-5\n      sm:gap-x-2\n      xl:gap-x-2\n    ",
             },
             [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "\n        border-r-2 border-grey-100\n        dark:border-gray-700\n        col-start-1 col-end-3\n        -mx-3\n        overflow-y-scroll\n        max-h-screen\n        w-full\n        overflow-x-auto\n        scrollbar-thin scrollbar-thumb-purple-700 scrollbar-track-purple-300\n        flex-1\n      ",
-                },
-                [
-                  _c("table", { staticClass: "w-full whitespace-no-wrap" }, [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c(
-                      "tbody",
-                      {
-                        staticClass:
-                          "bg-white dark:divide-gray-700 dark:bg-gray-800",
-                      },
-                      _vm._l(_vm.tickets, function (item) {
-                        return _c(
-                          "tr",
-                          {
-                            key: item.id,
-                            staticClass:
-                              "\n              text-gray-700\n              hover:text-white\n              dark:text-gray-200\n              shadow-md\n              hover:bg-purple-500\n              dark:hover:bg-gray-700\n              cursor-pointer\n              transition-colors\n              duration-150\n              active:bg-purple-700\n            ",
-                            class: [
-                              item.id == _vm.selectedTicket.id
-                                ? "text-white border-solid border-2 border-purple-300 bg-purple-700 my-3 cursor-not-allowed"
-                                : "",
-                            ],
-                            on: {
-                              click: function ($event) {
-                                return _vm.selectTicket(item)
-                              },
-                            },
-                          },
-                          [
-                            _c(
-                              "td",
-                              { staticClass: "px-4 py-3 dark:text-black" },
-                              [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(
-                                      _vm.truncateTicketName(item.subject, 20)
-                                    ) +
-                                    "\n            "
-                                ),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              { staticClass: "px-4 py-3 dark:text-black" },
-                              [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(_vm.formatDate(item.created_at)) +
-                                    "\n            "
-                                ),
-                              ]
-                            ),
-                          ]
-                        )
-                      }),
-                      0
-                    ),
-                  ]),
-                ]
-              ),
+              _c("ticket-list", {
+                attrs: { tickets: _vm.tickets },
+                on: { ticketSelected: _vm.getTicketSelected },
+              }),
               _vm._v(" "),
-              _vm.selectedTicket
-                ? _c(
-                    "div",
-                    {
-                      staticClass:
-                        "\n        col-start-3 col-end-7\n        text-gray-700\n        dark:text-gray-400\n        sm:p-2\n        flex\n      ",
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "border-r-2 border-grey-100 dark:border-gray-700 w-3/4 ",
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "flex justify-between items-center mb-2",
-                            },
-                            [
-                              _c(
-                                "h4",
-                                {
-                                  staticClass:
-                                    "\n              text-lg\n              sm:text-md\n              font-bold\n              text-gray-600\n              dark:text-gray-300\n            ",
-                                },
-                                [
-                                  _vm._v(
-                                    "\n            " +
-                                      _vm._s(_vm.selectedTicket.subject) +
-                                      "\n          "
-                                  ),
-                                ]
-                              ),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "flex flex-col" }, [
-                            _c(
-                              "p",
-                              {
-                                staticClass:
-                                  "text-green-400 mb-2 font-semibold",
-                              },
-                              [
-                                _vm._v(
-                                  "\n            Submitted by: " +
-                                    _vm._s(_vm.selectedTicket.user.first_name) +
-                                    "\n            " +
-                                    _vm._s(_vm.selectedTicket.user.last_name) +
-                                    "\n          "
-                                ),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "p",
-                              {
-                                staticClass:
-                                  "text-orange-400 my-3 font-semibold",
-                              },
-                              [
-                                _vm._v(
-                                  "\n            Assigned To: " +
-                                    _vm._s(
-                                      _vm.selectedTicket.agent.first_name
-                                    ) +
-                                    "\n            " +
-                                    _vm._s(_vm.selectedTicket.agent.last_name) +
-                                    "\n          "
-                                ),
-                              ]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("divider"),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "my-3 w-full" }, [
-                            _c(
-                              "h4",
-                              {
-                                staticClass:
-                                  "\n              text-md\n              font-semibold\n              text-gray-600\n              dark:text-gray-300\n              mb-3\n            ",
-                              },
-                              [
-                                _vm._v(
-                                  "\n            Customer Info\n          "
-                                ),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "flex items-end mb-2" }, [
-                              _c(
-                                "h5",
-                                {
-                                  staticClass:
-                                    "text-md text-grey-600 font-semibold sentence mr-3",
-                                },
-                                [_vm._v("\n              Name:\n            ")]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "tex-sm" }, [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(_vm.selectedTicket.customer.name) +
-                                    "\n            "
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "flex items-end mb-2" }, [
-                              _c(
-                                "h5",
-                                {
-                                  staticClass:
-                                    "text-md text-grey-600 font-semibold sentence mr-3",
-                                },
-                                [_vm._v("\n              Email:\n            ")]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "tex-sm" }, [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(_vm.selectedTicket.customer.email) +
-                                    "\n            "
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "flex items-end" }, [
-                              _c(
-                                "h5",
-                                {
-                                  staticClass:
-                                    "text-md text-grey-600 font-semibold sentence mr-3",
-                                },
-                                [
-                                  _vm._v(
-                                    "\n              Phone number:\n            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "tex-sm" }, [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(
-                                      _vm.selectedTicket.customer.phone_number
-                                    ) +
-                                    "\n            "
-                                ),
-                              ]),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("divider"),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "my-3 w-full" }, [
-                            _c(
-                              "h4",
-                              {
-                                staticClass:
-                                  "\n              text-md\n              font-semibold\n              text-gray-600\n              dark:text-gray-300\n              mb-3\n            ",
-                              },
-                              [_vm._v("\n            Fault Detail\n          ")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "mb-3" }, [
-                              _c(
-                                "h5",
-                                {
-                                  staticClass:
-                                    "text-md text-grey-600 font-semibold sentence mb-1",
-                                },
-                                [
-                                  _vm._v(
-                                    "\n              Reported:\n            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "tex-sm" }, [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(
-                                      _vm.selectedTicket.fault_reported
-                                        ? _vm.selectedTicket.fault_reported
-                                        : "None Reported"
-                                    ) +
-                                    "\n            "
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("div", {}, [
-                              _c(
-                                "h5",
-                                {
-                                  staticClass:
-                                    "text-md text-grey-600 font-semibold sentence mb-1",
-                                },
-                                [
-                                  _vm._v(
-                                    "\n              Observed:\n            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "tex-sm" }, [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(
-                                      _vm.selectedTicket.fault_observed
-                                        ? _vm.selectedTicket.fault_observed
-                                        : "None Observed"
-                                    ) +
-                                    "\n            "
-                                ),
-                              ]),
-                            ]),
-                          ]),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "p-2 flex flex-col w-1/4" }, [
-                        _c("div", { staticClass: "mb-3" }, [
-                          _c(
-                            "h6",
-                            {
-                              staticClass:
-                                "\n              text-sm\n              font-semibold\n              text-gray-600\n              dark:text-gray-300\n              mb-1\n              uppercase\n            ",
-                            },
-                            [_vm._v("\n            Status\n          ")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            {
-                              staticClass:
-                                "\n              capitalize\n              px-2\n              py-1\n              font-semibold\n              whitespace-nowrap\n              rounded-full\n              text-sm\n            ",
-                              class: _vm.getStatusColor(
-                                _vm.selectedTicket.status.name
-                              ),
-                            },
-                            [
-                              _vm._v(
-                                "\n            " +
-                                  _vm._s(_vm.selectedTicket.status.name) +
-                                  "\n          "
-                              ),
-                            ]
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-3" }, [
-                          _c(
-                            "h6",
-                            {
-                              staticClass:
-                                "\n              text-sm\n              font-semibold\n              text-gray-600\n              dark:text-gray-300\n              mb-1\n              uppercase\n            ",
-                            },
-                            [_vm._v("\n            Priority\n          ")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            {
-                              staticClass:
-                                "\n              capitalize\n              px-2\n              py-1\n              font-semibold\n              leading-tight\n              rounded-full\n              text-sm\n            ",
-                              class: _vm.getPriorityColor(
-                                _vm.selectedTicket.priority.name
-                              ),
-                            },
-                            [
-                              _vm._v(
-                                "\n            " +
-                                  _vm._s(_vm.selectedTicket.priority.name) +
-                                  "\n          "
-                              ),
-                            ]
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-3" }, [
-                          _c(
-                            "h6",
-                            {
-                              staticClass:
-                                "\n              text-sm\n              font-semibold\n              text-gray-600\n              dark:text-gray-300\n              mb-1\n              uppercase\n            ",
-                            },
-                            [_vm._v("\n            Category\n          ")]
-                          ),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "font-semibold text-sm" }, [
-                            _vm._v(
-                              "\n            " +
-                                _vm._s(_vm.selectedTicket.category.name) +
-                                "\n          "
-                            ),
-                          ]),
-                        ]),
-                      ]),
-                    ]
-                  )
-                : _vm._e(),
-            ]
+              _c("ticket-detail", {
+                attrs: { selectedTicket: _vm.currentTicket },
+              }),
+            ],
+            1
           )
         : _c("empty-state"),
     ],
     1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=template&id=3f2fe3e8&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketDetail.vue?vue&type=template&id=3f2fe3e8& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.selectedTicket
+    ? _c(
+        "div",
+        {
+          staticClass:
+            "col-start-3 col-end-7 text-gray-700 dark:text-gray-400 sm:p-2 flex",
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "border-r-2 border-grey-100 dark:border-gray-700 w-3/4",
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "flex justify-between items-center mb-2" },
+                [
+                  _c(
+                    "h4",
+                    {
+                      staticClass:
+                        "text-lg sm:text-md font-bold text-gray-600 dark:text-gray-300",
+                    },
+                    [
+                      _vm._v(
+                        "\n        " +
+                          _vm._s(_vm.selectedTicket.subject) +
+                          "\n      "
+                      ),
+                    ]
+                  ),
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-col" }, [
+                _c("p", { staticClass: "text-green-400 mb-2 font-semibold" }, [
+                  _vm._v(
+                    "\n        Submitted by: " +
+                      _vm._s(_vm.selectedTicket.user.first_name) +
+                      "\n        " +
+                      _vm._s(_vm.selectedTicket.user.last_name) +
+                      "\n      "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-orange-400 my-3 font-semibold" }, [
+                  _vm._v(
+                    "\n        Assigned To: " +
+                      _vm._s(_vm.selectedTicket.agent.first_name) +
+                      "\n        " +
+                      _vm._s(_vm.selectedTicket.agent.last_name) +
+                      "\n      "
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("divider"),
+              _vm._v(" "),
+              _c("div", { staticClass: "my-3 w-full" }, [
+                _c(
+                  "h4",
+                  {
+                    staticClass:
+                      "text-md font-semibold text-gray-600 dark:text-gray-300 mb-3",
+                  },
+                  [_vm._v("\n        Customer Info\n      ")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex items-end mb-2" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "text-md text-grey-600 font-semibold sentence mr-3",
+                    },
+                    [_vm._v("\n          Name:\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "tex-sm" }, [
+                    _vm._v(
+                      "\n          " +
+                        _vm._s(_vm.selectedTicket.customer.name) +
+                        "\n        "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex items-end mb-2" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "text-md text-grey-600 font-semibold sentence mr-3",
+                    },
+                    [_vm._v("\n          Email:\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "tex-sm" }, [
+                    _vm._v(
+                      "\n          " +
+                        _vm._s(_vm.selectedTicket.customer.email) +
+                        "\n        "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex items-end" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "text-md text-grey-600 font-semibold sentence mr-3",
+                    },
+                    [_vm._v("\n          Phone number:\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "tex-sm" }, [
+                    _vm._v(
+                      "\n          " +
+                        _vm._s(_vm.selectedTicket.customer.phone_number) +
+                        "\n        "
+                    ),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("divider"),
+              _vm._v(" "),
+              _c("div", { staticClass: "my-3 w-full" }, [
+                _c(
+                  "h4",
+                  {
+                    staticClass:
+                      "text-md font-semibold text-gray-600 dark:text-gray-300 mb-3",
+                  },
+                  [_vm._v("\n        Fault Detail\n      ")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "mb-3" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "text-md text-grey-600 font-semibold sentence mb-1",
+                    },
+                    [_vm._v("\n          Reported:\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "tex-sm" }, [
+                    _vm._v(
+                      "\n          " +
+                        _vm._s(
+                          _vm.selectedTicket.fault_reported
+                            ? _vm.selectedTicket.fault_reported
+                            : "None Reported"
+                        ) +
+                        "\n        "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", {}, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "text-md text-grey-600 font-semibold sentence mb-1",
+                    },
+                    [_vm._v("\n          Observed:\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "tex-sm" }, [
+                    _vm._v(
+                      "\n          " +
+                        _vm._s(
+                          _vm.selectedTicket.fault_observed
+                            ? _vm.selectedTicket.fault_observed
+                            : "None Observed"
+                        ) +
+                        "\n        "
+                    ),
+                  ]),
+                ]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "p-2 flex flex-col w-1/4" }, [
+            _c("div", { staticClass: "mb-3" }, [
+              _c(
+                "h6",
+                {
+                  staticClass:
+                    "\n          text-sm\n          font-semibold\n          text-gray-600\n          dark:text-gray-300\n          mb-1\n          uppercase\n        ",
+                },
+                [_vm._v("\n        Status\n      ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass:
+                    "\n          capitalize\n          px-2\n          py-1\n          font-semibold\n          whitespace-nowrap\n          rounded-full\n          text-sm\n        ",
+                  class: _vm.getStatusColor(_vm.selectedTicket.status.name),
+                },
+                [
+                  _vm._v(
+                    "\n        " +
+                      _vm._s(_vm.selectedTicket.status.name) +
+                      "\n      "
+                  ),
+                ]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-3" }, [
+              _c(
+                "h6",
+                {
+                  staticClass:
+                    "\n          text-sm\n          font-semibold\n          text-gray-600\n          dark:text-gray-300\n          mb-1\n          uppercase\n        ",
+                },
+                [_vm._v("\n        Priority\n      ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass:
+                    "\n          capitalize\n          px-2\n          py-1\n          font-semibold\n          leading-tight\n          rounded-full\n          text-sm\n        ",
+                  class: _vm.getPriorityColor(_vm.selectedTicket.priority.name),
+                },
+                [
+                  _vm._v(
+                    "\n        " +
+                      _vm._s(_vm.selectedTicket.priority.name) +
+                      "\n      "
+                  ),
+                ]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-3" }, [
+              _c(
+                "h6",
+                {
+                  staticClass:
+                    "\n          text-sm\n          font-semibold\n          text-gray-600\n          dark:text-gray-300\n          mb-1\n          uppercase\n        ",
+                },
+                [_vm._v("\n        Category\n      ")]
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "font-semibold text-sm" }, [
+                _vm._v(
+                  "\n        " +
+                    _vm._s(_vm.selectedTicket.category.name) +
+                    "\n      "
+                ),
+              ]),
+            ]),
+          ]),
+        ]
+      )
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketList.vue?vue&type=template&id=5d983d16&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TicketList.vue?vue&type=template&id=5d983d16& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass:
+        "\n    border-r-2 border-grey-100\n    dark:border-gray-700\n    col-start-1 col-end-3\n    -mx-3\n    overflow-y-scroll\n    max-h-screen\n    w-full\n    overflow-x-auto\n    scrollbar-thin scrollbar-thumb-purple-700 scrollbar-track-purple-300\n    flex-1\n  ",
+    },
+    [
+      _c("table", { staticClass: "w-full whitespace-no-wrap" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          { staticClass: "bg-white dark:divide-gray-700 dark:bg-gray-800" },
+          _vm._l(_vm.tickets, function (item) {
+            return _c(
+              "tr",
+              {
+                key: item.id,
+                staticClass:
+                  "\n          text-gray-700\n          hover:text-white\n          dark:text-gray-200\n          shadow-md\n          hover:bg-purple-500\n          dark:hover:bg-gray-700\n          cursor-pointer\n          transition-colors\n          duration-150\n          active:bg-purple-700\n        ",
+                class: [
+                  item.id == _vm.selectedTicket.id
+                    ? "text-white border-solid border-2 border-purple-300 bg-purple-700 my-3 cursor-not-allowed"
+                    : "",
+                ],
+                on: {
+                  click: function ($event) {
+                    return _vm.selectTicket(item)
+                  },
+                },
+              },
+              [
+                _c("td", { staticClass: "px-4 py-3 dark:text-black" }, [
+                  _vm._v(
+                    "\n          " +
+                      _vm._s(_vm.truncateTicketName(item.subject, 20)) +
+                      "\n        "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "px-4 py-3 dark:text-black" }, [
+                  _vm._v(
+                    "\n          " +
+                      _vm._s(_vm.formatDate(item.created_at)) +
+                      "\n        "
+                  ),
+                ]),
+              ]
+            )
+          }),
+          0
+        ),
+      ]),
+    ]
   )
 }
 var staticRenderFns = [
@@ -44430,7 +44608,7 @@ var staticRenderFns = [
         "tr",
         {
           staticClass:
-            "\n              text-xs\n              font-semibold\n              tracking-wide\n              md:tracking-normal\n              sm:tracking-tight\n              text-left text-gray-500\n              uppercase\n              dark:text-gray-400 dark:bg-gray-800 dark:border-gray-700\n            ",
+            "\n          text-xs\n          font-semibold\n          tracking-wide\n          md:tracking-normal\n          sm:tracking-tight\n          text-left text-gray-500\n          uppercase\n          dark:text-gray-400 dark:bg-gray-800 dark:border-gray-700\n        ",
         },
         [
           _c("th", { staticClass: "px-4 py-3" }, [_vm._v("Ticket Name")]),

@@ -29,7 +29,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = $this->userRepository->paginate(10);
+        $users = $this->userRepository->paginate(10, ['roles']);
         return view('users.index', compact('users'));
     }
 
@@ -40,7 +40,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = $this->roleRepository->all();
+        $roles = $this->roleRepository->all(['id', 'name']);
         return view('users.create', compact('roles'));
     }
 
