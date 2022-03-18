@@ -5,6 +5,8 @@ use App\Http\Controllers\Api\PriorityController;
 use App\Http\Controllers\Api\StatusController;
 use App\Http\Controllers\Api\TechnicianController;
 use App\Http\Controllers\Api\TicketController;
+use App\Http\Controllers\Api\TicketPriorityChangeController;
+use App\Http\Controllers\Api\TicketStatusChangeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,4 +32,5 @@ Route::get('technicians', [TechnicianController::class, 'index']);
 
 Route::get('tickets', [TicketController::class, 'index']);
 
-
+Route::patch('tickets/{ticket}/status', [TicketStatusChangeController::class, 'update']);
+Route::patch('tickets/{ticket}/priority', [TicketPriorityChangeController::class, 'update']);

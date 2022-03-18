@@ -9,6 +9,7 @@ class Comment extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $with =['user'];
 
     /**
      * Get the parent commentable model (post or video).

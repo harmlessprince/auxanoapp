@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Comment;
 use App\Models\Ticket;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,16 @@ class TicketSeeder extends Seeder
      */
     public function run()
     {
-        Ticket::factory(20)->create();
+        Ticket::factory(20)->create()->each(function ($ticket) {
+            $ticket->audits()->create([
+                'operation' => 'create',
+                'action' => 'Created by ' . $ticket->user->full_name,
+                'user_id' => auth()->id(),
+                'agent_id' => $ticket->agent_id,
+                'user_id' => $ticket->user_id,
+            ]);
+            $comments = Comment::factory(random_int(1,5))->make();
+            $ticket->comments()->saveMany($comments);
+        });
     }
 }

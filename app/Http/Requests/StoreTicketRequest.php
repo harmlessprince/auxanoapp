@@ -25,7 +25,7 @@ class StoreTicketRequest extends FormRequest
     {
         return [
             'ticket_name' => ['required', 'string', 'max:200'],
-            'status' => ['required', 'integer'],
+            'status' => ['required', 'integer', 'exists:ticket_statuses,id'],
             'priority' => ['required', 'integer', 'exists:priorities,id'],
             'category' => ['required', 'integer', 'exists:categories,id'],
             'customer' => ['required', 'integer', 'exists:customers,id'],

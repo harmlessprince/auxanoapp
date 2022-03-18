@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
 
@@ -30,7 +31,8 @@ class TicketFactory extends Factory
             'user_id' => $u,
             'agent_id' => $a,
             'customer_id' => $c,
-            'completed_at' => Arr::random([null, $this->faker->date('Y-m-d H:m:i')])
+            'completed_at' => Carbon::today()->addDays(rand(20, 50)),
+            'due_at' => Carbon::today()->addDays(rand(0, 20)),
         ];
     }
 }

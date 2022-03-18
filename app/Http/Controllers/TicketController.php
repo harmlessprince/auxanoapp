@@ -37,9 +37,12 @@ class TicketController extends Controller
     public function store(StoreTicketRequest $request)
     {
         $data = $request->validated();
-        // dd($data);
-        $this->ticketRepository->create($data);
-
+        $ticket = $this->ticketRepository->create($data);
+        $ticket->audits()->create([
+            'operation' => 'Created by ' . auth()->user()->full_name,
+            'user_id' => auth()->id(),
+            'agent_id' => $request->input('assign_to')
+        ]);
         return  redirect(route('tickets.index'))->with(['success' => 'Tickets has been successfully created']);
     }
 }

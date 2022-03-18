@@ -26,7 +26,12 @@
       <ticket-list :tickets="tickets" @ticketSelected="getTicketSelected" />
       <!-- Table Container End -->
       <!-- Details Container -->
-      <ticket-detail :selectedTicket="currentTicket" />
+      <ticket-detail
+        :selectedTicket="currentTicket"
+        :statuses="statuses"
+        :priorities="priorities"
+        :users="technicians"
+      />
     </div>
     <!-- Container End -->
     <empty-state v-else></empty-state>

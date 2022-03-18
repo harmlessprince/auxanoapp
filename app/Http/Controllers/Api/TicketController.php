@@ -17,13 +17,6 @@ class TicketController extends Controller
 {
     public function index(Request $request)
     {
-        // array:5 [
-        //     "status" => "1"
-        //     "category" => "1"
-        //     "priority" => "1"
-        //     "technician" => "1"
-        //     "ticket_name" => null
-        //   ]
         $tickets = app(Pipeline::class)->send(Ticket::query()->select('*'))->through([
             StatusFilter::class,
             PriorityFilter::class,
@@ -31,7 +24,13 @@ class TicketController extends Controller
             TechnicianFilter::class,
             TicketNameFilter::class,
         ])->thenReturn()->latest()->simplePaginate(30);
-    
+
         return $tickets;
+    }
+    public function edit()
+    {
+    }
+    public function update()
+    {
     }
 }

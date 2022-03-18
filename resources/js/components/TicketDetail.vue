@@ -4,7 +4,84 @@
     class="col-start-3 col-end-7 text-gray-700 dark:text-gray-400 sm:p-2 flex"
   >
     <!-- Left Detail -->
-    <div class="border-r-2 border-grey-100 dark:border-gray-700 w-3/4">
+    <div class="w-4/6">
+      <div class="flex items-center space-x-4 mb-2 flex-wrap">
+        <button
+          class="
+            flex
+            items-center
+            justify-between
+            px-4
+            py-2
+            text-sm
+            font-medium
+            leading-5
+            text-white
+            transition-colors
+            rounded-lg
+            duration-150
+            border border-transparent
+            focus:outline-none
+            text-white
+            bg-orange-600
+          "
+          type="button"
+          @click="showModal('status-modal')"
+        >
+          Change Status
+        </button>
+        <button
+          class="
+            flex
+            items-center
+            justify-between
+            px-4
+            py-2
+            text-sm
+            font-medium
+            leading-5
+            transition-colors
+            rounded-lg
+            duration-150
+            border border-transparent
+            focus:outline-none
+            text-yellow-100
+            bg-yellow-500
+          "
+          type="button"
+          @click="showModal('priority-modal')"
+        >
+          Change Priority
+        </button>
+        <!-- <v-button class="text-yellow-100 bg-yellow-500">
+          Change Priority
+        </v-button> -->
+        <button
+          class="
+            flex
+            items-center
+            justify-between
+            px-4
+            py-2
+            text-sm
+            font-medium
+            leading-5
+            transition-colors
+            rounded-lg
+            duration-150
+            border border-transparent
+            focus:outline-none
+            text-blue-100
+            bg-blue-500
+          "
+          type="button"
+          @click="showModal('assign-modal')"
+        >
+          Assign
+        </button>
+        <!-- <v-button class="text-blue-100 bg-blue-500"> Assign </v-button> -->
+        <v-button class="bg-green-700 text-green-100"> Edit </v-button>
+      </div>
       <div class="flex justify-between items-center mb-2">
         <h4
           class="text-lg sm:text-md font-bold text-gray-600 dark:text-gray-300"
@@ -23,7 +100,7 @@
           {{ selectedTicket.agent.last_name }}
         </p>
       </div>
-      <divider />
+
       <div class="my-3 w-full">
         <h4 class="text-md font-semibold text-gray-600 dark:text-gray-300 mb-3">
           Customer Info
@@ -54,7 +131,6 @@
           </p>
         </div>
       </div>
-      <divider />
 
       <div class="my-3 w-full">
         <h4 class="text-md font-semibold text-gray-600 dark:text-gray-300 mb-3">
@@ -72,7 +148,7 @@
             }}
           </p>
         </div>
-        <div class="">
+        <div class="my-3 w-full">
           <h5 class="text-md text-grey-600 font-semibold sentence mb-1">
             Observed:
           </h5>
@@ -85,10 +161,21 @@
           </p>
         </div>
       </div>
+      <!-- <div class="my-3 w-full">
+        <h5 class="text-md text-grey-600 font-semibold sentence mb-1">
+          Comments
+        </h5>
+        <comments
+          :comments="selectedTicket.comments"
+          v-if="selectedTicket.comments.length > 0"
+        />
+        <span v-else>No Comment</span>
+      </div> -->
     </div>
     <!-- Lef detail End -->
     <!-- Right Detail -->
-    <div class="p-2 flex flex-col w-1/4">
+    <div class="p-2 flex flex-col w-2/6">
+      <div class="mb-3"></div>
       <div class="mb-3">
         <h6
           class="
@@ -162,21 +249,170 @@
           {{ selectedTicket.category.name }}
         </span>
       </div>
+      <div class="mb-3">
+        <h6
+          class="
+            text-sm
+            font-semibold
+            text-gray-600
+            dark:text-gray-300
+            mb-1
+            uppercase
+          "
+        >
+          Due Date
+        </h6>
+        <span class="capitalize font-semibold leading-tight text-sm">
+          {{ selectedTicket.due_at }}
+        </span>
+      </div>
+      <div class="mb-3">
+        <h4 class="text-md font-semibold text-gray-600 dark:text-gray-300 mb-3">
+          Ticket History
+        </h4>
+        <audit :audits="selectedTicket.audits" />
+      </div>
     </div>
     <!-- Right Detail End -->
+    <status-modal v-show="isModalVisible == 'status-modal'" @close="closeModal">
+      <template v-slot:header> Change Status </template>
+      <template v-slot:body>
+        <div class="flex flex-wrap -mx-3 mb-3">
+          <div class="w-full px-3 mb-3">
+            <label class="block mt-4 text-sm">
+              <span class="text-gray-700 dark:text-gray-400"> Status </span>
+              <select
+                class="
+                  block
+                  w-full
+                  mt-1
+                  text-sm
+                  dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700
+                  form-select
+                  focus:border-purple-400
+                  focus:outline-none
+                  focus:shadow-outline-purple
+                  dark:focus:shadow-outline-gray
+                "
+                v-model="selectedStatus"
+              >
+                <option value="">----Select Status----</option>
+                <option
+                  v-for="status in statuses"
+                  :key="status.id"
+                  :value="status.id"
+                >
+                  {{ status.name }}
+                </option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </template>
+    </status-modal>
+    <priority-modal
+      v-show="isModalVisible == 'priority-modal'"
+      @close="closeModal"
+    >
+      <template v-slot:header> Change Priority </template>
+      <template v-slot:body>
+        <div class="flex flex-wrap -mx-3 mb-3">
+          <div class="w-full px-3 mb-3">
+            <label class="block mt-4 text-sm">
+              <span class="text-gray-700 dark:text-gray-400"> Status </span>
+              <select
+                class="
+                  block
+                  w-full
+                  mt-1
+                  text-sm
+                  dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700
+                  form-select
+                  focus:border-purple-400
+                  focus:outline-none
+                  focus:shadow-outline-purple
+                  dark:focus:shadow-outline-gray
+                "
+                v-model="selectedPriority"
+              >
+                <option value="">----Select Status----</option>
+                <option
+                  v-for="item in priorities"
+                  :key="item.id"
+                  :value="item.id"
+                >
+                  {{ item.name }}
+                </option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </template>
+    </priority-modal>
+    <assign-modal v-show="isModalVisible == 'assign-modal'" @close="closeModal">
+      <template v-slot:header> Reassign Ticket </template>
+      <template v-slot:body>
+        <div class="flex flex-wrap -mx-3 mb-3">
+          <div class="w-full px-3 mb-3">
+            <label class="block mt-4 text-sm">
+              <span class="text-gray-700 dark:text-gray-400"> Reassign </span>
+              <select
+                class="
+                  block
+                  w-full
+                  mt-1
+                  text-sm
+                  dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700
+                  form-select
+                  focus:border-purple-400
+                  focus:outline-none
+                  focus:shadow-outline-purple
+                  dark:focus:shadow-outline-gray
+                "
+                v-model="selectedAgent"
+              >
+                <option value="">----Select Status----</option>
+                <option v-for="item in users" :key="item.id" :value="item.id">
+                  {{ item.first_name }} {{ item.last_name }}
+                </option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </template>
+    </assign-modal>
   </div>
   <!-- Details Container End -->
 </template>
 
 <script>
+import Audit from "./Audit.vue";
 import Divider from "./Divider.vue";
+import Button from "./Button.vue";
+import Comments from "./Comments.vue";
+import Modal from "./Modal.vue";
 export default {
-  props: ["selectedTicket"],
+  props: ["selectedTicket", "statuses", "priorities", "users"],
   components: {
     divider: Divider,
+    Audit,
+    Comments,
+    "v-button": Button,
+    "status-modal": Modal,
+    "priority-modal": Modal,
+    "assign-modal": Modal,
   },
   data() {
-    return {};
+    return {
+      selectedStatus: "",
+      selectedPriority: "",
+      selectedAgent: "",
+      isModalVisible: false,
+    };
+  },
+  mounted() {
+    console.log(this.selectedTicket, "slec");
+    // this.selectedStatus = this.selectedTicket.status.id;
   },
   methods: {
     getStatusColor(state) {
@@ -212,6 +448,18 @@ export default {
       }
 
       return color;
+    },
+    showModal(modal) {
+      console.log(modal);
+      this.selectedStatus = this.selectedTicket.status.id;
+      this.selectedPriority = this.selectedTicket.priority.id;
+      this.selectedAgent = this.selectedTicket.agent.id
+      console.log(this.selectedStatus);
+      this.isModalVisible = modal;
+    },
+    closeModal() {
+      console.log(this.selectedStatus);
+      this.isModalVisible = false;
     },
   },
 };

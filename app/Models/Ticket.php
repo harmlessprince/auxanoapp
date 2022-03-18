@@ -9,7 +9,7 @@ class Ticket extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $with =['agent', 'user', 'status', 'priority', 'category', 'audits', 'customer'];
+    protected $with =['agent', 'user', 'status', 'priority', 'category', 'audits', 'customer', 'comments'];
 
     /**
      * Get all of the ticket's comments.

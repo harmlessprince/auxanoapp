@@ -52,4 +52,14 @@ class User extends Authenticatable
     {
         return $this->hasOne(Role::class, 'model_id')->latestOfMany();
     }
+
+    /**
+     * Get the user's full name.
+     *
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
+    }
 }

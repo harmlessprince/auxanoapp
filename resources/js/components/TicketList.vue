@@ -76,7 +76,7 @@ export default {
       selectedTicket: null,
     };
   },
-  created() {
+  beforeMount() {
     this.selectTicket(this.tickets[0]);
   },
   methods: {
