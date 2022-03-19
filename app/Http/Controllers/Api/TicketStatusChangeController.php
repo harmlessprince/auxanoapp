@@ -13,6 +13,7 @@ class TicketStatusChangeController extends Controller
         $request->validate([
             'status' => ['required', 'integer', 'exists:ticket_statuses,id']
         ]);
+        // dd(auth()->id());
         $ticket->status_id = $request->status;
         $ticket->save();
         $ticket->audits()->create([

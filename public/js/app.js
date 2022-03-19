@@ -3910,9 +3910,8 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"); // axios.defaults.withCredentials = true;
-// window.axios.defaults.headers.common['X-CSRF-TOKEN'] =  document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+axios.defaults.withCredentials = true;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -3948,7 +3947,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 // import axios from "axios";
 // import Auth from "./auth";
-axios.defaults.baseURL = "http://auxanoapp.test/api";
+window.axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+axios.defaults.baseURL = "http://auxanoapp.test/api"; // 
+
+console.log(axios.defaults);
 var get = function get(url) {
   var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   return axios({
