@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 
 require __DIR__ . '/auth.php';
-Route::middleware('auth')->group(function () {
+Route::middleware('auth:sanctum')->group(function () {
     Route::get('/', [DashBoardController::class, 'index'])->name('home');
     Route::get('/dashboard', [DashBoardController::class, 'index'])->name('dashboard');
     Route::resource('users', UserController::class);
