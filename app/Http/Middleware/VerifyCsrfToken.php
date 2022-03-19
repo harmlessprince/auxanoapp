@@ -12,7 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        'http://auxanoapp.herokuapp.com',
-        'https://auxanoapp.herokuapp.com'
+        'http://auxanoapp.herokuapp.com/api/*',
+        'https://auxanoapp.herokuapp.com/api/*'
     ];
 }
