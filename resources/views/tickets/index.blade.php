@@ -15,6 +15,7 @@
     </div>
 
     <div id="app">
+        <notifications></notifications>
         <ticket-component></ticket-component>
     </div>
 @endsection

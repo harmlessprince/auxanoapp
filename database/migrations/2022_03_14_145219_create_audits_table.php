@@ -19,8 +19,8 @@ class CreateAuditsTable extends Migration
             $table->string('reason')->nullable();
             $table->string('action')->nullable();
             $table->foreignId('user_id');
-            $table->foreignId('agent_id');
             $table->foreignId('ticket_id');
+            $table->text('data')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

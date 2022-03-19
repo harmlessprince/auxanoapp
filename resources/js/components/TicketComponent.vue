@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <loading v-if="loading" />
+  <div> 
+    <loading v-show="loading" />
     <search-ticket-form
       :categories="categories"
       :statuses="statuses"
@@ -23,9 +23,14 @@
       v-if="tickets.length > 0"
     >
       <!-- Table Container -->
-      <ticket-list :tickets="tickets" @ticketSelected="getTicketSelected" />
+      <ticket-list
+        :tickets="tickets"
+        @ticketSelected="getTicketSelected"
+        :selectedTicket="currentTicket"
+      />
       <!-- Table Container End -->
       <!-- Details Container -->
+     
       <ticket-detail
         :selectedTicket="currentTicket"
         :statuses="statuses"
@@ -34,7 +39,7 @@
       />
     </div>
     <!-- Container End -->
-    <empty-state v-else></empty-state>
+    <empty-state v-show="showEmptyState"></empty-state>
   </div>
 </template>
 
@@ -64,6 +69,7 @@ export default {
       priorities: [],
       technicians: [],
       loading: false,
+      showEmptyState: false,
       currentTicket: null,
     };
   },
@@ -89,12 +95,18 @@ export default {
           console.log(err);
           this.loading = false;
         });
-      console.log(responseData);
+
       this.tickets = responseData.data;
+      if (this.tickets.length < 1) {
+        this.showEmptyState = true;
+      } else {
+        this.showEmptyState = false;
+      }
+      this.currentTicket = this.tickets[0];
       this.loading = false;
     },
     getTicketSelected(ticketSelected) {
-      this.currentTicket = ticketSelected.selectedTicket;
+      this.currentTicket = ticketSelected;
     },
     async getStatus() {
       this.statuses = await get("/statuses")

@@ -10,11 +10,21 @@ class TicketPriorityChangeController extends Controller
 {
     public function update(Request $request, Ticket $ticket)
     {
-        $request->validate($request->only('priority'), [
+        $request->validate([
             'priority' => ['required', 'integer', 'exists:priorities,id']
         ]);
-        $ticket->priority = $request->priority;
+        $ticket->priority_id = $request->priority;
         $ticket->save();
-        return  redirect(route('tickets.index'))->with(['success' => 'Ticket priority has been successfully updated']);
+        $ticket = $ticket->fresh();
+        $ticket->audits()->create([
+            'operation' => 'update',
+            'action' => 'Changed priority to' . $ticket->priority->name,
+            'user_id' => auth()->id(),
+        ]);
+        return response()->json([
+            'success' => true,
+            'message' => 'Ticket priority has been successfully updated',
+        ]);
+        // return  redirect(route('tickets.index'))->with(['success' => 'Ticket priority has been successfully updated']);
     }
 }

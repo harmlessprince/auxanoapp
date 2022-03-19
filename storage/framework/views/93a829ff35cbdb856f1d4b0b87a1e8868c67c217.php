@@ -24,6 +24,7 @@
     </div>
 
     <div id="app">
+        <notifications></notifications>
         <ticket-component></ticket-component>
     </div>
 <?php $__env->stopSection(); ?>

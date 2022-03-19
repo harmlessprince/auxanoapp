@@ -290,6 +290,7 @@
       <status-modal
         v-show="isModalVisible == 'status-modal'"
         @close="closeModal"
+        @clicked="updateStatus"
       >
         <template v-slot:header> Change Status </template>
         <template v-slot:body>
@@ -329,13 +330,14 @@
       <priority-modal
         v-show="isModalVisible == 'priority-modal'"
         @close="closeModal"
+        @clicked="updatePriority"
       >
         <template v-slot:header> Change Priority </template>
         <template v-slot:body>
           <div class="flex flex-wrap -mx-3 mb-3">
             <div class="w-full px-3 mb-3">
               <label class="block mt-4 text-sm">
-                <span class="text-gray-700 dark:text-gray-400"> Status </span>
+                <span class="text-gray-700 dark:text-gray-400"> Priority </span>
                 <select
                   class="
                     block
@@ -368,6 +370,7 @@
       <assign-modal
         v-show="isModalVisible == 'assign-modal'"
         @close="closeModal"
+        @clicked="reAssignTicket"
       >
         <template v-slot:header> Reassign Ticket </template>
         <template v-slot:body>
@@ -411,6 +414,7 @@ import Divider from "./Divider.vue";
 import Button from "./Button.vue";
 import Comments from "./Comments.vue";
 import Modal from "./Modal.vue";
+import { patch } from "../utilities/apiService";
 export default {
   props: ["selectedTicket", "statuses", "priorities", "users"],
   components: {
@@ -439,7 +443,7 @@ export default {
       let color = "";
       if (state == "In Progress") {
         color =
-          "text-orange-700 bg-orange-100 dark:text-white dark:bg-orange-600";
+          "text-orange-700 bg-orange-100 dark:text-white dark:bg-orange-500";
       } else if (state == "Done") {
         color = "bg-green-100 dark:bg-green-700 dark:text-green-100";
       } else if (state == "Canceled") {
@@ -470,25 +474,98 @@ export default {
       return color;
     },
     showModal(modal) {
-      console.log(modal);
       this.selectedStatus = this.selectedTicket.status.id;
       this.selectedPriority = this.selectedTicket.priority.id;
       this.selectedAgent = this.selectedTicket.agent.id;
-      console.log(this.selectedStatus);
       this.isModalVisible = modal;
     },
     closeModal() {
       console.log(this.selectedStatus);
       this.isModalVisible = false;
     },
+    async updatePriority() {
+      const data = await patch(`tickets/${this.selectedTicket.id}/priority`, {
+        priority: this.selectedPriority,
+      })
+        .then((response) => {
+          return response.data;
+        })
+        .catch((err) => {
+          console.log(err.response.data.message);
+          notify({
+            text: err.response.data.message,
+            theme: "red",
+            hideAfter: 3000,
+          });
+        });
+      if (data.success) {
+        this.closeModal();
+        notify({
+          text: data.message,
+          theme: "green",
+          hideAfter: 3000,
+        });
+        // alert(data.message)
+      }
+    },
+    async updateStatus() {
+      const data = await patch(`tickets/${this.selectedTicket.id}/status`, {
+        status: this.selectedStatus,
+      })
+        .then((response) => {
+          return response.data;
+        })
+        .catch((err) => {
+          console.log(err.response.data.message);
+          notify({
+            text: err.response.data.message,
+            theme: "red",
+            hideAfter: 3000,
+          });
+        });
+      if (data.success) {
+        this.closeModal();
+        notify({
+          text: data.message,
+          theme: "green",
+          hideAfter: 3000,
+        });
+        // alert(data.message)
+      }
+    },
+    async reAssignTicket() {
+      const data = await patch(`tickets/${this.selectedTicket.id}/reassign`, {
+        agent: this.selectedAgent,
+      })
+        .then((response) => {
+          return response.data;
+        })
+        .catch((err) => {
+          console.log(err.response.data.message);
+          notify({
+            text: err.response.data.message,
+            theme: "red",
+            hideAfter: 3000,
+          });
+        });
+      if (data.success) {
+        this.closeModal();
+        notify({
+          text: data.message,
+          theme: "green",
+          hideAfter: 3000,
+        });
+        // alert(data.message)
+      }
+    },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1.5s;
+  transition: opacity 2s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

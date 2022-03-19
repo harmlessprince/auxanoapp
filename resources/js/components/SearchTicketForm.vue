@@ -191,7 +191,6 @@ export default {
         technician: this.technician,
         ticket_name: this.ticket_name,
       });
-      console.log(params);
       this.$emit("search", params);
     },
     cleanParams(obj) {

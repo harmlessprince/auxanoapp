@@ -7,6 +7,7 @@
       -mx-3
       overflow-y-scroll
       max-h-screen
+      min-h-screen
       w-full
       overflow-x-auto
       scrollbar-thin scrollbar-thumb-purple-700 scrollbar-track-purple-300
@@ -70,10 +71,10 @@
 import { truncate } from "../utilities/helpers";
 import moment from "moment";
 export default {
-  props: ["tickets"],
+  props: ["tickets", "selectedTicket"],
   data() {
     return {
-      selectedTicket: null,
+      
     };
   },
   beforeMount() {
@@ -81,8 +82,7 @@ export default {
   },
   methods: {
     selectTicket(ticket) {
-      this.selectedTicket = ticket;
-       this.$emit("ticketSelected", {selectedTicket: this.selectedTicket});
+      this.$emit("ticketSelected", ticket);
     },
     truncateTicketName(name) {
       let limit = 20;

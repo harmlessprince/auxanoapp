@@ -19,8 +19,6 @@ class TicketSeeder extends Seeder
             $ticket->audits()->create([
                 'operation' => 'create',
                 'action' => 'Created by ' . $ticket->user->full_name,
-                'user_id' => auth()->id(),
-                'agent_id' => $ticket->agent_id,
                 'user_id' => $ticket->user_id,
             ]);
             $comments = Comment::factory(random_int(1,5))->make();

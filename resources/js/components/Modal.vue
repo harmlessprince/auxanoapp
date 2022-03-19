@@ -130,7 +130,7 @@
                 Cancel
               </button>
               <button
-                type="submit"
+                type="button"
                 class="
                   w-full
                   px-5
@@ -149,6 +149,7 @@
                   hover:bg-purple-700
                   focus:outline-none focus:shadow-outline-purple
                 "
+                @click="save"
               >
                 Save
               </button>
@@ -169,8 +170,12 @@ export default {
   name: "Modal",
   methods: {
     close() {
+      console.log("closed");
       this.$emit("close");
     },
+    save(){
+      this.$emit('clicked');
+    }
   },
 };
 </script>

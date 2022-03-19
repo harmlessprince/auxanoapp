@@ -21,8 +21,8 @@ class TicketController extends Controller
     }
     public function index()
     {
-        $tickets = Ticket::with(['status', 'priority', 'category', 'user', 'agent', 'customer'])->paginate();
-        return view('tickets.index', compact('tickets'));
+        // $tickets = Ticket::with(['status', 'priority', 'category', 'user', 'agent', 'customer'])->paginate();
+        return view('tickets.index');
     }
 
     public function create()

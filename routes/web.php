@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [DashBoardController::class, 'index'])->name('home');
     Route::get('/dashboard', [DashBoardController::class, 'index'])->name('dashboard');
     Route::resource('users', UserController::class);
-    Route::resource('tickets', TicketController::class);
+    Route::resource('tickets', TicketController::class)->only(['index', 'create', 'store']);
     Route::resource('roles', RoleController::class)->only(['index']);
     Route::resource('categories', CategoryController::class)->only(['index']);
     Route::resource('customers', CustomerController::class);
