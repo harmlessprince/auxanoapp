@@ -15,15 +15,13 @@ export const post = (url, data) =>
     axios({
         method: "POST",
         url,
-        data,
-        headers: {},
+        data
     });
 export const put = (url, data) =>
     axios({
         method: "PUT",
         url,
         data,
-        headers: {},
     });
 export const patch = (url, data) =>
     axios({

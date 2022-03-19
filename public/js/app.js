@@ -3524,6 +3524,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.next = 2;
                 return (0,_utilities_apiService__WEBPACK_IMPORTED_MODULE_6__.patch)("tickets/".concat(_this.selectedTicket.id, "/priority"), {
                   priority: _this.selectedPriority
+                }, {
+                  _token: csrfToken
                 }).then(function (response) {
                   return response.data;
                 })["catch"](function (err) {
@@ -3916,6 +3918,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
+  window.csrfToken = document.querySelector('meta[name="csrf-token"]').content;
   window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
   console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
@@ -3977,16 +3980,14 @@ var post = function post(url, data) {
   return axios({
     method: "POST",
     url: url,
-    data: data,
-    headers: {}
+    data: data
   });
 };
 var put = function put(url, data) {
   return axios({
     method: "PUT",
     url: url,
-    data: data,
-    headers: {}
+    data: data
   });
 };
 var patch = function patch(url, data) {

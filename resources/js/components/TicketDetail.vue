@@ -484,9 +484,15 @@ export default {
       this.isModalVisible = false;
     },
     async updatePriority() {
-      const data = await patch(`tickets/${this.selectedTicket.id}/priority`, {
-        priority: this.selectedPriority,
-      })
+      const data = await patch(
+        `tickets/${this.selectedTicket.id}/priority`,
+        {
+          priority: this.selectedPriority,
+        },
+        {
+          _token: csrfToken,
+        }
+      )
         .then((response) => {
           return response.data;
         })
