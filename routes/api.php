@@ -27,14 +27,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::patch('tickets/{ticket}/status', [TicketStatusChangeController::class, 'update']);
-    Route::patch('tickets/{ticket}/priority', [TicketPriorityChangeController::class, 'update']);
-    Route::patch('tickets/{ticket}/reassign', [TicketAssignController::class, 'update']);
-    Route::get('statuses', [StatusController::class, 'index']);
-    Route::get('categories', [CategoryController::class, 'index']);
-    Route::get('priorities', [PriorityController::class, 'index']);
-    Route::get('technicians', [TechnicianController::class, 'index']);
+// Route::middleware('auth:sanctum')->group(function () {
+// });
+Route::patch('tickets/{ticket}/status', [TicketStatusChangeController::class, 'update']);
+Route::patch('tickets/{ticket}/priority', [TicketPriorityChangeController::class, 'update']);
+Route::patch('tickets/{ticket}/reassign', [TicketAssignController::class, 'update']);
+Route::get('statuses', [StatusController::class, 'index']);
+Route::get('categories', [CategoryController::class, 'index']);
+Route::get('priorities', [PriorityController::class, 'index']);
+Route::get('technicians', [TechnicianController::class, 'index']);
 
-    Route::get('tickets', [TicketController::class, 'index']);
-});
+Route::get('tickets', [TicketController::class, 'index']);
