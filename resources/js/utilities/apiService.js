@@ -1,6 +1,5 @@
 // import axios from "axios";
 // import Auth from "./auth";
-window.axios.defaults.headers.common['X-CSRF-TOKEN'] =  document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 axios.defaults.baseURL = process.env.MIX_APP_URL;
 // 
 console.log(axios.defaults);
