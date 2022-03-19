@@ -15,7 +15,7 @@ class TicketSeeder extends Seeder
      */
     public function run()
     {
-        Ticket::factory(20)->create()->each(function ($ticket) {
+        Ticket::factory(50)->create()->each(function ($ticket) {
             $ticket->audits()->create([
                 'operation' => 'create',
                 'action' => 'Created by ' . $ticket->user->full_name,

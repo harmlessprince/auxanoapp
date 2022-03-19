@@ -52,4 +52,5 @@
 
 <script src="{{ asset('/js/custom.js') }}"></script>
 <script src="{{ mix('/js/app.js') }}"></script>
+
 </html>

@@ -18,7 +18,7 @@ class TicketPriorityChangeController extends Controller
         $ticket = $ticket->fresh();
         $ticket->audits()->create([
             'operation' => 'update',
-            'action' => 'Changed priority to' . $ticket->priority->name,
+            'action' => 'Changed priority to ' . $ticket->priority->name,
             'user_id' => auth()->id(),
         ]);
         return response()->json([

@@ -1,5 +1,5 @@
 <template>
-  <div> 
+  <div>
     <loading v-show="loading" />
     <search-ticket-form
       :categories="categories"
@@ -27,10 +27,11 @@
         :tickets="tickets"
         @ticketSelected="getTicketSelected"
         :selectedTicket="currentTicket"
+        :pagination="pagination"
       />
       <!-- Table Container End -->
       <!-- Details Container -->
-     
+
       <ticket-detail
         :selectedTicket="currentTicket"
         :statuses="statuses"
@@ -71,6 +72,7 @@ export default {
       loading: false,
       showEmptyState: false,
       currentTicket: null,
+      pagination: {},
     };
   },
   async beforeMount() {
@@ -95,8 +97,18 @@ export default {
           console.log(err);
           this.loading = false;
         });
-
+        console.log('responseData', responseData)
       this.tickets = responseData.data;
+      this.pagination = {
+        total: responseData.total,
+        currentPage: responseData.current_page,
+        firstPageUrl: responseData.first_page_url,
+        nextPageUrl: responseData.next_page_url,
+        perPage: responseData.per_page,
+        prevPageUrl: responseData.prev_page_url,
+        to: responseData.to,
+        from: responseData.from,
+      };
       if (this.tickets.length < 1) {
         this.showEmptyState = true;
       } else {

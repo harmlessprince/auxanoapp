@@ -2776,6 +2776,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 
@@ -2801,7 +2802,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       technicians: [],
       loading: false,
       showEmptyState: false,
-      currentTicket: null
+      currentTicket: null,
+      pagination: {}
     };
   },
   beforeMount: function beforeMount() {
@@ -2868,7 +2870,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 4:
                 responseData = _context2.sent;
+                console.log('responseData', responseData);
                 _this2.tickets = responseData.data;
+                _this2.pagination = {
+                  total: responseData.total,
+                  currentPage: responseData.current_page,
+                  firstPageUrl: responseData.first_page_url,
+                  nextPageUrl: responseData.next_page_url,
+                  perPage: responseData.per_page,
+                  prevPageUrl: responseData.prev_page_url,
+                  to: responseData.to,
+                  from: responseData.from
+                };
 
                 if (_this2.tickets.length < 1) {
                   _this2.showEmptyState = true;
@@ -2879,7 +2892,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this2.currentTicket = _this2.tickets[0];
                 _this2.loading = false;
 
-              case 9:
+              case 11:
               case "end":
                 return _context2.stop();
             }
@@ -3719,15 +3732,113 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ["tickets", "selectedTicket"],
+  props: ["tickets", "selectedTicket", "pagination"],
   data: function data() {
     return {};
   },
   beforeMount: function beforeMount() {
     this.selectTicket(this.tickets[0]);
+    console.log(this.pagination.currentPage > 1);
   },
   methods: {
     selectTicket: function selectTicket(ticket) {
@@ -3744,6 +3855,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     formatDate: function formatDate(date) {
       return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).fromNow();
+    },
+    onFirstPage: function onFirstPage() {
+      return this.pagination.currentPage == 1;
+    },
+    hasMorePages: function hasMorePages() {
+      return this.pagination.currentPage < this.pagination.lastPage;
     }
   }
 });
@@ -46334,6 +46451,7 @@ var render = function () {
                 attrs: {
                   tickets: _vm.tickets,
                   selectedTicket: _vm.currentTicket,
+                  pagination: _vm.pagination,
                 },
                 on: { ticketSelected: _vm.getTicketSelected },
               }),
@@ -47136,55 +47254,158 @@ var render = function () {
     "div",
     {
       staticClass:
-        "\n    border-r-2 border-grey-100\n    dark:border-gray-700\n    col-start-1 col-end-3\n    -mx-3\n    overflow-y-scroll\n    max-h-screen\n    min-h-screen\n    w-full\n    overflow-x-auto\n    scrollbar-thin scrollbar-thumb-purple-700 scrollbar-track-purple-300\n    flex-1\n  ",
+        "\n    flex flex-col\n    border-r-2 border-grey-100\n    dark:border-gray-700\n    col-start-1 col-end-3\n    -mx-3\n    w-full\n  ",
     },
     [
-      _c("table", { staticClass: "w-full whitespace-no-wrap" }, [
-        _vm._m(0),
-        _vm._v(" "),
+      _c("div", { staticClass: "flex flex-col items-center" }, [
         _c(
-          "tbody",
-          { staticClass: "bg-white dark:divide-gray-700 dark:bg-gray-800" },
-          _vm._l(_vm.tickets, function (item) {
-            return _c(
-              "tr",
-              {
-                key: item.id,
-                staticClass:
-                  "\n          text-gray-700\n          hover:text-white\n          dark:text-gray-200\n          shadow-md\n          hover:bg-purple-500\n          dark:hover:bg-gray-700\n          cursor-pointer\n          transition-colors\n          duration-150\n          active:bg-purple-700\n        ",
-                class: [
-                  item.id == _vm.selectedTicket.id
-                    ? "text-white border-solid border-2 border-purple-300 bg-purple-700 my-3 cursor-not-allowed"
-                    : "",
-                ],
-                on: {
-                  click: function ($event) {
-                    return _vm.selectTicket(item)
+          "span",
+          { staticClass: "text-sm text-gray-700 dark:text-gray-400" },
+          [
+            _vm._v("\n      Showing\n      "),
+            _c(
+              "span",
+              { staticClass: "font-semibold text-gray-900 dark:text-white" },
+              [_vm._v(_vm._s(_vm.pagination.from))]
+            ),
+            _vm._v("\n      to\n      "),
+            _c(
+              "span",
+              { staticClass: "font-semibold text-gray-900 dark:text-white" },
+              [_vm._v(_vm._s(_vm.pagination.to))]
+            ),
+            _vm._v("\n      of\n      "),
+            _c(
+              "span",
+              { staticClass: "font-semibold text-gray-900 dark:text-white" },
+              [_vm._v(_vm._s(_vm.pagination.total))]
+            ),
+            _vm._v("\n      Entries\n    "),
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "inline-flex mt-2 xs:mt-0" }, [
+          _c(
+            "button",
+            {
+              staticClass:
+                "\n          inline-flex\n          items-center\n          py-2\n          px-4\n          text-sm\n          font-medium\n          text-white\n          bg-gray-800\n          rounded-l\n          hover:bg-gray-900\n          dark:bg-gray-800\n          dark:border-gray-700\n          dark:text-gray-400\n          dark:hover:bg-gray-700\n          dark:hover:text-white\n        ",
+              attrs: { disabled: _vm.onFirstPage },
+            },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "mr-2 w-5 h-5",
+                  attrs: {
+                    fill: "currentColor",
+                    viewBox: "0 0 20 20",
+                    xmlns: "http://www.w3.org/2000/svg",
                   },
                 },
-              },
-              [
-                _c("td", { staticClass: "px-4 py-3 dark:text-black" }, [
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(_vm.truncateTicketName(item.subject, 20)) +
-                      "\n        "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "px-4 py-3 dark:text-black" }, [
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(_vm.formatDate(item.created_at)) +
-                      "\n        "
-                  ),
-                ]),
-              ]
-            )
-          }),
-          0
-        ),
+                [
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      d: "M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z",
+                      "clip-rule": "evenodd",
+                    },
+                  }),
+                ]
+              ),
+              _vm._v("\n        Prev\n      "),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass:
+                "\n          inline-flex\n          items-center\n          py-2\n          px-4\n          text-sm\n          font-medium\n          text-white\n          bg-gray-800\n          rounded-r\n          border-0 border-l border-gray-700\n          hover:bg-gray-900\n          dark:bg-gray-800\n          dark:border-gray-700\n          dark:text-gray-400\n          dark:hover:bg-gray-700\n          dark:hover:text-white\n        ",
+              attrs: { disabled: !_vm.hasMorePages },
+            },
+            [
+              _vm._v("\n        Next\n        "),
+              _c(
+                "svg",
+                {
+                  staticClass: "ml-2 w-5 h-5",
+                  attrs: {
+                    fill: "currentColor",
+                    viewBox: "0 0 20 20",
+                    xmlns: "http://www.w3.org/2000/svg",
+                  },
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      d: "M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z",
+                      "clip-rule": "evenodd",
+                    },
+                  }),
+                ]
+              ),
+            ]
+          ),
+        ]),
       ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "\n      overflow-y-scroll\n      max-h-screen\n      min-h-screen\n      overflow-x-auto\n      scrollbar-thin scrollbar-thumb-purple-700 scrollbar-track-purple-300\n      flex-1\n    ",
+        },
+        [
+          _c("table", { staticClass: "w-full whitespace-no-wrap" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              { staticClass: "bg-white dark:divide-gray-700 dark:bg-gray-800" },
+              _vm._l(_vm.tickets, function (item) {
+                return _c(
+                  "tr",
+                  {
+                    key: item.id,
+                    staticClass:
+                      "\n            text-gray-700\n            hover:text-white\n            dark:text-gray-200\n            shadow-md\n            hover:bg-purple-500\n            dark:hover:bg-gray-700\n            cursor-pointer\n            transition-colors\n            duration-150\n            active:bg-purple-700\n          ",
+                    class: [
+                      item.id == _vm.selectedTicket.id
+                        ? "text-white border-solid border-2 border-purple-300 bg-purple-700 my-3 cursor-not-allowed"
+                        : "",
+                    ],
+                    on: {
+                      click: function ($event) {
+                        return _vm.selectTicket(item)
+                      },
+                    },
+                  },
+                  [
+                    _c("td", { staticClass: "px-4 py-3 dark:text-black" }, [
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(_vm.truncateTicketName(item.subject, 20)) +
+                          "\n          "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "px-4 py-3 dark:text-black" }, [
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(_vm.formatDate(item.created_at)) +
+                          "\n          "
+                      ),
+                    ]),
+                  ]
+                )
+              }),
+              0
+            ),
+          ]),
+        ]
+      ),
     ]
   )
 }
@@ -47198,7 +47419,7 @@ var staticRenderFns = [
         "tr",
         {
           staticClass:
-            "\n          text-xs\n          font-semibold\n          tracking-wide\n          md:tracking-normal\n          sm:tracking-tight\n          text-left text-gray-500\n          uppercase\n          dark:text-gray-400 dark:bg-gray-800 dark:border-gray-700\n        ",
+            "\n            text-xs\n            font-semibold\n            tracking-wide\n            md:tracking-normal\n            sm:tracking-tight\n            text-left text-gray-500\n            uppercase\n            dark:text-gray-400 dark:bg-gray-800 dark:border-gray-700\n          ",
         },
         [
           _c("th", { staticClass: "px-4 py-3" }, [_vm._v("Ticket Name")]),

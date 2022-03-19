@@ -17,7 +17,7 @@ class TicketStatusChangeController extends Controller
         $ticket->save();
         $ticket->audits()->create([
             'operation' => 'update',
-            'action' => 'Changed status to ' . $ticket->priority->name,
+            'action' => 'Changed status to ' . $ticket->status->name,
             'user_id' => auth()->id(),
         ]);
         return response()->json([

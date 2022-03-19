@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
+use SebastianBergmann\Type\NullType;
 
 class TicketFactory extends Factory
 {
@@ -31,7 +32,7 @@ class TicketFactory extends Factory
             'user_id' => $u,
             'agent_id' => $a,
             'customer_id' => $c,
-            'completed_at' => Carbon::today()->addDays(rand(20, 50)),
+            'completed_at' => Arr::random([null, Carbon::today()->addDays(rand(20, 50))]),
             'due_at' => Carbon::today()->addDays(rand(0, 20)),
         ];
     }

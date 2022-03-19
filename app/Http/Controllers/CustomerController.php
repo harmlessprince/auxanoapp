@@ -25,7 +25,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = $this->customerRepository->paginate();
+        $customers = $this->customerRepository->paginate(5);
         $types = $this->customerTypes;
         return view('customers.index', compact('customers', 'types'));
     }

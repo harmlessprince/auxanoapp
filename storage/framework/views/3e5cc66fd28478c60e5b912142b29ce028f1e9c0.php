@@ -64,5 +64,6 @@
 
 <script src="<?php echo e(asset('/js/custom.js')); ?>"></script>
 <script src="<?php echo e(mix('/js/app.js')); ?>"></script>
+
 </html>
 <?php /**PATH /home/harmlessprince/web projects/laravel/auxanoapp/resources/views/layouts/app.blade.php ENDPATH**/ ?>
