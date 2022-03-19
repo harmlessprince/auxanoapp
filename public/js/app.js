@@ -3911,6 +3911,7 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
  */
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+axios.defaults.withCredentials = true;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -3944,14 +3945,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "patch": () => (/* binding */ patch),
 /* harmony export */   "interceptors": () => (/* binding */ interceptors)
 /* harmony export */ });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
- // import Auth from "./auth";
-
-(axios__WEBPACK_IMPORTED_MODULE_0___default().defaults.baseURL) = "http://auxanoapp.test/api";
+// import axios from "axios";
+// import Auth from "./auth";
+axios.defaults.baseURL = "http://auxanoapp.test/api";
 var get = function get(url) {
   var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  return axios__WEBPACK_IMPORTED_MODULE_0___default()({
+  return axios({
     method: "GET",
     url: url,
     headers: {},
@@ -3959,14 +3958,14 @@ var get = function get(url) {
   });
 };
 var del = function del(url) {
-  return axios__WEBPACK_IMPORTED_MODULE_0___default()({
+  return axios({
     url: url,
     method: "DELETE",
     headers: {}
   });
 };
 var post = function post(url, data) {
-  return axios__WEBPACK_IMPORTED_MODULE_0___default()({
+  return axios({
     method: "POST",
     url: url,
     data: data,
@@ -3974,7 +3973,7 @@ var post = function post(url, data) {
   });
 };
 var put = function put(url, data) {
-  return axios__WEBPACK_IMPORTED_MODULE_0___default()({
+  return axios({
     method: "PUT",
     url: url,
     data: data,
@@ -3982,7 +3981,7 @@ var put = function put(url, data) {
   });
 };
 var patch = function patch(url, data) {
-  return axios__WEBPACK_IMPORTED_MODULE_0___default()({
+  return axios({
     method: "PATCH",
     url: url,
     data: data,
@@ -3990,7 +3989,7 @@ var patch = function patch(url, data) {
   });
 };
 var interceptors = function interceptors(cb) {
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().interceptors.response.use(function (res) {
+  return axios.interceptors.response.use(function (res) {
     return res;
   }, function (err) {
     cb(err);
