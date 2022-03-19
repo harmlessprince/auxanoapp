@@ -7,6 +7,7 @@ use App\Http\Controllers\PriorityController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +32,13 @@ Route::middleware('auth')->group(function () {
     Route::resource('roles', RoleController::class)->only(['index']);
     Route::resource('categories', CategoryController::class)->only(['index']);
     Route::resource('customers', CustomerController::class);
+});
+
+Route::get('/clear', function () {
+
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    return "Cleared!";
 });
