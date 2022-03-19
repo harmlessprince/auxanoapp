@@ -55,8 +55,14 @@
 
 
 <?php echo $__env->yieldPushContent('scripts'); ?>
+
 <?php echo \Livewire\Livewire::scripts(); ?>
 
+<script>
+    window.Laravel = {
+        csrfToken: '<?php echo e(csrf_token()); ?>'
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <script src="<?php echo e(asset('template/assets/js/init-alpine.js')); ?>"></script>
 <!-- You need focus-trap.js to make the modal accessible -->

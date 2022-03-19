@@ -44,7 +44,13 @@
 
 
 @stack('scripts')
+
 @livewireScripts
+<script>
+    window.Laravel = {
+        csrfToken: '{{ csrf_token() }}'
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <script src="{{ asset('template/assets/js/init-alpine.js') }}"></script>
 <!-- You need focus-trap.js to make the modal accessible -->
