@@ -1,9 +1,16 @@
 <?php
 
+use App\Http\Controllers\Api\CategoryController as ApiCategoryController;
+use App\Http\Controllers\Api\PriorityController as ApiPriorityController;
+use App\Http\Controllers\Api\StatusController;
+use App\Http\Controllers\Api\TechnicianController;
+use App\Http\Controllers\Api\TicketAssignController;
+use App\Http\Controllers\Api\TicketController as ApiTicketController;
+use App\Http\Controllers\Api\TicketPriorityChangeController;
+use App\Http\Controllers\Api\TicketStatusChangeController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashBoardController;
-use App\Http\Controllers\PriorityController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
@@ -31,4 +38,16 @@ Route::middleware('auth')->group(function () {
     Route::resource('roles', RoleController::class)->only(['index']);
     Route::resource('categories', CategoryController::class)->only(['index']);
     Route::resource('customers', CustomerController::class);
+
+
+    Route::prefix('vue')->name('vue.')->namespace('Api')->group(function () {
+        Route::patch('tickets/{ticket}/status', [TicketStatusChangeController::class, 'update']);
+        Route::patch('tickets/{ticket}/priority', [TicketPriorityChangeController::class, 'update']);
+        Route::patch('tickets/{ticket}/reassign', [TicketAssignController::class, 'update']);
+        Route::get('statuses', [StatusController::class, 'index'])->name('statuses');
+        Route::get('categories', [ApiCategoryController::class, 'index'])->name('categories');
+        Route::get('priorities', [ApiPriorityController::class, 'index'])->name('priorities');
+        Route::get('technicians', [TechnicianController::class, 'index']);
+        Route::get('tickets', [ApiTicketController::class, 'index'])->name('tickets');
+    });
 });

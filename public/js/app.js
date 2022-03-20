@@ -3524,8 +3524,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.next = 2;
                 return (0,_utilities_apiService__WEBPACK_IMPORTED_MODULE_6__.patch)("tickets/".concat(_this.selectedTicket.id, "/priority"), {
                   priority: _this.selectedPriority
-                }, {
-                  _token: csrfToken
                 }).then(function (response) {
                   return response.data;
                 })["catch"](function (err) {
@@ -3914,14 +3912,15 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
-window.axios.defaults.headers.common['Accept'] = 'application/json'; // let token = document.head.querySelector('meta[name="csrf-token"]');
-// if (token) {
-//     window.csrfToken = document.querySelector('meta[name="csrf-token"]').content;
-//     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-// } else {
-//     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-// }
-// axios.defaults.withCredentials = true;
+window.axios.defaults.headers.common['Accept'] = 'application/json';
+var token = document.head.querySelector('meta[name="csrf-token"]');
+
+if (token) {
+  window.csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+} // axios.defaults.withCredentials = true;
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -3957,7 +3956,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 // import axios from "axios";
 // import Auth from "./auth";
-axios.defaults.baseURL = "http://auxanoapp.test/api"; // 
+axios.defaults.baseURL = "http://auxanoapp.test/vue"; // 
 
 console.log(axios.defaults);
 var get = function get(url) {

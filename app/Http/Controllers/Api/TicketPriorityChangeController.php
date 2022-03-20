@@ -10,6 +10,7 @@ class TicketPriorityChangeController extends Controller
 {
     public function update(Request $request, Ticket $ticket)
     {
+        // dd($request->headers);
         $request->validate([
             'priority' => ['required', 'integer', 'exists:priorities,id']
         ]);
