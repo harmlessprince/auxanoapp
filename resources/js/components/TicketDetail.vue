@@ -1,12 +1,13 @@
 <template>
   <transition name="fade">
     <div
-      v-if="selectedTicket"
+      v-show="selectedTicket"
       class="col-start-3 col-end-7 text-gray-700 dark:text-gray-400 sm:p-2 flex"
     >
       <!-- Left Detail -->
       <div class="w-4/6">
-        <div class="flex items-center space-x-4 mb-2 flex-wrap">
+      
+        <div class="flex items-center justify-between mb-2 flex-wrap">
           <button
             class="
               flex
@@ -53,7 +54,7 @@
             @click="showModal('priority-modal')"
           >
             Change Priority
-          </button>
+          </button>  
           <!-- <v-button class="text-yellow-100 bg-yellow-500">
           Change Priority
         </v-button> -->
@@ -565,7 +566,7 @@ export default {
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 2s;
+  transition: opacity 5s ease;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

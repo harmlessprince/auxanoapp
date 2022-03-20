@@ -26,17 +26,22 @@
       <ticket-list
         :tickets="tickets"
         @ticketSelected="getTicketSelected"
+        @animatedDetail="animatedDetail"
         :selectedTicket="currentTicket"
         :pagination="pagination"
+        @nextPage="getTickets"
+        @previousPage="getTickets"
       />
       <!-- Table Container End -->
       <!-- Details Container -->
-
       <ticket-detail
         :selectedTicket="currentTicket"
         :statuses="statuses"
         :priorities="priorities"
         :users="technicians"
+        :class="{
+          animate: animated,
+        }"
       />
     </div>
     <!-- Container End -->
@@ -73,6 +78,7 @@ export default {
       showEmptyState: false,
       currentTicket: null,
       pagination: {},
+      animated: false,
     };
   },
   async beforeMount() {
@@ -97,11 +103,11 @@ export default {
           console.log(err);
           this.loading = false;
         });
-        console.log('responseData', responseData)
       this.tickets = responseData.data;
       this.pagination = {
         total: responseData.total,
         currentPage: responseData.current_page,
+        lastPage: responseData.last_page,
         firstPageUrl: responseData.first_page_url,
         nextPageUrl: responseData.next_page_url,
         perPage: responseData.per_page,
@@ -119,6 +125,9 @@ export default {
     },
     getTicketSelected(ticketSelected) {
       this.currentTicket = ticketSelected;
+    },
+    animatedDetail(animated) {
+      this.animated = animated;
     },
     async getStatus() {
       this.statuses = await get("/statuses")
@@ -157,6 +166,9 @@ export default {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+.animate {
+  /* opacity: 0; */
 }
 </style>
 // first_page_url: "http://auxanoapp.test/api/tickets?page=1";

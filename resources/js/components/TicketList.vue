@@ -26,9 +26,9 @@
         }}</span>
         Entries
       </span>
-      <div class="inline-flex mt-2 xs:mt-0">
+      <div class="inline-flex mt-2 xs:mt-0 mb-2 ">
         <button
-          :disabled="onFirstPage"
+          :disabled="yesFirstPage == 1"
           class="
             inline-flex
             items-center
@@ -45,8 +45,9 @@
             dark:text-gray-400
             dark:hover:bg-gray-700
             dark:hover:text-white
+            mr-1
           "
-          
+          @click="previousPage"
         >
           <svg
             class="mr-2 w-5 h-5"
@@ -63,7 +64,7 @@
           Prev
         </button>
         <button
-          :disabled="!hasMorePages"
+          :disabled="yesMorePages == 0"
           class="
             inline-flex
             items-center
@@ -82,6 +83,7 @@
             dark:hover:bg-gray-700
             dark:hover:text-white
           "
+          @click="nextPage"
         >
           Next
           <svg
@@ -170,15 +172,35 @@ import moment from "moment";
 export default {
   props: ["tickets", "selectedTicket", "pagination"],
   data() {
-    return {};
+    return {
+      animated: false,
+      yesFirstPage: true,
+      yesMorePages: true,
+    };
   },
   beforeMount() {
     this.selectTicket(this.tickets[0]);
-    console.log(this.pagination.currentPage > 1);
+    this.onFirstPage();
+    this.hasMorePages();
+  },
+  beforeUpdate() {
+    this.onFirstPage();
+    this.hasMorePages();
   },
   methods: {
+    nextPage() {
+      this.$emit("nextPage", { page: this.pagination.currentPage + 1 });
+    },
+    previousPage() {
+      this.$emit("previousPage", { page: this.pagination.currentPage - 1 });
+    },
+    animateDetail() {
+      this.animated = !this.animated;
+      this.$emit("animatedDetail", this.animated);
+    },
     selectTicket(ticket) {
       this.$emit("ticketSelected", ticket);
+      this.animateDetail();
     },
     truncateTicketName(name) {
       let limit = 20;
@@ -191,10 +213,11 @@ export default {
       return moment(date).fromNow();
     },
     onFirstPage() {
-      return this.pagination.currentPage == 1;
+      return (this.yesFirstPage = this.pagination.currentPage == 1);
     },
     hasMorePages() {
-      return this.pagination.currentPage < this.pagination.lastPage;
+      return (this.yesMorePages =
+        this.pagination.currentPage < this.pagination.lastPage);
     },
   },
 };
