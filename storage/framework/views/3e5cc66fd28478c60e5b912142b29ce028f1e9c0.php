@@ -24,7 +24,7 @@
         <div class="flex flex-col flex-1 w-full">
             <?php echo $__env->make('partials.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <main class="h-full overflow-y-auto">
-                <div class="container px-6 mx-auto grid">
+                <div class="container px-6 mx-auto grid pb-3">
                     <div class="flex justify-between my-6">
                         <h2 class=" text-2xl font-semibold text-gray-700 dark:text-gray-200">
                             <?php echo $__env->yieldContent('page'); ?>

@@ -15,11 +15,15 @@ class TicketStatusChangeController extends Controller
         ]);
         // dd(auth()->id());
         $ticket->status_id = $request->status;
+        $old = collect($ticket->getOriginal());
         $ticket->save();
+        $new = collect($ticket->getChanges());
         $ticket->audits()->create([
-            'operation' => 'update',
+            'operation' => 'updated status',
             'action' => 'Changed status to ' . $ticket->status->name,
             'user_id' => auth()->id(),
+            'old' => $old,
+            'new' => $new,
         ]);
         return response()->json([
             'success' => true,

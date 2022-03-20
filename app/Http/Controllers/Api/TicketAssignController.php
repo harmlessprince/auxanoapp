@@ -14,11 +14,15 @@ class TicketAssignController extends Controller
             'agent' => ['required', 'integer', 'exists:users,id']
         ]);
         $ticket->agent_id = $request->agent;
+        $old = collect($ticket->getOriginal());
         $ticket->save();
+        $new = collect($ticket->getChanges());
         $ticket->audits()->create([
-            'operation' => 'update',
-            'action' => 'Assigned to ' . $ticket->agent->full_name,
+            'operation' => 'reassigned ticket',
+            'action' => 'Reassigned to ' . $ticket->agent->full_name,
             'user_id' => auth()->id(),
+            'old' => $old,
+            'new' => $new,
         ]);
         return response()->json([
             'success' => true,

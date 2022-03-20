@@ -15,12 +15,16 @@ class TicketPriorityChangeController extends Controller
             'priority' => ['required', 'integer', 'exists:priorities,id']
         ]);
         $ticket->priority_id = $request->priority;
+        $old = collect($ticket->getOriginal());
         $ticket->save();
+        $new = collect($ticket->getChanges());
         $ticket = $ticket->fresh();
         $ticket->audits()->create([
-            'operation' => 'update',
+            'operation' => 'updated priority',
             'action' => 'Changed priority to ' . $ticket->priority->name,
             'user_id' => auth()->id(),
+            'old' => $old,
+            'new' => $new,
         ]);
         return response()->json([
             'success' => true,

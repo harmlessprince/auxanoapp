@@ -23,7 +23,7 @@
         <div class="flex flex-col flex-1 w-full">
             @include('partials.header')
             <main class="h-full overflow-y-auto">
-                <div class="container px-6 mx-auto grid">
+                <div class="container px-6 mx-auto grid pb-3">
                     <div class="flex justify-between my-6">
                         <h2 class=" text-2xl font-semibold text-gray-700 dark:text-gray-200">
                             @yield('page')

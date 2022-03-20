@@ -27,11 +27,12 @@ class TicketController extends Controller
 
     public function create()
     {
-        $statuses = Status::all(['id', 'name']);
-        $priorities = Priority::all(['id', 'name']);
-        $users = User::all(['id', 'first_name', 'last_name']);
-        $customers = Customer::all(['id', 'name', 'email']);
-        $categories = Category::all(['id', 'name']);
+        $data = $this->editCreateData();
+        $statuses = $data['statuses'];
+        $priorities =  $data['priorities'];
+        $users = $data['users'];
+        $customers = $data['customers'];
+        $categories = $data['categories'];
         return view('tickets.create', compact('statuses', 'priorities', 'customers', 'categories', 'users'));
     }
     public function store(StoreTicketRequest $request)
@@ -39,10 +40,38 @@ class TicketController extends Controller
         $data = $request->validated();
         $ticket = $this->ticketRepository->create($data);
         $ticket->audits()->create([
-            'operation' => 'Created by ' . auth()->user()->full_name,
+            'action' => 'Created by ' . auth()->user()->full_name,
             'user_id' => auth()->id(),
-            'agent_id' => $request->input('assign_to')
+            'operation' => 'create'
         ]);
         return  redirect(route('tickets.index'))->with(['success' => 'Tickets has been successfully created']);
+    }
+    public function edit(Ticket $ticket)
+    {
+        $data = $this->editCreateData();
+        $statuses = $data['statuses'];
+        $priorities =  $data['priorities'];
+        $users = $data['users'];
+        $customers = $data['customers'];
+        $categories = $data['categories'];
+
+        return view('tickets.edit', compact('statuses', 'priorities', 'customers', 'categories', 'users', 'ticket'));
+    }
+
+    private function editCreateData()
+    {
+        return [
+            'statuses' => Status::all(['id', 'name']),
+            'priorities' => Priority::all(['id', 'name']),
+            'users' => User::all(['id', 'first_name', 'last_name']),
+            'customers' => Customer::all(['id', 'name', 'email']),
+            'categories' => Category::all(['id', 'name']),
+        ];
+    }
+    public function update(StoreTicketRequest $request, Ticket $ticket)
+    {
+        $data = $request->validated();
+        $ticket = $this->ticketRepository->updateTicket($ticket->id, $data);
+        return  redirect(route('tickets.index'))->with(['success' => 'Tickets has been successfully updated']);
     }
 }

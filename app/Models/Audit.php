@@ -11,6 +11,14 @@ class Audit extends Model
     protected $with = ['user', 'agent'];
     protected $guarded = [];
 
+    protected $cast = [
+        'old' => 'array',
+        'new' => 'array',
+        'created_at' => 'datetime:Y-m-d H:i:s',
+        'updated_at' => 'datetime:Y-m-d H:i:s',
+    ];
+
+
     public function user()
     {
         return $this->belongsTo(User::class);

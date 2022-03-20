@@ -1,12 +1,10 @@
 <template>
-  <transition name="fade">
+  <transition name="fade" appear>
     <div
-      v-show="selectedTicket"
       class="col-start-3 col-end-7 text-gray-700 dark:text-gray-400 sm:p-2 flex"
     >
       <!-- Left Detail -->
       <div class="w-4/6">
-      
         <div class="flex items-center justify-between mb-2 flex-wrap">
           <button
             class="
@@ -54,7 +52,7 @@
             @click="showModal('priority-modal')"
           >
             Change Priority
-          </button>  
+          </button>
           <!-- <v-button class="text-yellow-100 bg-yellow-500">
           Change Priority
         </v-button> -->
@@ -81,8 +79,28 @@
           >
             Assign
           </button>
-          <!-- <v-button class="text-blue-100 bg-blue-500"> Assign </v-button> -->
-          <v-button class="bg-green-700 text-green-100"> Edit </v-button>
+          <a
+            class="
+              flex
+              items-center
+              justify-between
+              px-4
+              py-2
+              text-sm
+              font-medium
+              leading-5
+              transition-colors
+              rounded-lg
+              duration-150
+              border border-transparent
+              focus:outline-none
+              bg-green-700
+              text-green-100
+            "
+            :href="'tickets/' + selectedTicket.id + '/edit'"
+          >
+            Edit More
+          </a>
         </div>
         <div class="flex justify-between items-center mb-2">
           <h4
@@ -312,7 +330,7 @@
                     focus:shadow-outline-purple
                     dark:focus:shadow-outline-gray
                   "
-                  v-model="selectedStatus"
+                  v-model="selectedStatus.id"
                 >
                   <option value="">----Select Status----</option>
                   <option
@@ -352,7 +370,7 @@
                     focus:shadow-outline-purple
                     dark:focus:shadow-outline-gray
                   "
-                  v-model="selectedPriority"
+                  v-model="selectedPriority.id"
                 >
                   <option value="">----Select Status----</option>
                   <option
@@ -392,7 +410,7 @@
                     focus:shadow-outline-purple
                     dark:focus:shadow-outline-gray
                   "
-                  v-model="selectedAgent"
+                  v-model="selectedAgent.id"
                 >
                   <option value="">----Select Status----</option>
                   <option v-for="item in users" :key="item.id" :value="item.id">
@@ -429,11 +447,17 @@ export default {
   },
   data() {
     return {
-      selectedStatus: "",
-      selectedPriority: "",
-      selectedAgent: "",
+      selectedStatus: {},
+      selectedPriority: {},
+      selectedAgent: {},
       isModalVisible: false,
+      showDetails: true,
     };
+  },
+  watch: {
+    selectedTicket: function () {
+      this.showDetails = !this.showDetails;
+    },
   },
   mounted() {
     console.log(this.selectedTicket, "slec");
@@ -475,18 +499,18 @@ export default {
       return color;
     },
     showModal(modal) {
-      this.selectedStatus = this.selectedTicket.status.id;
-      this.selectedPriority = this.selectedTicket.priority.id;
-      this.selectedAgent = this.selectedTicket.agent.id;
+      this.selectedStatus = this.selectedTicket.status;
+      this.selectedPriority = this.selectedTicket.priority;
+      this.selectedAgent = this.selectedTicket.agent;
       this.isModalVisible = modal;
     },
     closeModal() {
-      console.log(this.selectedStatus);
+      // console.log(this.selectedStatus);
       this.isModalVisible = false;
     },
     async updatePriority() {
       const data = await patch(`tickets/${this.selectedTicket.id}/priority`, {
-        priority: this.selectedPriority,
+        priority: this.selectedPriority.id,
       })
         .then((response) => {
           return response.data;
@@ -511,7 +535,7 @@ export default {
     },
     async updateStatus() {
       const data = await patch(`tickets/${this.selectedTicket.id}/status`, {
-        status: this.selectedStatus,
+        status: this.selectedStatus.id,
       })
         .then((response) => {
           return response.data;
@@ -525,18 +549,20 @@ export default {
           });
         });
       if (data.success) {
+        this.selectedTicket.status.name = this.selectedStatus.name;
+        this.$emit('statusUpdated', this.selectedTicket);
         this.closeModal();
         notify({
           text: data.message,
           theme: "green",
           hideAfter: 3000,
         });
-        // alert(data.message)
+        location.reload();
       }
     },
     async reAssignTicket() {
       const data = await patch(`tickets/${this.selectedTicket.id}/reassign`, {
-        agent: this.selectedAgent,
+        agent: this.selectedAgent.id,
       })
         .then((response) => {
           return response.data;
@@ -556,19 +582,49 @@ export default {
           theme: "green",
           hideAfter: 3000,
         });
-        // alert(data.message)
       }
     },
   },
 };
 </script>
 
-<style scoped>
+<style>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 5s ease;
+  transition: opacity 1s ease;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+.anim-fade-in {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.anim-fade-out {
+  animation-name: fade-out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 </style>

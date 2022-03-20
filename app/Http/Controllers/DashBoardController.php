@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Ticket;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashBoardController extends Controller
@@ -14,6 +16,17 @@ class DashBoardController extends Controller
         $customersCount = Customer::count();
         $openTicketsCount = Ticket::whereNull('completed_at')->count();
         $closedTicketsCount = $ticketsCount - $openTicketsCount;
-        return view('dashboard', compact('ticketsCount', 'openTicketsCount', 'closedTicketsCount', 'customersCount'));
+        // Total tickets counter per category for google pie chart
+        $ticketsPerCategory = Category::withCount('tickets')->orderBy('name')->get();
+        $ticketsPerAgent = User::select(['first_name', 'last_name'])->withCount('agentTickets')->get();
+        // dd($ticketsPerAgent);
+        return view('dashboard', compact(
+            'ticketsCount',
+            'openTicketsCount',
+            'closedTicketsCount',
+            'customersCount',
+            'ticketsPerCategory',
+            'ticketsPerAgent'
+        ));
     }
 }

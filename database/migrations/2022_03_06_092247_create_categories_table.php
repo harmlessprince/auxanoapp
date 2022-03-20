@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('status')->default(true);
+            $table->string('color')->default('#01579b');
             $table->timestamps();
         });
     }

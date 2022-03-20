@@ -13,7 +13,7 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes;
-
+    protected $append = ['full_name'];
     // protected $with = ['roles'];
 
     /**
@@ -61,5 +61,14 @@ class User extends Authenticatable
     public function getFullNameAttribute()
     {
         return "{$this->first_name} {$this->last_name}";
+    }
+
+    public function agentTickets()
+    {
+        return $this->hasMany(Ticket::class, 'agent_id');
+    }
+    public function userTickets()
+    {
+        return $this->hasMany(Ticket::class, 'user_id');
     }
 }

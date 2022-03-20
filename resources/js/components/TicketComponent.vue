@@ -26,7 +26,6 @@
       <ticket-list
         :tickets="tickets"
         @ticketSelected="getTicketSelected"
-        @animatedDetail="animatedDetail"
         :selectedTicket="currentTicket"
         :pagination="pagination"
         @nextPage="getTickets"
@@ -39,9 +38,8 @@
         :statuses="statuses"
         :priorities="priorities"
         :users="technicians"
-        :class="{
-          animate: animated,
-        }"
+        :key="Math.random()"
+        @statusUpdated="statusUpdated"
       />
     </div>
     <!-- Container End -->
@@ -126,8 +124,13 @@ export default {
     getTicketSelected(ticketSelected) {
       this.currentTicket = ticketSelected;
     },
-    animatedDetail(animated) {
-      this.animated = animated;
+    statusUpdated(updatedItem) {
+      console.log(updatedItem.status.name);
+      // const newState = this.tickets.map((ticket) =>{
+      //   if (ticket.id == this.currentTicket.id) {
+      //     console.log(ticket.status);
+      //   }
+      // })
     },
     async getStatus() {
       this.statuses = await get("/statuses")
@@ -161,6 +164,7 @@ export default {
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;
+  opacity: 1;
 }
 
 .v-enter-from,
@@ -171,11 +175,3 @@ export default {
   /* opacity: 0; */
 }
 </style>
-// first_page_url: "http://auxanoapp.test/api/tickets?page=1";
-//       from: 1;
-//       next_page_url: "http://auxanoapp.test/api/tickets?page=2";
-//       path: "http://auxanoapp.test/api/tickets";
-//       per_page: 15;
-//       prev_page_url: null;
-//       to: 15;
-//       current_page: 1

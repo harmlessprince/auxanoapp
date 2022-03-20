@@ -173,14 +173,14 @@ export default {
       console.log("closed");
       this.$emit("close");
     },
-    save(){
-      this.$emit('clicked');
-    }
+    save() {
+      this.$emit("clicked");
+    },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .modal-fade-enter,
 .modal-fade-leave-to {
   opacity: 0;
