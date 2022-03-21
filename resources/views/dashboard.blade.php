@@ -4,13 +4,15 @@
 
 @section('content')
     @include('partials.cards')
+    @include('partials.stat-tab')
     @include('partials.charts')
+   
 @endsection
 
 @push('scripts')
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="{{ asset('template/assets/js/charts-lines.js') }}" defer></script>
+    {{-- <script src="{{ asset('template/assets/js/charts-lines.js') }}" defer></script> --}}
     <script>
         const ticketsPerAgent = @json($ticketsPerAgent->toArray());
         const ticketsPerCategory = @json($ticketsPerCategory->toArray());

@@ -1,8 +1,6 @@
 // import axios from "axios";
 // import Auth from "./auth";
 axios.defaults.baseURL = process.env.MIX_APP_URL;
-// 
-console.log(axios.defaults);
 export const get = (url, params = {}) =>
     axios({ method: "GET", url, headers: {}, params });
 export const del = (url) =>

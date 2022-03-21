@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CategoryController as ApiCategoryController;
+use App\Http\Controllers\Api\DashboardController as ApiDashboardController;
 use App\Http\Controllers\Api\PriorityController as ApiPriorityController;
 use App\Http\Controllers\Api\StatusController;
 use App\Http\Controllers\Api\TechnicianController;
@@ -49,5 +50,6 @@ Route::middleware('auth')->group(function () {
         Route::get('priorities', [ApiPriorityController::class, 'index'])->name('priorities');
         Route::get('technicians', [TechnicianController::class, 'index']);
         Route::get('tickets', [ApiTicketController::class, 'index'])->name('tickets');
+        Route::get('dashboard', [ApiDashboardController::class, 'index'])->name('dashboard.index');
     });
 });

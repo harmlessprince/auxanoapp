@@ -67,8 +67,24 @@ class User extends Authenticatable
     {
         return $this->hasMany(Ticket::class, 'agent_id');
     }
+    public function agentCompleteTickets()
+    {
+        return $this->hasMany(Ticket::class, 'agent_id')->whereNotNull('completed_at');
+    }
+    public function agentOpenTickets()
+    {
+        return $this->hasMany(Ticket::class, 'agent_id')->whereNull('completed_at');
+    }
     public function userTickets()
     {
         return $this->hasMany(Ticket::class, 'user_id');
+    }
+    public function userCompleteTickets()
+    {
+        return $this->hasMany(Ticket::class, 'user_id')->whereNotNull('completed_at');
+    }
+    public function userOpenTickets()
+    {
+        return $this->hasMany(Ticket::class, 'user_id')->whereNull('completed_at');
     }
 }

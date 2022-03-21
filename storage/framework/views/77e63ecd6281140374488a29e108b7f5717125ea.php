@@ -3,13 +3,15 @@
 
 <?php $__env->startSection('content'); ?>
     <?php echo $__env->make('partials.cards', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('partials.stat-tab', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->make('partials.charts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+   
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startPush('scripts'); ?>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="<?php echo e(asset('template/assets/js/charts-lines.js')); ?>" defer></script>
+    
     <script>
         const ticketsPerAgent = <?php echo json_encode($ticketsPerAgent->toArray(), 15, 512) ?>;
         const ticketsPerCategory = <?php echo json_encode($ticketsPerCategory->toArray(), 15, 512) ?>;

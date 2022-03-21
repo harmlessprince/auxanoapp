@@ -12,6 +12,7 @@ Vue.component("ticket-component", require("./components/TicketComponent.vue").de
 // https://vuejsexamples.com/easily-display-notifications-to-your-users-built-with-vue/
 Vue.component('notifications', Notifications);
 
+Vue.component('tab-component', require('./components/StatTab/MainTabComponent.vue').default)
 // window.Alpine = Alpine;
 
 // Alpine.start();

@@ -19,7 +19,9 @@ class DashBoardController extends Controller
         // Total tickets counter per category for google pie chart
         $ticketsPerCategory = Category::withCount('tickets')->orderBy('name')->get();
         $ticketsPerAgent = User::select(['first_name', 'last_name'])->withCount('agentTickets')->get();
-        // dd($ticketsPerAgent);
+        
+        $agentPertTicketCompleted =  User::query()->select(['first_name', 'last_name'])->withCount('agentOpenTickets', 'agentCompleteTickets', 'agentTickets')->get();
+       
         return view('dashboard', compact(
             'ticketsCount',
             'openTicketsCount',
@@ -29,4 +31,6 @@ class DashBoardController extends Controller
             'ticketsPerAgent'
         ));
     }
+
+
 }

@@ -87,7 +87,7 @@ export default {
     await this.getTechnicians();
     await this.getTickets();
     this.loading = false;
-    console.log(screen.width + "px");
+    // console.log(screen.width + "px");
   },
   mounted() {},
   methods: {
