@@ -16,21 +16,34 @@ class StatusSeeder extends Seeder
     {
         $statuses = [
             [
-                'name' => 'To do',
+                'name' => 'Unassigned',
                 'color' => '#3b82f6' //blue
             ],
             [
-                'name' => 'In Progress',
-                'color' => '#eab308' //yellow
+                'name' => 'Assigned',
+                'color' => '#ffd600' //ffd600 yellow
             ],
             [
-                'name' => 'Done',
-                'color' => '#22c55e' //green
+                'name' => 'In Progress',
+                'color' => '#304ffe' //yellow
+            ],
+            [
+                'name' => 'Awaiting feedback',
+                'color' => '#827717' //lime
+            ],
+            [
+                'name' => 'Completed',
+                'color' => '#827717' //green
             ],
             [
                 'name' => 'Canceled',
+                'color' => '#212121' //red
+            ],
+            [
+                'name' => 'Abandoned',
                 'color' => '#ef4444' //red
             ]
+
         ];
 
         foreach ($statuses as $k => $value) {

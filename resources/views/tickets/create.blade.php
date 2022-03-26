@@ -9,6 +9,20 @@
         <form method="POST" action="{{ route('tickets.store') }}">
             @csrf
             <div class="flex flex-wrap -mx-3 mb-3">
+                <!-- status -->
+                <div class="w-full px-3 mb-3">
+                    <x-label for="customer" :value="__('Customer')" />
+                    <x-select required name='customer'>
+                        <option value="" class="">---Select---</option>
+                        @foreach ($customers as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }} -------- {{ $item->email }}
+                            </option>
+                        @endforeach
+                    </x-select>
+                    <x-input-error message='$message' name='customer' />
+                </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-3">
                 <div class="w-full px-3 mb-3">
                     <x-label for="subject" :value="__('Ticket Name')" />
                     <x-input id="ticket_name" class="block mt-1 w-full" type="text" name="ticket_name"
@@ -52,31 +66,27 @@
                 </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-3">
-                <!-- status -->
-                <div class="w-full px-3 mb-3">
-                    <x-label for="customer" :value="__('Customer')" />
-                    <x-select required name='customer'>
-                        <option value="" class="">---Select---</option>
-                        @foreach ($customers as $item)
-                            <option value="{{ $item->id }}">{{ $item->name }} -------- {{ $item->email }}
-                            </option>
-                        @endforeach
-                    </x-select>
-                    <x-input-error message='$message' name='customer' />
-                </div>
-            </div>
-            <div class="flex flex-wrap -mx-3 mb-3">
-                <!-- status -->
-                <div class="w-full px-3 mb-3">
-                    <x-label for="assign_to" :value="__('Assign To')" />
-                    <x-select required name='assign_to'>
-                        <option value="" class="">---Select---</option>
-                        @foreach ($users as $item)
+                <div class="w-1/2 px-3 mb-3">
+                    <x-label for="assign_to" :value="__('Assign To Agent')" />
+                    <x-select required name='assign_to_agent'>
+                        <option value="" class="">---Select Agent ---</option>
+                        @foreach ($agents as $item)
                             <option value="{{ $item->id }}">{{ $item->first_name }} {{ $item->last_name }}
                             </option>
                         @endforeach
                     </x-select>
-                    <x-input-error message='$message' name='assign_to' />
+                    <x-input-error message='$message' name='assign_to_agent' />
+                </div>
+                <div class="w-1/2 px-3 mb-3">
+                    <x-label for="assign_to" :value="__('Assign To Technician')" />
+                    <x-select required name='assign_to_technician'>
+                        <option value="" class="">---Select Technician---</option>
+                        @foreach ($technicians as $item)
+                            <option value="{{ $item->id }}">{{ $item->first_name }} {{ $item->last_name }}
+                            </option>
+                        @endforeach
+                    </x-select>
+                    <x-input-error message='$message' name='assign_to_technician' />
                 </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-3">
@@ -102,7 +112,7 @@
                 <div class="w-full px-3 mb-3">
                     <x-label for="due_date" :value="__('Due Date')" />
                     <x-input id="due_date" class="block mt-1 w-full" type="date" name="due_date"
-                        value="{{ old('due_date') }}" required autofocus placeholder='' min=" {{ date('Y-m-d')}}" />
+                        value="{{ old('due_date') }}" required autofocus placeholder='' min=" {{ date('Y-m-d') }}" />
                     <x-input-error message='$message' name='due_date' />
                 </div>
             </div>

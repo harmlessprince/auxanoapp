@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use App\Enums\UserType;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -48,10 +50,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function role()
-    {
-        return $this->hasOne(Role::class, 'model_id')->latestOfMany();
-    }
+    // public function role()
+    // {
+    //     return $this->hasOne(Role::class, 'model_id')->latestOfMany();
+    // }
 
     /**
      * Get the user's full name.
@@ -86,5 +88,23 @@ class User extends Authenticatable
     public function userOpenTickets()
     {
         return $this->hasMany(Ticket::class, 'user_id')->whereNull('completed_at');
+    }
+
+    //SCOPES
+    public function scopeSuperAdmins(Builder $query)
+    {
+        return $query->role(UserType::SUPER_ADMIN);
+    }
+    public function scopeAdmins(Builder $query)
+    {
+        return $query->role(UserType::ADMIN);
+    }
+    public function scopeAgents(Builder $query)
+    {
+        return $query->role(UserType::AGENT);
+    }
+    public function scopeTechnicians(Builder $query)
+    {
+        return $query->role(UserType::TECHNICIAN);
     }
 }

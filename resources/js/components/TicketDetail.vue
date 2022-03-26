@@ -222,14 +222,10 @@
           <span
             class="
               capitalize
-              px-2
-              py-1
               font-semibold
               whitespace-nowrap
-              rounded-full
               text-sm
             "
-            :class="getStatusColor(selectedTicket.status.name)"
           >
             {{ selectedTicket.status.name }}
           </span>

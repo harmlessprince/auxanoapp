@@ -29,7 +29,8 @@ class StoreTicketRequest extends FormRequest
             'priority' => ['required', 'integer', 'exists:priorities,id'],
             'category' => ['required', 'integer', 'exists:categories,id'],
             'customer' => ['required', 'integer', 'exists:customers,id'],
-            'assign_to' => ['required', 'integer', 'exists:users,id'],
+            'assign_to_technician' => ['nullable', 'integer', 'exists:users,id'],
+            'assign_to_agent' => ['nullable', 'integer', 'exists:users,id'],
             'fault_reported' => ['required', 'string', 'max:200'],
             'fault_observed' => ['required', 'string', 'max:200'],
             'due_date' => ['required', 'date']

@@ -29,6 +29,17 @@ class TicketObserver
     }
 
     /**
+     * Handle the ticket "saving" event.
+     *
+     * @param  \App\Models\Ticket  $ticket
+     * @return void
+     */
+    public function saving(Ticket $ticket)
+    {
+        $ticket->ticket_number = 'TCK-' . strtoupper(uniqid());
+    }
+
+    /**
      * Handle the Ticket "updated" event.
      *
      * @param  \App\Models\Ticket  $ticket

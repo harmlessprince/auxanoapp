@@ -3932,10 +3932,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -48256,8 +48252,7 @@ var render = function () {
               "span",
               {
                 staticClass:
-                  "\n            capitalize\n            px-2\n            py-1\n            font-semibold\n            whitespace-nowrap\n            rounded-full\n            text-sm\n          ",
-                class: _vm.getStatusColor(_vm.selectedTicket.status.name),
+                  "\n            capitalize\n            font-semibold\n            whitespace-nowrap\n            text-sm\n          ",
               },
               [
                 _vm._v(

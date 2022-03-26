@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\UserType;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -27,9 +28,10 @@ class RoleAndPermissionSeeder extends Seeder
         // create roles and assign created permissions
 
         // this can be done as separate statements
-        Role::updateOrCreate(['name' => 'super admin']);
-        Role::updateOrCreate(['name' => 'admin']);
-        Role::updateOrCreate(['name' => 'technician']);
+        Role::updateOrCreate(['name' => UserType::SUPER_ADMIN]);
+        Role::updateOrCreate(['name' => UserType::ADMIN]);
+        Role::updateOrCreate(['name' => UserType::AGENT]);
+        Role::updateOrCreate(['name' => UserType::TECHNICIAN]);
         // $role->givePermissionTo('edit articles');
 
         // // or may be done by chaining

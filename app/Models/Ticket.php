@@ -51,6 +51,16 @@ class Ticket extends Model
         return   $this->belongsTo(Category::class, 'category_id');
     }
 
+     /**
+     * Get Ticket item.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function item()
+    {
+        return   $this->hasOne(Item::class, 'ticket_id');
+    }
+
     /**
      * Get Ticket audits.
      *

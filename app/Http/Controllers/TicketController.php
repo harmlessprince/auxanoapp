@@ -30,10 +30,11 @@ class TicketController extends Controller
         $data = $this->editCreateData();
         $statuses = $data['statuses'];
         $priorities =  $data['priorities'];
-        $users = $data['users'];
+        $agents = $data['agents'];
+        $technicians = $data['technicians'];
         $customers = $data['customers'];
         $categories = $data['categories'];
-        return view('tickets.create', compact('statuses', 'priorities', 'customers', 'categories', 'users'));
+        return view('tickets.create', compact('statuses', 'priorities', 'customers', 'categories', 'agents', 'technicians'));
     }
     public function store(StoreTicketRequest $request)
     {
@@ -63,7 +64,8 @@ class TicketController extends Controller
         return [
             'statuses' => Status::all(['id', 'name']),
             'priorities' => Priority::all(['id', 'name']),
-            'users' => User::all(['id', 'first_name', 'last_name']),
+            'agents' => User::agents()->get(['id', 'first_name', 'last_name']),
+            'technicians' => User::technicians()->get(['id', 'first_name', 'last_name']),
             'customers' => Customer::all(['id', 'name', 'email']),
             'categories' => Category::all(['id', 'name']),
         ];
