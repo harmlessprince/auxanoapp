@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTicketRequest;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Priority;
@@ -34,7 +35,8 @@ class TicketController extends Controller
         $technicians = $data['technicians'];
         $customers = $data['customers'];
         $categories = $data['categories'];
-        return view('tickets.create', compact('statuses', 'priorities', 'customers', 'categories', 'agents', 'technicians'));
+        $brands = $data['brands'];
+        return view('tickets.create', compact('statuses', 'priorities', 'customers', 'categories', 'agents', 'technicians', 'brands'));
     }
     public function store(StoreTicketRequest $request)
     {
@@ -68,6 +70,7 @@ class TicketController extends Controller
             'technicians' => User::technicians()->get(['id', 'first_name', 'last_name']),
             'customers' => Customer::all(['id', 'name', 'email']),
             'categories' => Category::all(['id', 'name']),
+            'brands' => Brand::all(['id', 'name']),
         ];
     }
     public function update(StoreTicketRequest $request, Ticket $ticket)

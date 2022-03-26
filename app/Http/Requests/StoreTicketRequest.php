@@ -33,7 +33,14 @@ class StoreTicketRequest extends FormRequest
             'assign_to_agent' => ['nullable', 'integer', 'exists:users,id'],
             'fault_reported' => ['required', 'string', 'max:200'],
             'fault_observed' => ['required', 'string', 'max:200'],
-            'due_date' => ['required', 'date']
+            'due_date' => ['required', 'date'],
+            //item
+            'brand' => ['required', 'integer', 'exists:brands,id'],
+            'model' => ['required', 'string'],
+            'serial_number' => ['required', 'string'],
+            'ram_size' => ['nullable', 'string'],
+            'drive_size' => ['nullable', 'string'],
+            'charger' => ['required', 'string'],
         ];
     }
 }

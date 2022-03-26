@@ -13,4 +13,8 @@ class Item extends Model
     {
         return $this->belongsTo(Ticket::class);
     }
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
 }

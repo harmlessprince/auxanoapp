@@ -219,14 +219,7 @@
           >
             Status
           </h6>
-          <span
-            class="
-              capitalize
-              font-semibold
-              whitespace-nowrap
-              text-sm
-            "
-          >
+          <span class="capitalize whitespace-nowrap text-sm">
             {{ selectedTicket.status.name }}
           </span>
         </div>
@@ -271,8 +264,76 @@
           >
             Category
           </h6>
-          <span class="font-semibold text-sm">
+          <span class="text-sm">
             {{ selectedTicket.category.name }}
+          </span>
+        </div>
+        <div class="mb-3">
+          <h6
+            class="
+              text-sm
+              font-semibold
+              text-gray-600
+              dark:text-gray-300
+              mb-1
+              uppercase
+            "
+          >
+            Brand
+          </h6>
+          <span class="text-sm">
+            {{ selectedTicket.item.brand.name }}
+          </span>
+        </div>
+        <div class="mb-3">
+          <h6
+            class="
+              text-sm
+              font-semibold
+              text-gray-600
+              dark:text-gray-300
+              mb-1
+              uppercase
+            "
+          >
+            Model
+          </h6>
+          <span class="text-sm">
+            {{ selectedTicket.item.model }}
+          </span>
+        </div>
+        <div class="mb-3">
+          <h6
+            class="
+              text-sm
+              font-semibold
+              text-gray-600
+              dark:text-gray-300
+              mb-1
+              uppercase
+            "
+          >
+            RAM Size
+          </h6>
+          <span class="text-sm">
+            {{ selectedTicket.item.ram_size }}
+          </span>
+        </div>
+        <div class="mb-3">
+          <h6
+            class="
+              text-sm
+              font-semibold
+              text-gray-600
+              dark:text-gray-300
+              mb-1
+              uppercase
+            "
+          >
+            Drive size
+          </h6>
+          <span class="text-sm">
+            {{ selectedTicket.item.drive_size }}
           </span>
         </div>
         <div class="mb-3">
@@ -288,7 +349,7 @@
           >
             Due Date
           </h6>
-          <span class="capitalize font-semibold leading-tight text-sm">
+          <span class="capitalize leading-tight text-sm">
             {{ selectedTicket.due_at }}
           </span>
         </div>
@@ -546,7 +607,7 @@ export default {
         });
       if (data.success) {
         this.selectedTicket.status.name = this.selectedStatus.name;
-        this.$emit('statusUpdated', this.selectedTicket);
+        this.$emit("statusUpdated", this.selectedTicket);
         this.closeModal();
         notify({
           text: data.message,

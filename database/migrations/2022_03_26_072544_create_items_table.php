@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->foreignId('brand_id');
             $table->string('model');
             $table->string('serial_number');
-            $table->boolean('charger')->default(true);
+            $table->string('charger')->default('no');
             $table->string('drive_size')->nullable();
             $table->string('ram_size')->nullable();
             $table->timestamps();

@@ -30,6 +30,14 @@ class TicketRepository extends BaseRepository
             'due_at' => $payload['due_date'],
             'user_id' => auth()->id()
         ]);
+        $model->item()->create([
+            'brand_id' => $payload['brand'],
+            'model' => $payload['model'],
+            'serial_number' => $payload['serial_number'],
+            'drive_size' => $payload['drive_size'] ?? null,
+            'ram_size' => $payload['ram_size'] ?? null,
+            'charger' => $payload['charger'],
+        ]);
         return $model->fresh();
     }
 

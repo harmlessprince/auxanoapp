@@ -3359,9 +3359,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }
 
                 _this2.currentTicket = _this2.tickets[0];
+                console.log(_this2.currentTicket);
                 _this2.loading = false;
 
-              case 10:
+              case 11:
               case "end":
                 return _context2.stop();
             }
@@ -3507,6 +3508,67 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4082,7 +4144,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 if (data.success) {
                   _this2.selectedTicket.status.name = _this2.selectedStatus.name;
 
-                  _this2.$emit('statusUpdated', _this2.selectedTicket);
+                  _this2.$emit("statusUpdated", _this2.selectedTicket);
 
                   _this2.closeModal();
 
@@ -48250,10 +48312,7 @@ var render = function () {
             _vm._v(" "),
             _c(
               "span",
-              {
-                staticClass:
-                  "\n            capitalize\n            font-semibold\n            whitespace-nowrap\n            text-sm\n          ",
-              },
+              { staticClass: "capitalize whitespace-nowrap text-sm" },
               [
                 _vm._v(
                   "\n          " +
@@ -48301,7 +48360,7 @@ var render = function () {
               [_vm._v("\n          Category\n        ")]
             ),
             _vm._v(" "),
-            _c("span", { staticClass: "font-semibold text-sm" }, [
+            _c("span", { staticClass: "text-sm" }, [
               _vm._v(
                 "\n          " +
                   _vm._s(_vm.selectedTicket.category.name) +
@@ -48317,20 +48376,92 @@ var render = function () {
                 staticClass:
                   "\n            text-sm\n            font-semibold\n            text-gray-600\n            dark:text-gray-300\n            mb-1\n            uppercase\n          ",
               },
+              [_vm._v("\n          Brand\n        ")]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "text-sm" }, [
+              _vm._v(
+                "\n          " +
+                  _vm._s(_vm.selectedTicket.item.brand.name) +
+                  "\n        "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-3" }, [
+            _c(
+              "h6",
+              {
+                staticClass:
+                  "\n            text-sm\n            font-semibold\n            text-gray-600\n            dark:text-gray-300\n            mb-1\n            uppercase\n          ",
+              },
+              [_vm._v("\n          Model\n        ")]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "text-sm" }, [
+              _vm._v(
+                "\n          " +
+                  _vm._s(_vm.selectedTicket.item.model) +
+                  "\n        "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-3" }, [
+            _c(
+              "h6",
+              {
+                staticClass:
+                  "\n            text-sm\n            font-semibold\n            text-gray-600\n            dark:text-gray-300\n            mb-1\n            uppercase\n          ",
+              },
+              [_vm._v("\n          RAM Size\n        ")]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "text-sm" }, [
+              _vm._v(
+                "\n          " +
+                  _vm._s(_vm.selectedTicket.item.ram_size) +
+                  "\n        "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-3" }, [
+            _c(
+              "h6",
+              {
+                staticClass:
+                  "\n            text-sm\n            font-semibold\n            text-gray-600\n            dark:text-gray-300\n            mb-1\n            uppercase\n          ",
+              },
+              [_vm._v("\n          Drive size\n        ")]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "text-sm" }, [
+              _vm._v(
+                "\n          " +
+                  _vm._s(_vm.selectedTicket.item.drive_size) +
+                  "\n        "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-3" }, [
+            _c(
+              "h6",
+              {
+                staticClass:
+                  "\n            text-sm\n            font-semibold\n            text-gray-600\n            dark:text-gray-300\n            mb-1\n            uppercase\n          ",
+              },
               [_vm._v("\n          Due Date\n        ")]
             ),
             _vm._v(" "),
-            _c(
-              "span",
-              { staticClass: "capitalize font-semibold leading-tight text-sm" },
-              [
-                _vm._v(
-                  "\n          " +
-                    _vm._s(_vm.selectedTicket.due_at) +
-                    "\n        "
-                ),
-              ]
-            ),
+            _c("span", { staticClass: "capitalize leading-tight text-sm" }, [
+              _vm._v(
+                "\n          " +
+                  _vm._s(_vm.selectedTicket.due_at) +
+                  "\n        "
+              ),
+            ]),
           ]),
           _vm._v(" "),
           _c(

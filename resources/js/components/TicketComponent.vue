@@ -119,6 +119,7 @@ export default {
         this.showEmptyState = false;
       }
       this.currentTicket = this.tickets[0];
+      console.log(this.currentTicket);
       this.loading = false;
     },
     getTicketSelected(ticketSelected) {

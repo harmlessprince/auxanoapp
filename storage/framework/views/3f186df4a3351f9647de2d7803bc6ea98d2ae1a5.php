@@ -229,6 +229,208 @@
             <div class="flex flex-wrap -mx-3 mb-3">
                 <div class="w-1/2 px-3 mb-3">
                     <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.label','data' => ['for' => 'brand','value' => __('Brand')]]); ?>
+<?php $component->withName('label'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['for' => 'brand','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(__('Brand'))]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+                    <?php if (isset($component)) { $__componentOriginal9664ac210be45add4be058f3177c16028511e71a = $component; } ?>
+<?php $component = $__env->getContainer()->make(App\View\Components\Select::class, []); ?>
+<?php $component->withName('select'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['required' => true,'name' => 'brand']); ?>
+                        <option value="" class="">---Select Brand ---</option>
+                        <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($item->id); ?>"><?php echo e($item->name); ?>
+
+                            </option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                     <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal9664ac210be45add4be058f3177c16028511e71a)): ?>
+<?php $component = $__componentOriginal9664ac210be45add4be058f3177c16028511e71a; ?>
+<?php unset($__componentOriginal9664ac210be45add4be058f3177c16028511e71a); ?>
+<?php endif; ?>
+                    <?php if (isset($component)) { $__componentOriginal89519ced6d59f4f150433967f10a186198f86891 = $component; } ?>
+<?php $component = $__env->getContainer()->make(App\View\Components\InputError::class, ['message' => '$message','name' => 'brand']); ?>
+<?php $component->withName('input-error'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal89519ced6d59f4f150433967f10a186198f86891)): ?>
+<?php $component = $__componentOriginal89519ced6d59f4f150433967f10a186198f86891; ?>
+<?php unset($__componentOriginal89519ced6d59f4f150433967f10a186198f86891); ?>
+<?php endif; ?>
+                </div>
+                <div class="w-1/2 px-3 mb-3">
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.label','data' => ['for' => 'model','value' => __('Model')]]); ?>
+<?php $component->withName('label'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['for' => 'model','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(__('Model'))]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.input','data' => ['id' => 'model','class' => 'block mt-1 w-full','type' => 'text','name' => 'model','value' => ''.e(old('model')).'','required' => true,'placeholder' => 'Latitude E77450']]); ?>
+<?php $component->withName('input'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['id' => 'model','class' => 'block mt-1 w-full','type' => 'text','name' => 'model','value' => ''.e(old('model')).'','required' => true,'placeholder' => 'Latitude E77450']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+                    <?php if (isset($component)) { $__componentOriginal89519ced6d59f4f150433967f10a186198f86891 = $component; } ?>
+<?php $component = $__env->getContainer()->make(App\View\Components\InputError::class, ['message' => '$message','name' => 'model']); ?>
+<?php $component->withName('input-error'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal89519ced6d59f4f150433967f10a186198f86891)): ?>
+<?php $component = $__componentOriginal89519ced6d59f4f150433967f10a186198f86891; ?>
+<?php unset($__componentOriginal89519ced6d59f4f150433967f10a186198f86891); ?>
+<?php endif; ?>
+                </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-3">
+                <div class="w-full px-3 mb-3">
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.label','data' => ['for' => 'serial_number','value' => __('Serial Number')]]); ?>
+<?php $component->withName('label'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['for' => 'serial_number','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(__('Serial Number'))]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.input','data' => ['id' => 'serial_number','class' => 'block mt-1 w-full','type' => 'text','name' => 'serial_number','value' => ''.e(old('serial_number')).'','required' => true,'placeholder' => 'NP39202028']]); ?>
+<?php $component->withName('input'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['id' => 'serial_number','class' => 'block mt-1 w-full','type' => 'text','name' => 'serial_number','value' => ''.e(old('serial_number')).'','required' => true,'placeholder' => 'NP39202028']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+                    <?php if (isset($component)) { $__componentOriginal89519ced6d59f4f150433967f10a186198f86891 = $component; } ?>
+<?php $component = $__env->getContainer()->make(App\View\Components\InputError::class, ['message' => '$message','name' => 'serial_number']); ?>
+<?php $component->withName('input-error'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal89519ced6d59f4f150433967f10a186198f86891)): ?>
+<?php $component = $__componentOriginal89519ced6d59f4f150433967f10a186198f86891; ?>
+<?php unset($__componentOriginal89519ced6d59f4f150433967f10a186198f86891); ?>
+<?php endif; ?>
+                </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-3">
+                <div class="w-1/2 px-3 mb-3">
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.label','data' => ['for' => 'drive_size','value' => __('Drive Size(256GB)')]]); ?>
+<?php $component->withName('label'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['for' => 'drive_size','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(__('Drive Size(256GB)'))]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.input','data' => ['id' => 'drive_size','class' => 'block mt-1 w-full','type' => 'text','name' => 'drive_size','value' => ''.e(old('drive_size')).'','placeholder' => '256GB']]); ?>
+<?php $component->withName('input'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['id' => 'drive_size','class' => 'block mt-1 w-full','type' => 'text','name' => 'drive_size','value' => ''.e(old('drive_size')).'','placeholder' => '256GB']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+                    <?php if (isset($component)) { $__componentOriginal89519ced6d59f4f150433967f10a186198f86891 = $component; } ?>
+<?php $component = $__env->getContainer()->make(App\View\Components\InputError::class, ['message' => '$message','name' => 'drive_size']); ?>
+<?php $component->withName('input-error'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal89519ced6d59f4f150433967f10a186198f86891)): ?>
+<?php $component = $__componentOriginal89519ced6d59f4f150433967f10a186198f86891; ?>
+<?php unset($__componentOriginal89519ced6d59f4f150433967f10a186198f86891); ?>
+<?php endif; ?>
+                </div>
+                <div class="w-1/2 px-3 mb-3">
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.label','data' => ['for' => 'ram_size','value' => __('Ram Size(4GB)')]]); ?>
+<?php $component->withName('label'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['for' => 'ram_size','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(__('Ram Size(4GB)'))]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.input','data' => ['id' => 'v','class' => 'block mt-1 w-full','type' => 'text','name' => 'ram_size','value' => ''.e(old('drive_size')).'','placeholder' => '4GB']]); ?>
+<?php $component->withName('input'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['id' => 'v','class' => 'block mt-1 w-full','type' => 'text','name' => 'ram_size','value' => ''.e(old('drive_size')).'','placeholder' => '4GB']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+                    <?php if (isset($component)) { $__componentOriginal89519ced6d59f4f150433967f10a186198f86891 = $component; } ?>
+<?php $component = $__env->getContainer()->make(App\View\Components\InputError::class, ['message' => '$message','name' => 'ram_size']); ?>
+<?php $component->withName('input-error'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal89519ced6d59f4f150433967f10a186198f86891)): ?>
+<?php $component = $__componentOriginal89519ced6d59f4f150433967f10a186198f86891; ?>
+<?php unset($__componentOriginal89519ced6d59f4f150433967f10a186198f86891); ?>
+<?php endif; ?>
+                </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-3">
+                <div class="w-1/2 px-3 mb-3">
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.label','data' => ['for' => 'assign_to','value' => __('Assign To Agent')]]); ?>
 <?php $component->withName('label'); ?>
 <?php if ($component->shouldRender()): ?>
@@ -419,7 +621,25 @@
 <?php endif; ?>
                 </div>
             </div>
-
+            <div class="mt-4 text-sm">
+                <span class="text-gray-700 dark:text-gray-400">
+                    Is charger included ?
+                </span>
+                <div class="mt-2">
+                    <label class="inline-flex items-center text-gray-600 dark:text-gray-400">
+                        <input type="radio"
+                            class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                            name="charger" value="yes">
+                        <span class="ml-2">Yes charger is included</span>
+                    </label>
+                    <label class="inline-flex items-center ml-6 text-gray-600 dark:text-gray-400">
+                        <input type="radio"
+                            class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                            name="charger" value="no">
+                        <span class="ml-2">No charger is not included</span>
+                    </label>
+                </div>
+            </div>
             <div class="flex justify-end">
                 <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.button','data' => []]); ?>

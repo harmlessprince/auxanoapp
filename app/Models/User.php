@@ -107,4 +107,22 @@ class User extends Authenticatable
     {
         return $query->role(UserType::TECHNICIAN);
     }
+
+    //ROLE CHECK
+    public function isAgent()
+    {
+        return auth()->user()->hasRole(UserType::AGENT);
+    }
+    public function isSuperAdmin()
+    {
+        return auth()->user()->hasRole(UserType::SUPER_ADMIN);
+    }
+    public function isAdmin()
+    {
+        return auth()->user()->hasRole(UserType::ADMIN);
+    }
+    public function isTechnician()
+    {
+        return auth()->user()->hasRole(UserType::TECHNICIAN);
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\UserType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,7 +10,7 @@ class Ticket extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $with =['agent', 'user', 'status', 'priority', 'category', 'audits', 'customer', 'comments'];
+    protected $with =['agent', 'user', 'status', 'priority', 'category', 'audits', 'customer', 'comments', 'item', 'item.brand'];
 
     /**
      * Get all of the ticket's comments.
@@ -113,6 +114,9 @@ class Ticket extends Model
         return (bool) $this->completed_at;
     }
 
+  
+
+    //scopes
     /**
      * List of completed tickets.
      *

@@ -23,9 +23,9 @@ class TicketFactory extends Factory
         $a =  Arr::random(range(1, 10));
         $c =  Arr::random(range(1, 10));
         return [
-            'subject' => $this->faker->sentence(),
-            'fault_reported' => $this->faker->sentence(10),
-            'fault_observed' => $this->faker->sentence(10),
+            'subject' => $this->faker->realText(50),
+            'fault_reported' => $this->faker->realText(250),
+            'fault_observed' => $this->faker->realText(250),
             'status_id' => $s,
             'category_id' => $p,
             'priority_id' => $p,
