@@ -47,21 +47,7 @@
                     <x-input-error message='$message' name='role' />
                 </div>
             </div>
-            {{-- <div class="flex flex-wrap -mx-3 mb-3">
-                <div class="w-1/2 px-3 mb-3">
-                    <x-label for="" :value="__('password')" />
-
-                    <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autofocus
-                        placeholder="******************" />
-                    <x-input-error message='$message' name='password' />
-                </div>
-                <div class="w-1/2 px-3 mb-3">
-                    <x-label for="" :value="__('Confirm Password')" />
-                    <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
-                        name="password_confirmation" required autofocus placeholder="******************" />
-                    <x-input-error message='$message' name='confirm' />
-                </div>
-            </div> --}}
+          
             <div class="flex justify-end">
                 <x-button>
                     Update

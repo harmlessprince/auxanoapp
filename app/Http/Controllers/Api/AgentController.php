@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class TechnicianController extends Controller
+class AgentController extends Controller
 {
     public function index()
     {
         return response()->json([
-            'data' => User::all(['id', 'first_name', 'last_name']),
+            'data' => User::agents(['id', 'first_name', 'last_name'])->get(),
         ]);
     }
 }

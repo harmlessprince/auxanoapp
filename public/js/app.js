@@ -2653,7 +2653,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ["statuses", "categories", "priorities", "technicians"],
+  props: ["statuses", "categories", "priorities", "agents"],
   components: {
     "v-button": _Button_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
@@ -2662,7 +2662,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       status: "",
       category: "",
       priority: "",
-      technician: "",
+      agent: "",
       ticket_name: ""
     };
   },
@@ -2686,7 +2686,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         status: this.status,
         category: this.category,
         priority: this.priority,
-        technician: this.technician,
+        agent: this.agent,
         ticket_name: this.ticket_name
       });
       this.$emit("search", params);
@@ -3268,7 +3268,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       statuses: [],
       categories: [],
       priorities: [],
-      technicians: [],
+      agents: [],
       loading: false,
       showEmptyState: false,
       currentTicket: null,
@@ -3298,7 +3298,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
             case 7:
               _context.next = 9;
-              return _this.getTechnicians();
+              return _this.getAgents();
 
             case 9:
               _context.next = 11;
@@ -3454,7 +3454,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee5);
       }))();
     },
-    getTechnicians: function getTechnicians() {
+    getAgents: function getAgents() {
       var _this6 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee6() {
@@ -3463,12 +3463,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context6.prev = _context6.next) {
               case 0:
                 _context6.next = 2;
-                return (0,_utilities_apiService__WEBPACK_IMPORTED_MODULE_1__.get)("/technicians").then(function (response) {
+                return (0,_utilities_apiService__WEBPACK_IMPORTED_MODULE_1__.get)("/agents").then(function (response) {
                   return response.data.data;
                 });
 
               case 2:
-                _this6.technicians = _context6.sent;
+                _this6.agents = _context6.sent;
 
               case 3:
               case "end":
@@ -47295,7 +47295,7 @@ var render = function () {
         _c(
           "span",
           { staticClass: "text-gray-700 dark:text-gray-400 font-bold" },
-          [_vm._v("Technicians")]
+          [_vm._v("Agents")]
         ),
         _vm._v(" "),
         _c(
@@ -47305,8 +47305,8 @@ var render = function () {
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.technician,
-                expression: "technician",
+                value: _vm.agent,
+                expression: "agent",
               },
             ],
             staticClass:
@@ -47321,7 +47321,7 @@ var render = function () {
                     var val = "_value" in o ? o._value : o.value
                     return val
                   })
-                _vm.technician = $event.target.multiple
+                _vm.agent = $event.target.multiple
                   ? $$selectedVal
                   : $$selectedVal[0]
               },
@@ -47329,10 +47329,10 @@ var render = function () {
           },
           [
             _c("option", { attrs: { value: "" } }, [
-              _vm._v("---Select Technician----"),
+              _vm._v("---Select Agent----"),
             ]),
             _vm._v(" "),
-            _vm._l(_vm.technicians, function (item) {
+            _vm._l(_vm.agents, function (item) {
               return _c(
                 "option",
                 { key: item.id, domProps: { value: item.id } },
@@ -47984,7 +47984,7 @@ var render = function () {
           categories: _vm.categories,
           statuses: _vm.statuses,
           priorities: _vm.priorities,
-          technicians: _vm.technicians,
+          agents: _vm.agents,
         },
         on: { search: _vm.getTickets },
       }),
@@ -48016,7 +48016,7 @@ var render = function () {
                   selectedTicket: _vm.currentTicket,
                   statuses: _vm.statuses,
                   priorities: _vm.priorities,
-                  users: _vm.technicians,
+                  users: _vm.agents,
                 },
                 on: { statusUpdated: _vm.statusUpdated },
               }),

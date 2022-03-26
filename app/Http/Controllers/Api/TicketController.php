@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Ticket;
+use App\QueryFilters\AgentFilter;
 use App\QueryFilters\CategoryFilter;
 use App\QueryFilters\PriorityFilter;
 use App\QueryFilters\StatusFilter;
@@ -22,6 +23,7 @@ class TicketController extends Controller
             PriorityFilter::class,
             CategoryFilter::class,
             TechnicianFilter::class,
+            AgentFilter::class,
             TicketNameFilter::class,
         ])->thenReturn()->latest()->paginate(20);
 

@@ -165,13 +165,13 @@
                     <label class="inline-flex items-center text-gray-600 dark:text-gray-400">
                         <input type="radio"
                             class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
-                            name="charger" value="yes">
+                            name="charger" value="1">
                         <span class="ml-2">Yes charger is included</span>
                     </label>
                     <label class="inline-flex items-center ml-6 text-gray-600 dark:text-gray-400">
                         <input type="radio"
                             class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
-                            name="charger" value="no">
+                            name="charger" value="0">
                         <span class="ml-2">No charger is not included</span>
                     </label>
                 </div>

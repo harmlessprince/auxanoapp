@@ -22,7 +22,6 @@ class TicketController extends Controller
     }
     public function index()
     {
-        // $tickets = Ticket::with(['status', 'priority', 'category', 'user', 'agent', 'customer'])->paginate();
         return view('tickets.index');
     }
 
@@ -54,11 +53,12 @@ class TicketController extends Controller
         $data = $this->editCreateData();
         $statuses = $data['statuses'];
         $priorities =  $data['priorities'];
-        $users = $data['users'];
+        $agents = $data['agents'];
         $customers = $data['customers'];
         $categories = $data['categories'];
+        $brands = $data['brands'];
 
-        return view('tickets.edit', compact('statuses', 'priorities', 'customers', 'categories', 'users', 'ticket'));
+        return view('tickets.edit', compact('statuses', 'priorities', 'customers', 'categories', 'ticket', 'brands'));
     }
 
     private function editCreateData()

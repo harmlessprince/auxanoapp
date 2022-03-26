@@ -90,7 +90,7 @@
     </label>
     <label class="block text-sm">
       <span class="text-gray-700 dark:text-gray-400 font-bold"
-        >Technicians</span
+        >Agents</span
       >
       <select
         class="
@@ -103,10 +103,10 @@
           focus:border-purple-400 focus:outline-none focus:shadow-outline-purple
           dark:focus:shadow-outline-gray
         "
-        v-model="technician"
+        v-model="agent"
       >
-        <option value="">---Select Technician----</option>
-        <option v-for="item in technicians" :key="item.id" :value="item.id">
+        <option value="">---Select Agent----</option>
+        <option v-for="item in agents" :key="item.id" :value="item.id">
           {{ item.first_name }} {{ item.last_name }}
         </option>
       </select>
@@ -167,7 +167,7 @@
 <script>
 import Button from "./Button.vue";
 export default {
-  props: ["statuses", "categories", "priorities", "technicians"],
+  props: ["statuses", "categories", "priorities", "agents"],
   components: {
     "v-button": Button,
   },
@@ -176,7 +176,7 @@ export default {
       status: "",
       category: "",
       priority: "",
-      technician: "",
+      agent: "",
       ticket_name: "",
     };
   },
@@ -188,7 +188,7 @@ export default {
         status: this.status,
         category: this.category,
         priority: this.priority,
-        technician: this.technician,
+        agent: this.agent,
         ticket_name: this.ticket_name,
       });
       this.$emit("search", params);

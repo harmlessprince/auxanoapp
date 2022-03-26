@@ -4,7 +4,7 @@ use App\Http\Controllers\Api\CategoryController as ApiCategoryController;
 use App\Http\Controllers\Api\DashboardController as ApiDashboardController;
 use App\Http\Controllers\Api\PriorityController as ApiPriorityController;
 use App\Http\Controllers\Api\StatusController;
-use App\Http\Controllers\Api\TechnicianController;
+use App\Http\Controllers\Api\AgentController;
 use App\Http\Controllers\Api\TicketAssignController;
 use App\Http\Controllers\Api\TicketController as ApiTicketController;
 use App\Http\Controllers\Api\TicketPriorityChangeController;
@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function () {
         Route::get('statuses', [StatusController::class, 'index'])->name('statuses');
         Route::get('categories', [ApiCategoryController::class, 'index'])->name('categories');
         Route::get('priorities', [ApiPriorityController::class, 'index'])->name('priorities');
-        Route::get('technicians', [TechnicianController::class, 'index']);
+        Route::get('agents', [AgentController::class, 'index']);
         Route::get('tickets', [ApiTicketController::class, 'index'])->name('tickets');
         Route::get('dashboard', [ApiDashboardController::class, 'index'])->name('dashboard.index');
     });

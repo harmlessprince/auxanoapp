@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\UserType;
 use App\Models\Role;
 use Illuminate\Database\Seeder;
 
@@ -16,7 +17,7 @@ class UserSeeder extends Seeder
     {
         \App\Models\User::factory(10)->create()->each(function ($user)
         {
-            $role = Role::all()->random();
+            $role = Role::where('name', '<>', UserType::SUPER_ADMIN)->where('name', '<>', UserType::ADMIN)->get()->random();
             $user->assignRole($role);
         });
     }

@@ -54,11 +54,20 @@ class TicketRepository extends BaseRepository
             'priority_id' => $payload['priority'],
             'category_id' => $payload['category'],
             'customer_id' => $payload['customer'],
-            'agent_id' => $payload['assign_to'],
+            'agent_id' => $payload['assign_to_agent'] ?? null,
+            'technician_id' => $payload['assign_to_technician'] ?? null,
             'fault_reported' => $payload['fault_reported'],
             'fault_observed' => $payload['fault_observed'],
             'due_at' => $payload['due_date'],
             'user_id' => auth()->id()
+        ]);
+        $model->item()->update([
+            'brand_id' => $payload['brand'],
+            'model' => $payload['model'],
+            'serial_number' => $payload['serial_number'],
+            'drive_size' => $payload['drive_size'] ?? null,
+            'ram_size' => $payload['ram_size'] ?? null,
+            'charger' => $payload['charger'],
         ]);
         $new = collect($model->getChanges());
         if ($new->count() > 0) {

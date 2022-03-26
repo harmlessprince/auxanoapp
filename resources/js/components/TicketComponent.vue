@@ -5,7 +5,7 @@
       :categories="categories"
       :statuses="statuses"
       :priorities="priorities"
-      :technicians="technicians"
+      :agents="agents"
       @search="getTickets"
     />
     <!-- Container -->
@@ -37,7 +37,7 @@
         :selectedTicket="currentTicket"
         :statuses="statuses"
         :priorities="priorities"
-        :users="technicians"
+        :users="agents"
         :key="Math.random()"
         @statusUpdated="statusUpdated"
       />
@@ -71,7 +71,7 @@ export default {
       statuses: [],
       categories: [],
       priorities: [],
-      technicians: [],
+      agents: [],
       loading: false,
       showEmptyState: false,
       currentTicket: null,
@@ -84,7 +84,7 @@ export default {
     await this.getStatus();
     await this.getPriority();
     await this.getCategory();
-    await this.getTechnicians();
+    await this.getAgents();
     await this.getTickets();
     this.loading = false;
     // console.log(screen.width + "px");
@@ -152,8 +152,8 @@ export default {
         return response.data.data;
       });
     },
-    async getTechnicians() {
-      this.technicians = await get("/technicians").then((response) => {
+    async getAgents() {
+      this.agents = await get("/agents").then((response) => {
         return response.data.data;
       });
     },
