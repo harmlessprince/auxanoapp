@@ -12,10 +12,11 @@
         <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300">
             All tasks
         </h4>
-        {{-- <x-link href="{{ route('tasks.create') }}">
-            Create Task
-        </x-link> --}}
+        <x-button @click="openModal">
+            Add Task
+        </x-button>
     </div>
+    @livewire('task-form-modal')
 
     <div id="app">
         <notifications></notifications>

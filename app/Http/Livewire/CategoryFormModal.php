@@ -32,6 +32,6 @@ class CategoryFormModal extends Component
     public function create()
     {
         $validatedData = $this->validate();
-        dd($validatedData);
+       
     }
 }

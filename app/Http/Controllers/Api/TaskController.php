@@ -28,6 +28,21 @@ class TaskController extends Controller
         return $tasks;
     }
 
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'title' => ['required', 'string', 'max:255'],
+            'description' => ['nullable', 'string']
+        ]);
+       $task = Task::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'assigned_to' => $request->assigned_to ?: auth()->id(),
+            'created_by' => auth()->id(),
+        ]);
+        return $this->successResponse('Task created successfully', ['task' => $task]);
+    }
+
     public function update(Request $request, Task $task)
     {
         $this->validate($request, [
@@ -49,7 +64,7 @@ class TaskController extends Controller
         $task->done = $request->done;
         $task->save();
         $message = $task->done ? 'marked has done' : "marked has not done";
-        return $this->successResponse('Task has been successfully '.$message);
+        return $this->successResponse('Task has been successfully ' . $message);
     }
     public function destroy(Task $task)
     {
@@ -68,6 +83,6 @@ class TaskController extends Controller
         $task->assigned_to = $request->assigned_to;
         $task->save();
         $name = $task->assignedTo->full_name;
-        return $this->successResponse('Task has been successfully assigned to '.$name);
+        return $this->successResponse('Task has been successfully assigned to ' . $name);
     }
 }
