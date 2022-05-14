@@ -22,7 +22,7 @@ abstract class Enum
     /**
      * @throws NotSupportedException
      */
-    final private function __clone()
+     private function __clone()
     {
         throw new NotSupportedException('Cloning not supported for this class');
     }
