@@ -3,7 +3,7 @@
     <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" />
 @endpush
 @section('page')
-    Tickets
+    Tasks
 @endsection
 
 @section('content')
