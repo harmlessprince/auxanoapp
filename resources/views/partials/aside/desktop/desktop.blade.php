@@ -9,6 +9,7 @@
           </ul>
           <ul>
               @include('partials.aside.desktop.user')
+              @include('partials.aside.desktop.task')
               @include('partials.aside.desktop.ticket')
               @include('partials.aside.desktop.role')
               @include('partials.aside.desktop.customer')

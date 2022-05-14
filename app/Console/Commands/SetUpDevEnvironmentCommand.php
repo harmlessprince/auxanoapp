@@ -23,6 +23,8 @@ class SetUpDevEnvironmentCommand extends Command
      */
     protected $description = 'Set up the development environment';
 
+    public User $user;
+
     /**
      * Create a new command instance.
      *
@@ -42,7 +44,7 @@ class SetUpDevEnvironmentCommand extends Command
     {
         $this->info('Setting up development environment');
         $this->MigrateAndSeedDatabase();
-        $user = $this->CreateJohnDoeUser();
+
         // $this->CreatePersonalAccessClient($user);
         // $this->CreatePersonalAccessToken($user);
         $this->info('All done. Bye!');
@@ -50,9 +52,11 @@ class SetUpDevEnvironmentCommand extends Command
     public function MigrateAndSeedDatabase()
     {
         $this->call('migrate:fresh');
+        $user = $this->CreateJohnDoeUser();
         $this->call('db:seed');
+         $user->assignRole(UserType::SUPER_ADMIN);
     }
-
+    
     public function createJohnDoeUser()
     {
         $this->info('Creating John Doe User');
@@ -65,7 +69,8 @@ class SetUpDevEnvironmentCommand extends Command
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
         ]);
-        $user->assignRole(UserType::SUPER_ADMIN);
+        $this->user = $user;
+       
         $this->info('John Doe created');
         $this->warn('Email: john@example.com');
         $this->warn('Password: password');

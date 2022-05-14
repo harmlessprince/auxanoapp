@@ -136,4 +136,13 @@ class Ticket extends Model
     {
         return $query->whereNull('completed_at');
     }
+
+    public function scopeUserTickets($query, $id)
+    {
+        return $query->where('user_id', $id);
+    }
+    public function scopeAgentTickets($query, $id)
+    {
+        return $query->where('agent_id', $id);
+    }
 }

@@ -36,6 +36,14 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {};
+  },
+};
+</script>
+
 <style scoped>
 .loader {
   border-top-color: #7e22ce;

@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             StatusSeeder::class,
             CustomerSeeder::class,
             TicketSeeder::class,
+            TaskSeeder::class,
         ]);
     }
 }

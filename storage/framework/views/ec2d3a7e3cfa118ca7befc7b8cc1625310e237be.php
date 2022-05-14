@@ -49,8 +49,6 @@
                 </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-3">
-                <?php echo e($errors); ?>
-
                 <!-- status -->
                 
                 <div class="w-1/3 px-3 mb-3 hidden">

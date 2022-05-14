@@ -43,7 +43,11 @@
       />
     </div>
     <!-- Container End -->
-    <empty-state v-show="showEmptyState"></empty-state>
+    <empty-state
+      v-if="showEmptyState"
+      :imageName="'confused-travolta.gif'"
+      :message="' We can\'t find anything, try searching again.'"
+    ></empty-state>
   </div>
 </template>
 
