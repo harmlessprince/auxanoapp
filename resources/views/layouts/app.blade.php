@@ -40,23 +40,24 @@
             </main>
         </div>
     </div>
+
+    
+    @livewireScripts
+    <script>
+        window.Laravel = {
+            csrfToken: '{{ csrf_token() }}'
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="{{ asset('template/assets/js/init-alpine.js') }}"></script>
+    <!-- You need focus-trap.js to make the modal accessible -->
+    <script src="{{ asset('template/assets/js/focus-trap.js') }}" defer></script>
+
+    <script src="{{ asset('/js/custom.js') }}"></script>
+    <script src="{{ mix('/js/app.js') }}"></script>
+    @stack('scripts')
 </body>
 
 
-@stack('scripts')
-
-@livewireScripts
-<script>
-    window.Laravel = {
-        csrfToken: '{{ csrf_token() }}'
-    }
-</script>
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-<script src="{{ asset('template/assets/js/init-alpine.js') }}"></script>
-<!-- You need focus-trap.js to make the modal accessible -->
-<script src="{{ asset('template/assets/js/focus-trap.js') }}" defer></script>
-
-<script src="{{ asset('/js/custom.js') }}"></script>
-<script src="{{ mix('/js/app.js') }}"></script>
 
 </html>

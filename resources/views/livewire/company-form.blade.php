@@ -15,8 +15,8 @@
                 <div class="w-1/2 px-3 mb-3">
                     <x-label for="" :value="__('Email')" />
 
-                    <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
-                        required autofocus placeholder='johndoe@gmail.com' wire:model.defer="email" />
+                    <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
+                        autofocus placeholder='johndoe@gmail.com' wire:model.defer="email" />
                     <x-input-error message='$message' name='email' />
                 </div>
             </div>
@@ -25,17 +25,18 @@
                 <div class="w-1/2 px-3 mb-3">
                     <x-label for="email" :value="__('Phone Number')" />
 
-                    <x-input id="email" class="block mt-1 w-full" type="text" name="phone_number"
-                        :value="old('phone_number')" required placeholder='23490874747' wire:model.defer="phone_number" />
+                    <x-input id="email" class="block mt-1 w-full" type="text" name="phone_number" :value="old('phone_number')"
+                        required placeholder='23490874747' wire:model.defer="phone_number" />
                     <x-input-error message='$message' name='phone_number' />
                 </div>
                 <div class="w-1/2 px-3 mb-3">
-                    
+
                     <x-label for="role" :value="__('Type')" />
                     <x-select required name='type' wire:model="type">
                         <option value="" class="uppercase">---Select---</option>
                         @foreach ($types as $item)
-                            <option value="{{ $item['value'] }}" wire:key="{{$item['value']}}" class="uppercase">{{ $item['name'] }}</option>
+                            <option value="{{ $item['value'] }}" wire:key="{{ $item['value'] }}"
+                                class="uppercase">{{ $item['name'] }}</option>
                         @endforeach
                     </x-select>
                     <x-input-error message='$message' name='type' />
@@ -49,7 +50,7 @@
                     <x-input-error message='$message' name='address' />
                 </div>
             </div>
-            
+
         </x-slot>
     </x-modal>
 

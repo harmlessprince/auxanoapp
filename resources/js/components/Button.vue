@@ -13,11 +13,24 @@
       transition-colors
       rounded-lg
       duration-150
-      border 
-      border-transparent
+      border border-transparent
       focus:outline-none
     "
+    @click="buttonClicked"
   >
     <slot> </slot>
   </button>
 </template>
+
+<script>
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    buttonClicked() {
+      this.$emit("clicked");
+    },
+  },
+};
+</script>

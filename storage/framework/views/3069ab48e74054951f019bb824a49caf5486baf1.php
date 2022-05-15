@@ -2,7 +2,7 @@
     <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" />
 <?php $__env->stopPush(); ?>
 <?php $__env->startSection('page'); ?>
-    Tickets
+    Tasks
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -28,15 +28,15 @@
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('task-form-modal')->html();
-} elseif ($_instance->childHasBeenRendered('Q9FTiXS')) {
-    $componentId = $_instance->getRenderedChildComponentId('Q9FTiXS');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Q9FTiXS');
+} elseif ($_instance->childHasBeenRendered('JTs7Z9p')) {
+    $componentId = $_instance->getRenderedChildComponentId('JTs7Z9p');
+    $componentTag = $_instance->getRenderedChildComponentTagName('JTs7Z9p');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Q9FTiXS');
+    $_instance->preserveRenderedChild('JTs7Z9p');
 } else {
     $response = \Livewire\Livewire::mount('task-form-modal');
     $html = $response->html();
-    $_instance->logRenderedChild('Q9FTiXS', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('JTs7Z9p', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

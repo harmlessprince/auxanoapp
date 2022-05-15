@@ -131,7 +131,7 @@
 <?php endif; ?>
                 </div>
                 <div class="w-1/2 px-3 mb-3">
-                    
+
                     <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.label','data' => ['for' => 'role','value' => __('Type')]]); ?>
 <?php $component->withName('label'); ?>
@@ -152,7 +152,8 @@
 <?php $component->withAttributes(['required' => true,'name' => 'type','wire:model' => 'type']); ?>
                         <option value="" class="uppercase">---Select---</option>
                         <?php $__currentLoopData = $types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value="<?php echo e($item['value']); ?>" wire:key="<?php echo e($item['value']); ?>" class="uppercase"><?php echo e($item['name']); ?></option>
+                            <option value="<?php echo e($item['value']); ?>" wire:key="<?php echo e($item['value']); ?>"
+                                class="uppercase"><?php echo e($item['name']); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -204,7 +205,7 @@
 <?php endif; ?>
                 </div>
             </div>
-            
+
          <?php $__env->endSlot(); ?>
      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

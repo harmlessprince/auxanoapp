@@ -18,6 +18,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\CategoryList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,7 +52,6 @@ Route::middleware('auth')->group(function () {
         Route::patch('tickets/{ticket}/priority', [TicketPriorityChangeController::class, 'update']);
         Route::patch('tickets/{ticket}/reassign', [TicketAssignController::class, 'update']);
         Route::get('statuses', [StatusController::class, 'index'])->name('statuses');
-        Route::get('categories', [ApiCategoryController::class, 'index'])->name('categories');
         Route::get('priorities', [ApiPriorityController::class, 'index'])->name('priorities');
         Route::get('agents', [AgentController::class, 'index']);
         Route::get('users', [ApiUserController::class, 'index']);
@@ -64,6 +64,11 @@ Route::middleware('auth')->group(function () {
             Route::patch('/{task}/mark', [ApiTaskController::class, 'mark'])->name('tasks.mark');
             Route::patch('/{task}/assign', [ApiTaskController::class, 'assign'])->name('tasks.assign');
             Route::delete('/{task}/delete', [ApiTaskController::class, 'destroy'])->name('tasks.destroy');
+        });
+        Route::prefix('categories')->group(function () {
+            Route::get('/', [ApiCategoryController::class, 'index'])->name('categories.name');
+            Route::patch('/{category}', [ApiCategoryController::class, 'update'])->name('categories.update');
+            Route::delete('/{category}', [ApiCategoryController::class, 'destroy'])->name('categories.delete');
         });
     });
 });

@@ -234,6 +234,14 @@ export default {
       this.removeTaskFromDoneTasks(task);
     },
     async removeTask(task) {
+      const response = confirm(
+        "Are your sure you want to delete this task titled: " +
+          task.title +
+          " this action can not be reversed"
+      );
+      if (response == false) {
+        return;
+      }
       const url = `tasks/${task.id}/delete`;
       await destroy(url)
         .then((response) => {

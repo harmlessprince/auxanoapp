@@ -8,13 +8,13 @@ import Notifications from "@voerro/vue-notifications";
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 /* import specific icons */
-import { faCheck, faUserSecret, faXmark, faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faUserSecret, faXmark, faArrowRight, faArrowLeft, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { faFloppyDisk, faPenToSquare, faTrashCan, faUser } from "@fortawesome/free-regular-svg-icons";
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* add icons to the library */
-library.add(faUserSecret, faCheck, faXmark, faArrowRight, faArrowLeft, faPenToSquare, faUser, faTrashCan, faFloppyDisk,faXmark)
+library.add(faUserSecret, faCheck, faXmark, faArrowRight, faArrowLeft, faPenToSquare, faUser, faTrashCan, faFloppyDisk,faXmark, faEdit, faTrash)
 
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -27,6 +27,11 @@ import Vue from "vue";
 Vue.component(
     "ticket-component",
     require("./components/TicketComponent.vue").default
+);
+
+Vue.component(
+    "category-component",
+    require("./components/CategoryComponent.vue").default
 );
 // https://vuejsexamples.com/easily-display-notifications-to-your-users-built-with-vue/
 Vue.component("notifications", Notifications);

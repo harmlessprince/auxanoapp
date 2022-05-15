@@ -10,4 +10,5 @@ export const formatDate = (date, format = null) => {
     if (!format) {
         return moment(date).fromNow();
     }
+    return moment(date).format(format);
 };

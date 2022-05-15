@@ -202,7 +202,7 @@
         </button>
       </div>
     </div>
-    <transition>
+    <transition  name="fade" appear>
       <assign-modal
         v-show="isModalVisible == 'assign-modal'"
         @close="closeModal"

@@ -10,19 +10,31 @@ class CategoryList extends Component
 {
     use WithPagination;
 
-    // public $name;
+    public $categories;
+    public $count = 0;
     public function render()
     {
-        return view('livewire.category-list', [
-            'categories' =>  Category::paginate(10)
-        ]);
+        $this->categories = Category::all();
+        return view('livewire.category-list')->extends('layouts.app');
     }
 
+    
+ 
+ 
+    public function increment()
+    {
+        $this->count++;
+    }
 
     public function edit(Category $category)
     {
         dd($category);
         // $this->openModal();/
         // $this->dispatchBrowserEvent('edit-equipment', ['equipment' => $equipment]);
+    }
+
+    public function store()
+    {
+        dd('kdkd');
     }
 }
