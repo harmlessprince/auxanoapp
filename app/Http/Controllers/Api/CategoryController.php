@@ -12,7 +12,7 @@ class CategoryController extends Controller
     public function index()
     {
         return response()->json([
-            'data' => Category::all(['id', 'name']),
+            'data' => Category::latest()->get(['id', 'name']),
         ]);
     }
 

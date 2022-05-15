@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\TicketController as ApiTicketController;
 use App\Http\Controllers\Api\TicketPriorityChangeController;
 use App\Http\Controllers\Api\TicketStatusChangeController;
 use App\Http\Controllers\Api\UserController as ApiUserController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashBoardController;
@@ -43,6 +44,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('roles', RoleController::class)->only(['index']);
     Route::resource('categories', CategoryController::class)->only(['index']);
+    Route::get('brands', [BrandController::class, 'index'])->name('brands.index');
     Route::resource('customers', CustomerController::class);
     Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
 
@@ -69,6 +71,11 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [ApiCategoryController::class, 'index'])->name('categories.name');
             Route::patch('/{category}', [ApiCategoryController::class, 'update'])->name('categories.update');
             Route::delete('/{category}', [ApiCategoryController::class, 'destroy'])->name('categories.delete');
+        });
+        Route::prefix('brands')->group(function () {
+            Route::get('/', [BrandController::class, 'allBrands'])->name('brands.name');
+            Route::patch('/{brand}', [BrandController::class, 'update'])->name('brands.update');
+            Route::delete('/{brand}', [BrandController::class, 'destroy'])->name('brands.delete');
         });
     });
 });

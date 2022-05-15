@@ -7,11 +7,7 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    private  $categoryRepository;
-    public function __construct(CategoryRepository $categoryRepository)
-    {
-        $this->categoryRepository = $categoryRepository;
-    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = $this->categoryRepository->paginate();
-        return view('categories.index', compact('categories'));
+       
+        return view('categories.index');
     }
 }

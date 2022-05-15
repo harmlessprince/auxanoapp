@@ -14,6 +14,7 @@
               @include('partials.aside.desktop.role')
               @include('partials.aside.desktop.customer')
               @include('partials.aside.desktop.category')
+              @include('partials.aside.desktop.brand')
           </ul>
           <div class="px-6 my-6">
               <a href="{{ route('tickets.create') }}"

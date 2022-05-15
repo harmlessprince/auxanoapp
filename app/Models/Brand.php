@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Brand extends Model
 {
+    protected $guarded = [];
     use HasFactory;
-    protected $fillable =['name'];
+
+    public function item()
+    {
+        return $this->hasMany(Item::class);
+    }
 }

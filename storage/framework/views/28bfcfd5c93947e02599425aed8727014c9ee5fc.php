@@ -15,6 +15,7 @@
               <?php echo $__env->make('partials.aside.desktop.role', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
               <?php echo $__env->make('partials.aside.desktop.customer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
               <?php echo $__env->make('partials.aside.desktop.category', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+              <?php echo $__env->make('partials.aside.desktop.brand', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
           </ul>
           <div class="px-6 my-6">
               <a href="<?php echo e(route('tickets.create')); ?>"

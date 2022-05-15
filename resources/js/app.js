@@ -33,6 +33,12 @@ Vue.component(
     "category-component",
     require("./components/CategoryComponent.vue").default
 );
+
+
+Vue.component(
+    "brand-component",
+    require("./components/brand/BrandComponent.vue").default
+);
 // https://vuejsexamples.com/easily-display-notifications-to-your-users-built-with-vue/
 Vue.component("notifications", Notifications);
 
