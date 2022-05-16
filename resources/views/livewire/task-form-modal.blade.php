@@ -14,7 +14,7 @@
             <div class="flex flex-wrap -mx-3 mb-3">
                 <div class="w-full px-3 mb-3">
                     <x-label for="assigned_to" :value="__('Assign To')" />
-                    <x-select required name='assigned_to' wire:model="assigned_to">
+                    <x-select  name='assigned_to' wire:model="assigned_to">
                         <option value="" class="uppercase">---Select---</option>
                         @foreach ($users as $item)
                             <option value="{{ $item->id }}" wire:key="{{$item->id}}" class="uppercase">{{ $item->full_name }}</option>

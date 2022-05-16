@@ -976,6 +976,9 @@ select {
 .cursor-not-allowed {
   cursor: not-allowed;
 }
+.cursor-auto {
+  cursor: auto;
+}
 .list-inside {
   list-style-position: inside;
 }

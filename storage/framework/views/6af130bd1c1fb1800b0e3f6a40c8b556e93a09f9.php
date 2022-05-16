@@ -67,7 +67,7 @@
 <?php $component->withName('select'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['required' => true,'name' => 'assigned_to','wire:model' => 'assigned_to']); ?>
+<?php $component->withAttributes(['name' => 'assigned_to','wire:model' => 'assigned_to']); ?>
                         <option value="" class="uppercase">---Select---</option>
                         <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <option value="<?php echo e($item->id); ?>" wire:key="<?php echo e($item->id); ?>" class="uppercase"><?php echo e($item->full_name); ?></option>

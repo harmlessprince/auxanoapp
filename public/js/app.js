@@ -22781,6 +22781,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -22880,6 +22882,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     closeModal: function closeModal() {
       this.isModalVisible = false;
+    },
+    closeCard: function closeCard() {
+      this.isEditing = false;
     }
   }
 });
@@ -68923,308 +68928,342 @@ var render = function () {
     "div",
     {
       staticClass:
-        "w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3 bg-white dark:bg-gray-800",
+        "w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3 bg-white dark:bg-gray-800 cursor-auto",
+      on: {
+        click: function ($event) {
+          if ($event.target !== $event.currentTarget) {
+            return null
+          }
+          return _vm.closeCard()
+        },
+      },
     },
     [
       _c(
         "div",
         {
           staticClass:
-            "\n      flex flex-col flex-1\n      px-4\n      py-4\n      bg-white\n      rounded-md\n      shadow-md\n      blur-[0.3px]\n    ",
+            "\n      flex flex-col flex-1\n      px-4\n      py-4\n      bg-white\n      rounded-md\n      shadow-md\n    ",
+          on: {
+            click: function ($event) {
+              if ($event.target !== $event.currentTarget) {
+                return null
+              }
+              return _vm.closeCard()
+            },
+          },
         },
         [
-          _c("div", { staticClass: "flex-1" }, [
-            _c(
-              "div",
-              { staticClass: "flex items-center mb-2 justify-between" },
-              [
-                _c("div", { staticClass: "w-10/12" }, [
-                  !_vm.isEditing
+          _c(
+            "div",
+            {
+              staticClass: "flex-1",
+              on: {
+                click: function ($event) {
+                  if ($event.target !== $event.currentTarget) {
+                    return null
+                  }
+                  return _vm.closeCard()
+                },
+              },
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "flex items-center mb-2 justify-between" },
+                [
+                  _c("div", { staticClass: "w-10/12" }, [
+                    !_vm.isEditing
+                      ? _c(
+                          "h4",
+                          {
+                            staticClass:
+                              "font-semibold text-gray-600 dark:text-gray-300",
+                          },
+                          [
+                            _vm._v(
+                              "\n            " +
+                                _vm._s(_vm.task.title) +
+                                "\n          "
+                            ),
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.isEditing
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.task.title,
+                              expression: "task.title",
+                            },
+                          ],
+                          staticClass:
+                            "\n              block\n              w-full\n              mb-3\n              text-sm\n              dark:border-gray-600 dark:bg-gray-700\n              focus:border-purple-400\n              focus:outline-none\n              focus:shadow-outline-purple\n              dark:text-gray-300 dark:focus:shadow-outline-gray\n              form-input\n            ",
+                          attrs: { placeholder: "Task title" },
+                          domProps: { value: _vm.task.title },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.task, "title", $event.target.value)
+                            },
+                          },
+                        })
+                      : _vm._e(),
+                  ]),
+                  _vm._v(" "),
+                  _vm.isEditing
                     ? _c(
-                        "h4",
+                        "button",
                         {
                           staticClass:
-                            "font-semibold text-gray-600 dark:text-gray-300",
+                            "\n            px-2\n            py-2\n            focus:outline-none\n            text-gray-500\n            hover:bg-gray-100\n            dark:text-gray-100\n            hover:dark:bg-gray-500\n          ",
+                          on: {
+                            click: function ($event) {
+                              return _vm.editTask(_vm.task)
+                            },
+                          },
                         },
                         [
-                          _vm._v(
-                            "\n            " +
-                              _vm._s(_vm.task.title) +
-                              "\n          "
-                          ),
-                        ]
+                          _c("font-awesome-icon", {
+                            staticClass: "w-5 h-5 text-gray-500",
+                            attrs: { icon: "fa-regular fa-floppy-disk" },
+                          }),
+                        ],
+                        1
                       )
                     : _vm._e(),
                   _vm._v(" "),
-                  _vm.isEditing
-                    ? _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.task.title,
-                            expression: "task.title",
+                  !_vm.isEditing
+                    ? _c(
+                        "button",
+                        {
+                          staticClass:
+                            "\n            px-2\n            py-2\n            focus:outline-none\n            text-gray-500\n            hover:bg-gray-100\n            dark:text-gray-100\n            hover:dark:bg-gray-500\n          ",
+                          on: {
+                            click: function ($event) {
+                              return _vm.editTask(_vm.task)
+                            },
                           },
+                        },
+                        [
+                          _c("font-awesome-icon", {
+                            staticClass: "w-5 h-5",
+                            attrs: {
+                              icon: "fa-regular fa-pen-to-square",
+                              fill: "currentColor",
+                            },
+                          }),
                         ],
-                        staticClass:
-                          "\n              block\n              w-full\n              mb-3\n              text-sm\n              dark:border-gray-600 dark:bg-gray-700\n              focus:border-purple-400\n              focus:outline-none\n              focus:shadow-outline-purple\n              dark:text-gray-300 dark:focus:shadow-outline-gray\n              form-input\n            ",
-                        attrs: { placeholder: "Task title" },
-                        domProps: { value: _vm.task.title },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.task, "title", $event.target.value)
-                          },
-                        },
-                      })
+                        1
+                      )
                     : _vm._e(),
-                ]),
-                _vm._v(" "),
-                _vm.isEditing
-                  ? _c(
-                      "button",
-                      {
-                        staticClass:
-                          "\n            px-2\n            py-2\n            focus:outline-none\n            text-gray-500\n            hover:bg-gray-100\n            dark:text-gray-100\n            hover:dark:bg-gray-500\n          ",
-                        on: {
-                          click: function ($event) {
-                            return _vm.editTask(_vm.task)
-                          },
+                ]
+              ),
+              _vm._v(" "),
+              _vm.loggedInUser.id != _vm.task.created_by.id
+                ? _c(
+                    "p",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.isEditing,
+                          expression: "!isEditing",
                         },
-                      },
-                      [
-                        _c("font-awesome-icon", {
-                          staticClass: "w-5 h-5 text-gray-500",
-                          attrs: { icon: "fa-regular fa-floppy-disk" },
-                        }),
                       ],
-                      1
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.isEditing
-                  ? _c(
-                      "button",
-                      {
-                        staticClass:
-                          "\n            px-2\n            py-2\n            focus:outline-none\n            text-gray-500\n            hover:bg-gray-100\n            dark:text-gray-100\n            hover:dark:bg-gray-500\n          ",
-                        on: {
-                          click: function ($event) {
-                            return _vm.editTask(_vm.task)
-                          },
+                      staticClass:
+                        "mb-2 text-sm text-gray-600 dark:text-gray-400",
+                    },
+                    [
+                      _vm._v(
+                        "\n        From: " + _vm._s(_vm.fullName) + "\n      "
+                      ),
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.loggedInUser.id != _vm.task.assigned_to.id
+                ? _c(
+                    "p",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.isEditing,
+                          expression: "!isEditing",
                         },
-                      },
-                      [
-                        _c("font-awesome-icon", {
-                          staticClass: "w-5 h-5",
-                          attrs: {
-                            icon: "fa-regular fa-pen-to-square",
-                            fill: "currentColor",
-                          },
-                        }),
                       ],
-                      1
-                    )
-                  : _vm._e(),
-              ]
-            ),
-            _vm._v(" "),
-            _vm.loggedInUser.id != _vm.task.created_by.id
-              ? _c(
-                  "p",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !_vm.isEditing,
-                        expression: "!isEditing",
-                      },
-                    ],
-                    staticClass:
-                      "mb-2 text-sm text-gray-600 dark:text-gray-400",
-                  },
-                  [
-                    _vm._v(
-                      "\n        From: " + _vm._s(_vm.fullName) + "\n      "
-                    ),
-                  ]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.loggedInUser.id != _vm.task.assigned_to.id
-              ? _c(
-                  "p",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !_vm.isEditing,
-                        expression: "!isEditing",
-                      },
-                    ],
-                    staticClass:
-                      "mb-2 text-sm text-gray-600 dark:text-gray-400",
-                  },
-                  [
-                    _vm._v(
-                      "\n        Assigned to: " +
-                        _vm._s(_vm.task.assigned_to.first_name) +
-                        "\n        " +
-                        _vm._s(_vm.task.assigned_to.last_name) +
-                        "\n      "
-                    ),
-                  ]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _c(
-              "p",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.isEditing,
-                    expression: "!isEditing",
-                  },
-                ],
-                staticClass: "mb-2 text-sm text-gray-600 dark:text-gray-400",
-              },
-              [
-                _vm._v(
-                  "\n        Created: " +
-                    _vm._s(_vm.createdAt(_vm.task.created_at)) +
-                    "\n      "
-                ),
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "p",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.isEditing,
-                    expression: "!isEditing",
-                  },
-                ],
-                staticClass: "mb-2 text-sm text-gray-600 dark:text-gray-400",
-              },
-              [
-                _vm._v(
-                  "\n        Due: " +
-                    _vm._s(_vm.dueAt(_vm.task.due_at)) +
-                    "\n      "
-                ),
-              ]
-            ),
-            _vm._v(" "),
-            !_vm.isEditing
-              ? _c(
-                  "p",
-                  {
-                    staticClass:
-                      "text-gray-600 dark:text-gray-400 text-justify mb-2",
-                  },
-                  [
-                    !_vm.readMore[_vm.task.id]
-                      ? _c("span", [
-                          _vm._v(
-                            "\n          " +
-                              _vm._s(
-                                _vm.formattedString(_vm.task.description)
-                              ) +
-                              "\n        "
-                          ),
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.readMore[_vm.task.id]
-                      ? _c("span", [
-                          _vm._v(
-                            "\n          " +
-                              _vm._s(_vm.task.description) +
-                              "\n        "
-                          ),
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.task.description &&
-                    _vm.task.description.length > _vm.maxChars
-                      ? _c("span", [
-                          !_vm.readMore[_vm.task.id]
-                            ? _c(
-                                "a",
-                                {
-                                  staticClass:
-                                    "text-sm text-center rounded text-cyan-500",
-                                  attrs: { href: "#", id: "readmore" },
-                                  on: {
-                                    click: function ($event) {
-                                      return _vm.showMore(_vm.task.id)
-                                    },
-                                  },
-                                },
-                                [_vm._v("Read more\n            ")]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.readMore[_vm.task.id]
-                            ? _c(
-                                "a",
-                                {
-                                  staticClass:
-                                    "text-sm text-center rounded text-cyan-500",
-                                  attrs: { href: "#", id: "readmore" },
-                                  on: {
-                                    click: function ($event) {
-                                      return _vm.showLess(_vm.task.id)
-                                    },
-                                  },
-                                },
-                                [_vm._v("\n            Read less\n          ")]
-                              )
-                            : _vm._e(),
-                        ])
-                      : _vm._e(),
-                  ]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.isEditing
-              ? _c("textarea", {
+                      staticClass:
+                        "mb-2 text-sm text-gray-600 dark:text-gray-400",
+                    },
+                    [
+                      _vm._v(
+                        "\n        Assigned to: " +
+                          _vm._s(_vm.task.assigned_to.first_name) +
+                          "\n        " +
+                          _vm._s(_vm.task.assigned_to.last_name) +
+                          "\n      "
+                      ),
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
                   directives: [
                     {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.task.description,
-                      expression: "task.description",
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.isEditing,
+                      expression: "!isEditing",
                     },
                   ],
-                  staticClass:
-                    "\n          block\n          w-full\n          mb-3\n          text-sm\n          dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700\n          form-textarea\n          focus:border-purple-400\n          focus:outline-none\n          focus:shadow-outline-purple\n          dark:focus:shadow-outline-gray\n        ",
-                  attrs: {
-                    rows: "6",
-                    placeholder: "Enter some long form content.",
-                  },
-                  domProps: { value: _vm.task.description },
-                  on: {
-                    input: function ($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.task, "description", $event.target.value)
+                  staticClass: "mb-2 text-sm text-gray-600 dark:text-gray-400",
+                },
+                [
+                  _vm._v(
+                    "\n        Created: " +
+                      _vm._s(_vm.createdAt(_vm.task.created_at)) +
+                      "\n      "
+                  ),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.isEditing,
+                      expression: "!isEditing",
                     },
-                  },
-                })
-              : _vm._e(),
-          ]),
+                  ],
+                  staticClass: "mb-2 text-sm text-gray-600 dark:text-gray-400",
+                },
+                [
+                  _vm._v(
+                    "\n        Due: " +
+                      _vm._s(_vm.dueAt(_vm.task.due_at)) +
+                      "\n      "
+                  ),
+                ]
+              ),
+              _vm._v(" "),
+              !_vm.isEditing
+                ? _c(
+                    "p",
+                    {
+                      staticClass:
+                        "text-gray-600 dark:text-gray-400 text-justify mb-2",
+                    },
+                    [
+                      !_vm.readMore[_vm.task.id]
+                        ? _c("span", [
+                            _vm._v(
+                              "\n          " +
+                                _vm._s(
+                                  _vm.formattedString(_vm.task.description)
+                                ) +
+                                "\n        "
+                            ),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.readMore[_vm.task.id]
+                        ? _c("span", [
+                            _vm._v(
+                              "\n          " +
+                                _vm._s(_vm.task.description) +
+                                "\n        "
+                            ),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.task.description &&
+                      _vm.task.description.length > _vm.maxChars
+                        ? _c("span", [
+                            !_vm.readMore[_vm.task.id]
+                              ? _c(
+                                  "a",
+                                  {
+                                    staticClass:
+                                      "text-sm text-center rounded text-cyan-500",
+                                    attrs: { href: "#", id: "readmore" },
+                                    on: {
+                                      click: function ($event) {
+                                        return _vm.showMore(_vm.task.id)
+                                      },
+                                    },
+                                  },
+                                  [_vm._v("Read more\n            ")]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.readMore[_vm.task.id]
+                              ? _c(
+                                  "a",
+                                  {
+                                    staticClass:
+                                      "text-sm text-center rounded text-cyan-500",
+                                    attrs: { href: "#", id: "readmore" },
+                                    on: {
+                                      click: function ($event) {
+                                        return _vm.showLess(_vm.task.id)
+                                      },
+                                    },
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n            Read less\n          "
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ])
+                        : _vm._e(),
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.isEditing
+                ? _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.task.description,
+                        expression: "task.description",
+                      },
+                    ],
+                    staticClass:
+                      "\n          block\n          w-full\n          mb-3\n          text-sm\n          dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700\n          form-textarea\n          focus:border-purple-400\n          focus:outline-none\n          focus:shadow-outline-purple\n          dark:focus:shadow-outline-gray\n        ",
+                    attrs: {
+                      rows: "6",
+                      placeholder: "Enter some long form content.",
+                    },
+                    domProps: { value: _vm.task.description },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.task, "description", $event.target.value)
+                      },
+                    },
+                  })
+                : _vm._e(),
+            ]
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "flex space-x-4" }, [
             _vm.task.done == false

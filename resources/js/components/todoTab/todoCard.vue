@@ -1,6 +1,7 @@
 <template>
   <div
-    class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3 bg-white dark:bg-gray-800"
+    class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3 bg-white dark:bg-gray-800 cursor-auto"
+    @click.self="closeCard()"
   >
     <div
       class="
@@ -10,10 +11,11 @@
         bg-white
         rounded-md
         shadow-md
-        blur-[0.3px]
       "
+      @click.self="closeCard()"
+       
     >
-      <div class="flex-1">
+      <div class="flex-1" @click.self="closeCard()">
         <div class="flex items-center mb-2 justify-between">
           <div class="w-10/12">
             <h4
@@ -349,6 +351,9 @@ export default {
     closeModal() {
       this.isModalVisible = false;
     },
+    closeCard(){
+      this.isEditing = false;
+    }
   },
 };
 </script>
